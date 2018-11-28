@@ -1,0 +1,20 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <fan-tray xmlns="urn:xran:fan:1.0">
+    <fan-state>
+      <name>fan01</name>
+      <fan-location>1</fan-location>
+      <present-and-operating>true</present-and-operating>
+      <vendor-code>4</vendor-code>
+      <fan-speed>90</fan-speed>
+      <target-speed>200</target-speed>
+    </fan-state>
+    <fan-state>
+      <name>fan02</name>
+      <fan-location>2</fan-location>
+      <present-and-operating>true</present-and-operating>
+      <vendor-code>4</vendor-code>
+      <fan-speed>100</fan-speed>
+      <target-speed>200</target-speed>
+    </fan-state>
+  </fan-tray>
+</config>

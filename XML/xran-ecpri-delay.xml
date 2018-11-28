@@ -1,0 +1,28 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <ecpri-delay-message xmlns="urn:xran:message5:1.0">
+    <ru-compensation>
+      <tcv2>9</tcv2>
+      <tcv1>19</tcv1>
+    </ru-compensation>
+    <message5-sessions>
+      <session-parameters>
+        <session-id>0</session-id>
+        <processing-element-name>element0</processing-element-name>
+        <flow-state>
+          <responses-transmitted>236536</responses-transmitted>
+          <requests-transmitted>96734</requests-transmitted>
+          <followups-transmitted>0</followups-transmitted>
+        </flow-state>
+      </session-parameters>
+      <session-parameters>
+        <session-id>1</session-id>
+        <processing-element-name>element1</processing-element-name>
+        <flow-state>
+          <responses-transmitted>12525</responses-transmitted>
+          <requests-transmitted>74513</requests-transmitted>
+          <followups-transmitted>99</followups-transmitted>
+        </flow-state>
+      </session-parameters>
+    </message5-sessions>
+  </ecpri-delay-message>
+</config>

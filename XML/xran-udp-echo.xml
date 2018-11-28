@@ -1,0 +1,7 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <udp-echo xmlns="urn:xran:udpecho:1.0">
+    <enable-udp-echo>false</enable-udp-echo>
+    <dscp-config>EF</dscp-config>
+    <echo-replies-transmitted>10</echo-replies-transmitted>
+  </udp-echo>
+</config>
