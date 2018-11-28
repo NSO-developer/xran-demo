@@ -1,0 +1,417 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+  <device>
+    <name>rusim0</name>
+      <config>
+        <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+          <component>
+            <name>netsim-ru-module</name>
+            <class xmlns:xran-hw="urn:xran:hardware:1.0">xran-hw:XRAN-RADIO</class>
+            <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-module</xran-name>
+          </component>
+          <component>
+            <name>netsim-ru-port0</name>
+            <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:port</class>
+            <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-port0</xran-name>
+          </component>
+          <component>
+            <name>netsim-ru-port1</name>
+            <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:port</class>
+            <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-port1</xran-name>
+          </component>
+        </hardware>
+        <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+          <interface>
+            <name>10GEth0</name>
+            <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+              <enabled>true</enabled>
+            </ipv4>
+            <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+              <enabled>true</enabled>
+            </ipv6>
+            <vlan-tagging xmlns="urn:xran:interfaces:1.0">true</vlan-tagging>
+            <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
+            <port-reference xmlns="urn:xran:interfaces:1.0">
+              <xran-port-name>netsim-ru-port0</xran-port-name>
+              <xran-port-number>0</xran-port-number>
+            </port-reference>
+          </interface>
+          <interface>
+            <name>10GEth0.100</name>
+            <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:l2vlan</type>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+              <enabled>true</enabled>
+              <address>
+                <ip>10.10.0.17</ip>
+                <netmask>255.255.255.0</netmask>
+              </address>
+            </ipv4>
+            <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+              <enabled>false</enabled>
+            </ipv6>
+            <base-interface xmlns="urn:xran:interfaces:1.0">10GEth0</base-interface>
+            <vlan-id xmlns="urn:xran:interfaces:1.0">100</vlan-id>
+            <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
+            <port-reference xmlns="urn:xran:interfaces:1.0">
+              <xran-port-name>netsim-ru-port0</xran-port-name>
+              <xran-port-number>0</xran-port-number>
+            </port-reference>
+          </interface>
+          <interface>
+            <name>10GEth0.110</name>
+            <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:l2vlan</type>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+              <enabled>true</enabled>
+            </ipv4>
+            <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+              <enabled>false</enabled>
+            </ipv6>
+            <base-interface xmlns="urn:xran:interfaces:1.0">10GEth0</base-interface>
+            <vlan-id xmlns="urn:xran:interfaces:1.0">110</vlan-id>
+            <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
+            <port-reference xmlns="urn:xran:interfaces:1.0">
+              <xran-port-name>netsim-ru-port0</xran-port-name>
+              <xran-port-number>0</xran-port-number>
+            </port-reference>
+          </interface>
+          <interface>
+            <name>10GEth1</name>
+            <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+              <enabled>true</enabled>
+            </ipv4>
+            <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+              <enabled>true</enabled>
+            </ipv6>
+            <vlan-tagging xmlns="urn:xran:interfaces:1.0">true</vlan-tagging>
+            <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:40</mac-address>
+            <port-reference xmlns="urn:xran:interfaces:1.0">
+              <xran-port-name>netsim-ru-port1</xran-port-name>
+              <xran-port-number>1</xran-port-number>
+            </port-reference>
+          </interface>
+        </interfaces>
+        <ald-ports-io xmlns="urn:xran:ald-port:1.0">
+          <ald-port-dc-control>
+            <name>aldport0</name>
+            <dc-enabled>false</dc-enabled>
+          </ald-port-dc-control>
+          <ald-port-dc-control>
+            <name>aldport1</name>
+            <dc-enabled>true</dc-enabled>
+          </ald-port-dc-control>
+        </ald-ports-io>
+        <delay-management xmlns="urn:xran:delay:1.0">
+          <bandwidth-scs-delay-state>
+            <bandwidth>20000</bandwidth>
+            <subcarrier-spacing>15000</subcarrier-spacing>
+          </bandwidth-scs-delay-state>
+          <bandwidth-scs-delay-state>
+            <bandwidth>50000</bandwidth>
+            <subcarrier-spacing>30000</subcarrier-spacing>
+          </bandwidth-scs-delay-state>
+          <bandwidth-scs-delay-state>
+            <bandwidth>100000</bandwidth>
+            <subcarrier-spacing>60000</subcarrier-spacing>
+          </bandwidth-scs-delay-state>
+        </delay-management>
+        <external-io xmlns="urn:xran:external-io:1.0">
+          <output-setting>
+            <name>extoutput0</name>
+            <line-out>true</line-out>
+          </output-setting>
+          <output-setting>
+            <name>extoutput1</name>
+            <line-out>false</line-out>
+          </output-setting>
+          <output-setting>
+            <name>extoutput2</name>
+            <line-out>false</line-out>
+          </output-setting>
+          <output-setting>
+            <name>extoutput3</name>
+            <line-out>true</line-out>
+          </output-setting>
+        </external-io>
+        <ecpri-delay-message xmlns="urn:xran:message5:1.0">
+          <enable-message5>true</enable-message5>
+          <message5-sessions>
+            <session-parameters>
+              <session-id>0</session-id>
+              <processing-element-name>element0</processing-element-name>
+            </session-parameters>
+            <session-parameters>
+              <session-id>1</session-id>
+              <processing-element-name>element1</processing-element-name>
+            </session-parameters>
+          </message5-sessions>
+        </ecpri-delay-message>
+        <mplane-info xmlns="urn:xran:mplane-interfaces:1.0">
+          <searchable-mplane-access-vlans-info>
+            <searchable-access-vlans>100</searchable-access-vlans>
+            <searchable-access-vlans>110</searchable-access-vlans>
+            <searchable-access-vlans>120</searchable-access-vlans>
+            <searchable-access-vlans>130</searchable-access-vlans>
+            <searchable-access-vlans>200</searchable-access-vlans>
+            <searchable-access-vlans>210</searchable-access-vlans>
+            <searchable-access-vlans>220</searchable-access-vlans>
+            <searchable-access-vlans>230</searchable-access-vlans>
+          </searchable-mplane-access-vlans-info>
+          <m-plane-interfaces>
+            <m-plane-sub-interfaces>
+              <interface-name>10GEth0.100</interface-name>
+              <sub-interface>100</sub-interface>
+            </m-plane-sub-interfaces>
+          </m-plane-interfaces>
+        </mplane-info>
+        <performance-measurement-objects xmlns="urn:xran:performance-management:1.0">
+          <enable-SFTP-upload>true</enable-SFTP-upload>
+          <enable-random-file-upload>false</enable-random-file-upload>
+          <remote-SFTP-uploads>
+            <remote-SFTP-upload-path>sftp://admin@uploadserver.operator.com/SFTPuploads/</remote-SFTP-upload-path>
+            <password>
+              <password>admin</password>
+            </password>
+          </remote-SFTP-uploads>
+          <transceiver-measurement-interval>300</transceiver-measurement-interval>
+          <rx-window-measurement-interval>60</rx-window-measurement-interval>
+          <notification-interval>300</notification-interval>
+          <file-upload-interval>7200</file-upload-interval>
+          <transceiver-measurement-objects>
+            <measurement-object>RX_POWER</measurement-object>
+            <active>true</active>
+            <report-info>FREQUENCY_TABLE</report-info>
+            <object-unit>PORT_NUMBER</object-unit>
+            <bin-count>5</bin-count>
+            <lower-bound>0.0001</lower-bound>
+            <upper-bound>3.2</upper-bound>
+          </transceiver-measurement-objects>
+          <transceiver-measurement-objects>
+            <measurement-object>VOLTAGE</measurement-object>
+            <active>true</active>
+            <report-info>FREQUENCY_TABLE</report-info>
+            <object-unit>PORT_NUMBER</object-unit>
+            <function>RAW</function>
+            <bin-count>4</bin-count>
+            <lower-bound>0.0</lower-bound>
+            <upper-bound>4.0</upper-bound>
+          </transceiver-measurement-objects>
+          <transceiver-measurement-objects>
+            <measurement-object>TEMPERATURE</measurement-object>
+            <active>false</active>
+            <object-unit>PORT_NUMBER</object-unit>
+          </transceiver-measurement-objects>
+          <rx-window-measurement-objects>
+            <measurement-object>RX_ON_TIME</measurement-object>
+            <active>true</active>
+            <object-unit>TRANSPORT</object-unit>
+          </rx-window-measurement-objects>
+          <rx-window-measurement-objects>
+            <measurement-object>RX_CORRUPT</measurement-object>
+            <active>true</active>
+            <object-unit>EAXC_ID</object-unit>
+            <report-info>COUNT</report-info>
+          </rx-window-measurement-objects>
+          <rx-window-measurement-objects>
+            <measurement-object>RX_TOTAL</measurement-object>
+            <active>true</active>
+            <object-unit>RU</object-unit>
+            <report-info>COUNT</report-info>
+          </rx-window-measurement-objects>
+        </performance-measurement-objects>
+        <processing-elements xmlns="urn:xran:processing-element:1.0">
+          <transport-session-type>ETH-INTERFACE</transport-session-type>
+          <ru-elements>
+            <name>element0</name>
+            <transport-flow>
+              <interface-name>10GEth0.100</interface-name>
+              <eth-flow>
+                <ru-mac-address>00:e0:fe:00:23:30</ru-mac-address>
+                <vlan-id>100</vlan-id>
+                <llscu-mac-address>11:95:a0:af:5f:b9</llscu-mac-address>
+              </eth-flow>
+            </transport-flow>
+          </ru-elements>
+          <ru-elements>
+            <name>element1</name>
+            <transport-flow>
+              <interface-name>10GEth0.110</interface-name>
+              <eth-flow>
+                <ru-mac-address>00:e0:fe:00:23:30</ru-mac-address>
+                <vlan-id>110</vlan-id>
+                <llscu-mac-address>11:95:a0:af:5f:b9</llscu-mac-address>
+              </eth-flow>
+            </transport-flow>
+          </ru-elements>
+        </processing-elements>
+        <port-transceivers xmlns="urn:xran:transceiver:1.0">
+          <port-transceiver-data>
+            <interface-name>10GEth0</interface-name>
+            <port-number>0</port-number>
+          </port-transceiver-data>
+          <port-transceiver-data>
+            <interface-name>10GEth1</interface-name>
+            <port-number>1</port-number>
+          </port-transceiver-data>
+        </port-transceivers>
+        <udp-echo xmlns="urn:xran:udpecho:1.0">
+          <enable-udp-echo>false</enable-udp-echo>
+          <dscp-config>EF</dscp-config>
+        </udp-echo>
+        <user-plane-configuration xmlns="urn:xran:uplane-conf:1.0">
+          <compression>
+            <compression-type>STATIC</compression-type>
+            <bitwidth>11</bitwidth>
+            <compression-method>BLOCK_FLOATING_POINT</compression-method>
+          </compression>
+          <low-level-tx-links>
+            <name>lltxlink0</name>
+            <processing-element>element0</processing-element>
+            <tx-array-carrier>>txarraycarrier0</tx-array-carrier>
+            <low-level-tx-endpoint>lltx-endpoint0</low-level-tx-endpoint>
+            <remote-address>
+              <cu-port-bitmask>65024</cu-port-bitmask>
+              <band-sector-bitmask>448</band-sector-bitmask>
+              <ccid-bitmask>56</ccid-bitmask>
+              <ru-port-bitmask>7</ru-port-bitmask>
+              <eaxc-id>585</eaxc-id>
+            </remote-address>
+          </low-level-tx-links>
+          <low-level-tx-links>
+            <name>lltxlink1</name>
+            <processing-element>element0</processing-element>
+            <tx-array-carrier>>txarraycarrier0</tx-array-carrier>
+            <low-level-tx-endpoint>lltx-endpoint1</low-level-tx-endpoint>
+            <remote-address>
+              <cu-port-bitmask>65024</cu-port-bitmask>
+              <band-sector-bitmask>448</band-sector-bitmask>
+              <ccid-bitmask>56</ccid-bitmask>
+              <ru-port-bitmask>7</ru-port-bitmask>
+              <eaxc-id>1170</eaxc-id>
+            </remote-address>
+          </low-level-tx-links>
+          <low-level-rx-links>
+            <name>llrxlink0</name>
+            <processing-element>element1</processing-element>
+            <rx-array-carrier>rxarraycarrier0</rx-array-carrier>
+            <low-level-rx-endpoint>llrx-endpoint0</low-level-rx-endpoint>
+            <remote-address>
+              <cu-port-bitmask>65024</cu-port-bitmask>
+              <band-sector-bitmask>448</band-sector-bitmask>
+              <ccid-bitmask>56</ccid-bitmask>
+              <ru-port-bitmask>7</ru-port-bitmask>
+              <eaxc-id>585</eaxc-id>
+            </remote-address>
+            <priority>HIGH</priority>
+          </low-level-rx-links>
+          <low-level-rx-links>
+            <name>llrxlink1</name>
+            <processing-element>element1</processing-element>
+            <rx-array-carrier>rxarraycarrier0</rx-array-carrier>
+            <low-level-rx-endpoint>llrx-endpoint1</low-level-rx-endpoint>
+            <remote-address>
+              <cu-port-bitmask>65024</cu-port-bitmask>
+              <band-sector-bitmask>448</band-sector-bitmask>
+              <ccid-bitmask>56</ccid-bitmask>
+              <ru-port-bitmask>7</ru-port-bitmask>
+              <eaxc-id>1170</eaxc-id>
+            </remote-address>
+            <priority>HIGH</priority>
+          </low-level-rx-links>
+          <low-level-tx-endpoints>
+            <name>llrx-endpoint0</name>
+            <local-address>
+              <cu-port-bitmask>65024</cu-port-bitmask>
+              <band-sector-bitmask>448</band-sector-bitmask>
+              <ccid-bitmask>56</ccid-bitmask>
+              <ru-port-bitmask>7</ru-port-bitmask>
+              <eaxc-id>1755</eaxc-id>
+            </local-address>
+          </low-level-tx-endpoints>
+          <low-level-tx-endpoints>
+            <name>llrx-endpoint1</name>
+            <local-address>
+              <cu-port-bitmask>65024</cu-port-bitmask>
+              <band-sector-bitmask>448</band-sector-bitmask>
+              <ccid-bitmask>56</ccid-bitmask>
+              <ru-port-bitmask>7</ru-port-bitmask>
+              <eaxc-id>2340</eaxc-id>
+            </local-address>
+          </low-level-tx-endpoints>
+          <low-level-tx-endpoints>
+            <name>lltx-endpoint0</name>
+            <local-address>
+              <cu-port-bitmask>65024</cu-port-bitmask>
+              <band-sector-bitmask>448</band-sector-bitmask>
+              <ccid-bitmask>56</ccid-bitmask>
+              <ru-port-bitmask>7</ru-port-bitmask>
+              <eaxc-id>585</eaxc-id>
+            </local-address>
+          </low-level-tx-endpoints>
+          <low-level-tx-endpoints>
+            <name>lltx-endpoint1</name>
+            <local-address>
+              <cu-port-bitmask>65024</cu-port-bitmask>
+              <band-sector-bitmask>448</band-sector-bitmask>
+              <ccid-bitmask>56</ccid-bitmask>
+              <ru-port-bitmask>7</ru-port-bitmask>
+              <eaxc-id>1170</eaxc-id>
+            </local-address>
+          </low-level-tx-endpoints>
+          <tx-array-carriers>
+            <name>>txarraycarrier0</name>
+            <absolute-frequency-center>636666</absolute-frequency-center>
+            <center-of-channel-bandwidth>3549990000</center-of-channel-bandwidth>
+            <channel-bandwidth>20000000</channel-bandwidth>
+            <power>30.45</power>
+            <active>ACTIVE</active>
+            <fft-size>4096</fft-size>
+            <downlink-radio-frame-offset>0</downlink-radio-frame-offset>
+            <downlink-sfn-offset>0</downlink-sfn-offset>
+            <default-scs>KHZ_15</default-scs>
+            <cp-length>7</cp-length>
+          </tx-array-carriers>
+          <rx-array-carriers>
+            <name>rxarraycarrier0</name>
+            <absolute-frequency-center>636666</absolute-frequency-center>
+            <center-of-channel-bandwidth>3549990000</center-of-channel-bandwidth>
+            <channel-bandwidth>20000000</channel-bandwidth>
+            <fft-size>4096</fft-size>
+            <ul-fft-sampling-offset>0</ul-fft-sampling-offset>
+            <n-ta-offset>0</n-ta-offset>
+            <default-scs>KHZ_15</default-scs>
+            <scs-specific-config>
+              <scs>KHZ_15</scs>
+              <offset-to-absolute-frequency-center>0</offset-to-absolute-frequency-center>
+              <number-of-prbs>100</number-of-prbs>
+            </scs-specific-config>
+            <cp-length>7</cp-length>
+          </rx-array-carriers>
+        </user-plane-configuration>
+        <xran-users xmlns="urn:xran:user-mgmt:1.0">
+          <user>
+            <name>fmpmuser</name>
+            <password>hashedpassword</password>
+            <enabled>true</enabled>
+          </user>
+          <user>
+            <name>nmsuser</name>
+            <password>hashedpassword</password>
+            <enabled>true</enabled>
+          </user>
+          <user>
+            <name>swmuser</name>
+            <password>hashedpassword</password>
+            <enabled>true</enabled>
+          </user>
+          <user>
+            <name>xranuser</name>
+            <password>hashedpassword</password>
+            <enabled>true</enabled>
+          </user>
+        </xran-users>
+      </config>
+  </device>
+  </devices>
+</config>

@@ -98,7 +98,7 @@ admin@ncs# exit
 Now load the RU's configuration data from the xml file
 
 ```
-$ ncs_load -l -m nsoconfig.xml
+$ ncs_load -l -m nso-config.xml
 ```
 ## Sync the configration to the Radio Unit
 ```
@@ -119,7 +119,7 @@ name=rusim0 netconf=12022 snmp=11022 ipc=5010 cli=10022 dir=~/ncs-run/netsim/rus
 Load the RU's operational data from the xml file using the identified IPC port, in this case 5010
 
 ```
-$ env CONFD_IPC_PORT=5010 confd_load -F p -W -o confdconfig.xml
+$ env CONFD_IPC_PORT=5010 confd_load -F p -W -o confd-oper.xml
 ```
 **Success!!** You know have a NETCONF client, supporting the xRAN YANG models, and a simulated Radio Unit.
 
