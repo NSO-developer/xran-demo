@@ -7,6 +7,8 @@ You can find more information on NSO's support of RESTCONF in the nso directory:
 
 We will also be demonstrating how [PyangBind](http://pynms.io/pyangbind/) can be used to automatically generating Python class hierarchies.
 
+The YANG model we will use for demonstration purposes is the xran-usermgmt.yang model. We know that this will likely come with privileges restricted using NETCONF Access Control Model (NACM), but this is all just for RESTCONF/Python demonstration purposes!
+
 ## Creating  Python Bindings
 
 Follow the steps described in the PyangBind [getting started guide](http://pynms.io/pyangbind/getting_started/):
