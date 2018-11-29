@@ -111,7 +111,7 @@ which should output the following
 
     New account to be added
     {
-        "xran-usermgmt-alt:xran-users": {
+        "xran-usermgmt:xran-users": {
             "user": [
                 {
                     "password": "password123",
@@ -132,7 +132,7 @@ We can now use the RESCONF PATCH method to add the newly defined user to the con
 url = 'http://admin:admin@localhost:8080/restconf/data/devices/device=rusim0/config/xran-usermgmt:xran-users'  
 headers={'content-type': 'application/yang-data+json', 'Accept':'application/yang-data+json'}  
 resp = requests.patch(url, data=pybindJSON.dumps(users, mode="ietf"), headers=headers)  
-    
+
 url = 'http://admin:admin@localhost:8080/restconf/data/devices/device=rusim0/live-status/xran-usermgmt:xran-users'  
 headers={'Accept':'application/yang-data+json'}  
 resp = requests.get(url, headers=headers)  
