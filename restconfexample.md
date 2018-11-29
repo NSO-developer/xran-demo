@@ -80,7 +80,7 @@ and this should output the JSON encoded current configuration that was loaded fr
       }
     }
 
-## Use PyangBind to create a new user account
+## Use PyangBind to create a new xARN user account  on the RU
 
 We are using the xran-usermgmt.yang model as an example, and it has the following tree structure.
 
@@ -177,3 +177,44 @@ which should confirm the new user has been added to the configuration
         ]
       }
     }
+
+## Use RESTCONF to import NSO data into python
+
+Finally, we can use the same PyangBind library to take JSON received from NSO and load it back into python variables.
+
+    #!/usr/bin/env python
+    import requests
+    import binding
+    import pyangbind.lib.pybindJSON as pybindJSON
+    import json
+
+    headers={'Accept':'application/yang-data+json'}
+    url = 'http://admin:admin@localhost:8080/restconf/data/devices/device=rusim0/live-status/xran-usermgmt:xran-users'
+
+    # example getting live-status of RU
+
+    resp = requests.get(url, headers=headers)
+    ietf_json = resp.content
+
+    string_to_load = ietf_json.replace('\n','')
+    live_users = pybindJSON.loads_ietf(string_to_load, binding, "xran_usermgmt")
+
+    json_users = json.loads(pybindJSON.dumps(live_users))
+    json_users = json_users['xran-users']['user']
+
+    users=[]
+    i=0
+    for k in json_users.keys():
+        users.append(str(k))
+
+    for user in users:
+        print "user", i ,live_users.xran_users.user[user].get()
+        i+=1
+
+And from the display, we can see details of the five user accounts received from NSO over the RESTCONF interface.
+
+    user 0 {'password': u'hashedpassword', 'enabled': True, 'name': u'nmsuser'}
+    user 1 {'password': u'hashedpassword', 'enabled': True, 'name': u'swmmuser'}
+    user 2 {'password': u'hashedpassword', 'enabled': True, 'name': u'xranuser'}
+    user 3 {'password': u'hashedpassword', 'enabled': True, 'name': u'fmpmuser'}
+    user 4 {'password': u'password123', 'enabled': True, 'name': u'pythonuser'}
