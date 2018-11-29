@@ -133,6 +133,8 @@ url = 'http://admin:admin@localhost:8080/restconf/data/devices/device=rusim0/con
 headers={'content-type': 'application/yang-data+json', 'Accept':'application/yang-data+json'}  
 resp = requests.patch(url, data=pybindJSON.dumps(users, mode="ietf"), headers=headers)  
 
+# and check the configuration by re-getting the xran-users container from NSO
+
 url = 'http://admin:admin@localhost:8080/restconf/data/devices/device=rusim0/live-status/xran-usermgmt:xran-users'  
 headers={'Accept':'application/yang-data+json'}  
 resp = requests.get(url, headers=headers)  
