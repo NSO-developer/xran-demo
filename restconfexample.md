@@ -180,35 +180,36 @@ which should confirm the new user has been added to the configuration
 
 Finally, we can use the same PyangBind library to take JSON received from NSO and load it back into the python class hierarchy.
 
-    #!/usr/bin/env python
-    import requests
-    import binding
-    import pyangbind.lib.pybindJSON as pybindJSON
-    import json
+``` python
+#!/usr/bin/env python
+import requests
+import binding
+import pyangbind.lib.pybindJSON as pybindJSON
+import json
 
-    headers={'Accept':'application/yang-data+json'}
-    url = 'http://admin:admin@localhost:8080/restconf/data/devices/device=rusim0/live-status/xran-usermgmt:xran-users'
+headers={'Accept':'application/yang-data+json'}
+url = 'http://admin:admin@localhost:8080/restconf/data/devices/device=rusim0/live-status/xran-usermgmt:xran-users'
 
-    # example getting live-status of RU
+# example getting live-status of RU
 
-    resp = requests.get(url, headers=headers)
-    ietf_json = resp.content
+resp = requests.get(url, headers=headers)
+ietf_json = resp.content
 
-    string_to_load = ietf_json.replace('\n','')
-    live_users = pybindJSON.loads_ietf(string_to_load, binding, "xran_usermgmt")
+string_to_load = ietf_json.replace('\n','')
+live_users = pybindJSON.loads_ietf(string_to_load, binding, "xran_usermgmt")
 
-    json_users = json.loads(pybindJSON.dumps(live_users))
-    json_users = json_users['xran-users']['user']
+json_users = json.loads(pybindJSON.dumps(live_users))
+json_users = json_users['xran-users']['user']
 
-    users=[]
-    i=0
-    for k in json_users.keys():
-        users.append(str(k))
+users=[]
+i=0
+for k in json_users.keys():
+    users.append(str(k))
 
-    for user in users:
-        print "user", i ,live_users.xran_users.user[user].get()
-        i+=1
-
+for user in users:
+    print "user", i ,live_users.xran_users.user[user].get()
+    i+=1
+```
 And from the display, we can see details of the five user accounts received from NSO over the RESTCONF interface.
 
     user 0 {'password': u'hashedpassword', 'enabled': True, 'name': u'nmsuser'}
