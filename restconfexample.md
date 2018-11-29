@@ -11,17 +11,17 @@ We will also be demonstrating how [PyangBind](http://pynms.io/pyangbind/) can be
 
 ## Creating  Python Bindings
 
-Following the steps described in the PyangBind [getting started guide](http://pynms.io/pyangbind/getting_started/):
+Follow the steps described in the PyangBind [getting started guide](http://pynms.io/pyangbind/getting_started/):
 
 
     $ pip install pyangbind
 
-And setting up a pointer to the PyangBind location
+Next set up a pointer to the PyangBind location
 
     $  export PYBINDPLUGIN=`/usr/bin/env python -c \
     'import pyangbind; import os; print "%s/plugin" % os.path.dirname(pyangbind.__file__)'`
 
-Next create the necessary bindings. In this example, we will use the latest xran-usermgmt.yang model.
+Finally, create the necessary bindings. In this example, we will use the latest xran-usermgmt.yang model.
 
     $ pyang --plugindir $PYBINDPLUGIN -f pybind -o binding.py ~/yang/V1_1_0/xran-usermgmt.yang
 
@@ -50,7 +50,7 @@ print "Current user management configuration"
 print resp.content
 ```
 
-and this should output the JSON encoded current configuration that was loaded from nso-config.xml
+and this should output the JSON encoded current configuration that was loaded from the nso-config.xml file.
 
     Current user management configuration
     {
@@ -80,7 +80,7 @@ and this should output the JSON encoded current configuration that was loaded fr
       }
     }
 
-## Use PyangBind to create a new xARN user account  on the RU
+## Use PyangBind to create a new xRAN user account on the RU
 
 We are using the xran-usermgmt.yang model as an example, and it has the following tree structure.
 
@@ -91,7 +91,7 @@ We are using the xran-usermgmt.yang model as an example, and it has the followin
             +--rw password?   password-type
             +--rw enabled?    boolean
 
-We need to create an xran-users object and then define its name, password and wether it is enabled. (Note: NSO uses the ietf JSON encodings and not PyangBind's default open-configuration encoding.)
+We need to create an xran-users object and then define its name, password and whether it is enabled. (Note: NSO uses the ietf JSON encodings and not PyangBind's default open-configuration encoding.)
 
 
 ``` python
@@ -124,7 +124,7 @@ which should output the following
 
 ## Use RESTCONF to add the new user to the xran-usermgmt.yang list
 
-We can now use the RESCONF PATCH method to add the newly defined user to the configuration and we can confirm the addition by getting the latest configuration
+We can now use the RESCONF PATCH method to add the newly defined user to the configuration and we can confirm the addition by getting the latest configuration back from NSO
 
 ``` python
 # now use restconf to update NSO  
@@ -178,9 +178,9 @@ which should confirm the new user has been added to the configuration
       }
     }
 
-## Use RESTCONF to import NSO data into python
+## Use RESTCONF and PyangBind to import NSO data into python
 
-Finally, we can use the same PyangBind library to take JSON received from NSO and load it back into python variables.
+Finally, we can use the same PyangBind library to take JSON received from NSO and load it back into the python class hierarchy.
 
     #!/usr/bin/env python
     import requests
