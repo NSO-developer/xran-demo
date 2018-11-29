@@ -40,7 +40,7 @@ And store in directory, e.g., ~/yang/V1_1_0
 ## Build Network Element Driver
 
 
-    $ ~/ncs4.7/bin/ncs-make-package --netconf-ned ~/YANG/V1_1_0 xran110 --dest ~/ncs-run/packages/xran110 --vendor xran --build --no-java
+    $ ~/ncs4.7/bin/ncs-make-package --netconf-ned ~/yang/V1_1_0 xran110 --dest ~/ncs-run/packages/xran110 --vendor xran --build --no-java
 
 
 ## Create simulated xRAN Radio Unit
@@ -68,12 +68,12 @@ Enter NSO CLI
     $ ncs_cli -C -u admin
 
 Now use the NSO CLI to perform a package reload and exit
- 
+
 
     admin@ncs#packages reload
     reload-result {
      package xran110
-     result true 
+     result true
     }
 
 ## Load the Radio Unit's configuration from xml
@@ -131,5 +131,3 @@ You can check the live status of your RU from the NCS CLI
     live-status hardware component netsim-ru-port1
     class  port
     xran-name netsim-ru-port1
-
-
