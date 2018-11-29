@@ -1,8 +1,6 @@
-# Demonstration of how to develop on top of NSO
+# Simple demo of how to develop on top of NSO
 
-**Introduction**
-
-NSO supports a number of alternative development approaches, including Java and Python, but in this demo we will be using the RESTCONF interface.
+NSO supports a number of alternative development approaches, including Java and Python, but in this demo we will be using NSO's RESTCONF interface.
 
 You can find more information on NSO's support of RESTCONF in the nso directory:
 ~/ncs4.7/examples.ncs/getting-started/developing-with-ncs/13-restconf
