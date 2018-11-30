@@ -49,7 +49,7 @@ container xran-users {
   //and so this constraint should be removed when operating in those scenarios
 
 ```
-so these need to be commented out when working with simulated RUs 
+so these need to be commented out when working with simulated RUs
 
 ``` yang
 container xran-users {
@@ -62,11 +62,19 @@ container xran-users {
 
 ```
 
+A similar change needs to performed on the xran-laa.yang file, which checks for the number of secondary LAA cells:
 
+``` yang
+container laa-config {
+//  must "number-of-laa-scells <= /mcap:module-capability/mcap:band-capabilities[mcap:band-number = '46']/mcap:sub-band-info/mcap:number-of-laa-scells" {
+//    error-message "number of laa secondary cells must be less than supported number of laa scells.";
+//  }
+```
 
 
 ## Build Network Element Driver
 
+Now the simulator constraints have been addressed, we can build the NED
 
     $ ~/ncs4.7/bin/ncs-make-package --netconf-ned ~/yang/V1_1_0 xran110 --dest ~/ncs-run/packages/xran110 --vendor xran --build --no-java
 
