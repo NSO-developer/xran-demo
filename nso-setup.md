@@ -171,4 +171,4 @@ You can check the live status of your RU from the NCS CLI
     class  port
     xran-name netsim-ru-port1
 
-(an example of the complete live status is included in the livestatus.txt file)
+(an example of the complete live status is included in [livestatus.txt](https://github.com/mark-grayson/xrandemo/blob/master/livestatus.txt) )
