@@ -6,18 +6,18 @@
         <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
           <component>
             <name>netsim-ru-module</name>
-            <class xmlns:xran-hw="urn:xran:hardware:1.0">xran-hw:XRAN-RADIO</class>
-            <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-module</xran-name>
+            <class xmlns:xran-hw="urn:xran:hardware:2.0">xran-hw:XRAN-RADIO</class>
+            <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-module</xran-name>
           </component>
           <component>
             <name>netsim-ru-port0</name>
             <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:port</class>
-            <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-port0</xran-name>
+            <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-port0</xran-name>
           </component>
           <component>
             <name>netsim-ru-port1</name>
             <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:port</class>
-            <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-port1</xran-name>
+            <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-port1</xran-name>
           </component>
         </hardware>
         <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
@@ -30,9 +30,9 @@
             <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>true</enabled>
             </ipv6>
-            <vlan-tagging xmlns="urn:xran:interfaces:1.0">true</vlan-tagging>
-            <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
-            <port-reference xmlns="urn:xran:interfaces:1.0">
+            <vlan-tagging xmlns="urn:xran:interfaces:2.0">true</vlan-tagging>
+            <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+            <port-reference xmlns="urn:xran:interfaces:2.0">
               <xran-port-name>netsim-ru-port0</xran-port-name>
               <xran-port-number>0</xran-port-number>
             </port-reference>
@@ -50,10 +50,10 @@
             <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>false</enabled>
             </ipv6>
-            <base-interface xmlns="urn:xran:interfaces:1.0">10GEth0</base-interface>
-            <vlan-id xmlns="urn:xran:interfaces:1.0">100</vlan-id>
-            <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
-            <port-reference xmlns="urn:xran:interfaces:1.0">
+            <base-interface xmlns="urn:xran:interfaces:2.0">10GEth0</base-interface>
+            <vlan-id xmlns="urn:xran:interfaces:2.0">100</vlan-id>
+            <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+            <port-reference xmlns="urn:xran:interfaces:2.0">
               <xran-port-name>netsim-ru-port0</xran-port-name>
               <xran-port-number>0</xran-port-number>
             </port-reference>
@@ -67,10 +67,10 @@
             <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>false</enabled>
             </ipv6>
-            <base-interface xmlns="urn:xran:interfaces:1.0">10GEth0</base-interface>
-            <vlan-id xmlns="urn:xran:interfaces:1.0">110</vlan-id>
-            <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
-            <port-reference xmlns="urn:xran:interfaces:1.0">
+            <base-interface xmlns="urn:xran:interfaces:2.0">10GEth0</base-interface>
+            <vlan-id xmlns="urn:xran:interfaces:2.0">110</vlan-id>
+            <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+            <port-reference xmlns="urn:xran:interfaces:2.0">
               <xran-port-name>netsim-ru-port0</xran-port-name>
               <xran-port-number>0</xran-port-number>
             </port-reference>
@@ -84,15 +84,15 @@
             <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>true</enabled>
             </ipv6>
-            <vlan-tagging xmlns="urn:xran:interfaces:1.0">true</vlan-tagging>
-            <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:40</mac-address>
-            <port-reference xmlns="urn:xran:interfaces:1.0">
+            <vlan-tagging xmlns="urn:xran:interfaces:2.0">true</vlan-tagging>
+            <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:40</mac-address>
+            <port-reference xmlns="urn:xran:interfaces:2.0">
               <xran-port-name>netsim-ru-port1</xran-port-name>
               <xran-port-number>1</xran-port-number>
             </port-reference>
           </interface>
         </interfaces>
-        <ald-ports-io xmlns="urn:xran:ald-port:1.0">
+        <ald-ports-io xmlns="urn:xran:ald-port:2.0">
           <ald-port-dc-control>
             <name>aldport0</name>
             <dc-enabled>false</dc-enabled>
@@ -102,7 +102,7 @@
             <dc-enabled>true</dc-enabled>
           </ald-port-dc-control>
         </ald-ports-io>
-        <delay-management xmlns="urn:xran:delay:1.0">
+        <delay-management xmlns="urn:xran:delay:2.0">
           <bandwidth-scs-delay-state>
             <bandwidth>20000</bandwidth>
             <subcarrier-spacing>15000</subcarrier-spacing>
@@ -116,7 +116,7 @@
             <subcarrier-spacing>60000</subcarrier-spacing>
           </bandwidth-scs-delay-state>
         </delay-management>
-        <external-io xmlns="urn:xran:external-io:1.0">
+        <external-io xmlns="urn:xran:external-io:2.0">
           <output-setting>
             <name>extoutput0</name>
             <line-out>true</line-out>
@@ -169,6 +169,12 @@
           <enable-SFTP-upload>true</enable-SFTP-upload>
           <enable-random-file-upload>false</enable-random-file-upload>
           <remote-SFTP-uploads>
+            <remote-SFTP-upload-path>sftp://admin@uploadserver.operator.com/SFTPuploads</remote-SFTP-upload-path>
+            <password>
+              <password>admin</password>
+            </password>
+          </remote-SFTP-uploads>
+          <remote-SFTP-uploads>
             <remote-SFTP-upload-path>sftp://admin@uploadserver.operator.com/SFTPuploads/</remote-SFTP-upload-path>
             <password>
               <password>admin</password>
@@ -220,7 +226,7 @@
             <report-info>COUNT</report-info>
           </rx-window-measurement-objects>
         </performance-measurement-objects>
-        <processing-elements xmlns="urn:xran:processing-element:1.0">
+        <processing-elements xmlns="urn:xran:processing-element:2.0">
           <transport-session-type>ETH-INTERFACE</transport-session-type>
           <ru-elements>
             <name>element0</name>
@@ -255,7 +261,7 @@
             <port-number>1</port-number>
           </port-transceiver-data>
         </port-transceivers>
-        <udp-echo xmlns="urn:xran:udpecho:1.0">
+        <udp-echo xmlns="urn:xran:udpecho:2.0">
           <enable-udp-echo>false</enable-udp-echo>
           <dscp-config>EF</dscp-config>
         </udp-echo>
@@ -389,7 +395,7 @@
             <cp-length>7</cp-length>
           </rx-array-carriers>
         </user-plane-configuration>
-        <xran-users xmlns="urn:xran:user-mgmt:1.0">
+        <xran-users xmlns="urn:xran:user-mgmt:2.0">
           <user>
             <name>fmpmuser</name>
             <password>hashedpassword</password>

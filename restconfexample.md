@@ -212,7 +212,7 @@ for user in users:
     print "user", i ,live_users.xran_users.user[user].get()
     i+=1
 ```
-And from the display, we can see details of the five user accounts received from NSO over the RESTCONF interface.
+And from the output, we can see details of the five user accounts received from NSO over the RESTCONF interface.
 
     user 0 {'password': u'hashedpassword', 'enabled': True, 'name': u'nmsuser'}
     user 1 {'password': u'hashedpassword', 'enabled': True, 'name': u'swmmuser'}

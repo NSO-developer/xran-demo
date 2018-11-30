@@ -2,18 +2,18 @@
   <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
     <component>
       <name>netsim-ru-module</name>
-      <class xmlns:xran-hw="urn:xran:hardware:1.0">xran-hw:XRAN-RADIO</class>
-      <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-module</xran-name>
+      <class xmlns:xran-hw="urn:xran:hardware:2.0">xran-hw:XRAN-RADIO</class>
+      <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-module</xran-name>
     </component>
     <component>
       <name>netsim-ru-port0</name>
       <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:port</class>
-      <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-port0</xran-name>
+      <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-port0</xran-name>
     </component>
     <component>
       <name>netsim-ru-port1</name>
       <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:port</class>
-      <xran-name xmlns="urn:xran:hardware:1.0">netsim-ru-port1</xran-name>
+      <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-port1</xran-name>
     </component>
   </hardware>
   <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
@@ -24,13 +24,13 @@
       <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
         <enabled>true</enabled>
         <forwarding>false</forwarding>
-        <diffserv-markings xmlns="urn:xran:interfaces:1.0">
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
           <u-plane-marking>46</u-plane-marking>
           <c-plane-marking>46</c-plane-marking>
           <s-plane-marking>46</s-plane-marking>
           <other-marking>0</other-marking>
         </diffserv-markings>
-        <m-plane-marking xmlns="urn:xran:interfaces:1.0">18</m-plane-marking>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
       </ipv4>
       <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
         <enabled>true</enabled>
@@ -42,25 +42,25 @@
           <temporary-valid-lifetime>604800</temporary-valid-lifetime>
           <temporary-preferred-lifetime>86400</temporary-preferred-lifetime>
         </autoconf>
-        <diffserv-markings xmlns="urn:xran:interfaces:1.0">
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
           <u-plane-marking>46</u-plane-marking>
           <c-plane-marking>46</c-plane-marking>
           <s-plane-marking>46</s-plane-marking>
           <other-marking>0</other-marking>
         </diffserv-markings>
-        <m-plane-marking xmlns="urn:xran:interfaces:1.0">18</m-plane-marking>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
       </ipv6>
-      <l2-mtu xmlns="urn:xran:interfaces:1.0">1500</l2-mtu>
-      <vlan-tagging xmlns="urn:xran:interfaces:1.0">true</vlan-tagging>
-      <class-of-service xmlns="urn:xran:interfaces:1.0">
+      <l2-mtu xmlns="urn:xran:interfaces:2.0">1500</l2-mtu>
+      <vlan-tagging xmlns="urn:xran:interfaces:2.0">true</vlan-tagging>
+      <class-of-service xmlns="urn:xran:interfaces:2.0">
         <u-plane-marking>7</u-plane-marking>
         <c-plane-marking>7</c-plane-marking>
         <m-plane-marking>2</m-plane-marking>
         <s-plane-marking>7</s-plane-marking>
         <other-marking>1</other-marking>
       </class-of-service>
-      <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
-      <port-reference xmlns="urn:xran:interfaces:1.0">
+      <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+      <port-reference xmlns="urn:xran:interfaces:2.0">
         <xran-port-name>netsim-ru-port0</xran-port-name>
         <xran-port-number>0</xran-port-number>
       </port-reference>
@@ -76,13 +76,13 @@
           <ip>10.10.0.17</ip>
           <netmask>255.255.255.0</netmask>
         </address>
-        <diffserv-markings xmlns="urn:xran:interfaces:1.0">
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
           <u-plane-marking>46</u-plane-marking>
           <c-plane-marking>46</c-plane-marking>
           <s-plane-marking>46</s-plane-marking>
           <other-marking>0</other-marking>
         </diffserv-markings>
-        <m-plane-marking xmlns="urn:xran:interfaces:1.0">18</m-plane-marking>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
       </ipv4>
       <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
         <enabled>false</enabled>
@@ -94,18 +94,18 @@
           <temporary-valid-lifetime>604800</temporary-valid-lifetime>
           <temporary-preferred-lifetime>86400</temporary-preferred-lifetime>
         </autoconf>
-        <diffserv-markings xmlns="urn:xran:interfaces:1.0">
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
           <u-plane-marking>46</u-plane-marking>
           <c-plane-marking>46</c-plane-marking>
           <s-plane-marking>46</s-plane-marking>
           <other-marking>0</other-marking>
         </diffserv-markings>
-        <m-plane-marking xmlns="urn:xran:interfaces:1.0">18</m-plane-marking>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
       </ipv6>
-      <base-interface xmlns="urn:xran:interfaces:1.0">10GEth0</base-interface>
-      <vlan-id xmlns="urn:xran:interfaces:1.0">100</vlan-id>
-      <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
-      <port-reference xmlns="urn:xran:interfaces:1.0">
+      <base-interface xmlns="urn:xran:interfaces:2.0">10GEth0</base-interface>
+      <vlan-id xmlns="urn:xran:interfaces:2.0">100</vlan-id>
+      <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+      <port-reference xmlns="urn:xran:interfaces:2.0">
         <xran-port-name>netsim-ru-port0</xran-port-name>
         <xran-port-number>0</xran-port-number>
       </port-reference>
@@ -117,13 +117,13 @@
       <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
         <enabled>true</enabled>
         <forwarding>false</forwarding>
-        <diffserv-markings xmlns="urn:xran:interfaces:1.0">
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
           <u-plane-marking>46</u-plane-marking>
           <c-plane-marking>46</c-plane-marking>
           <s-plane-marking>46</s-plane-marking>
           <other-marking>0</other-marking>
         </diffserv-markings>
-        <m-plane-marking xmlns="urn:xran:interfaces:1.0">18</m-plane-marking>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
       </ipv4>
       <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
         <enabled>false</enabled>
@@ -135,18 +135,18 @@
           <temporary-valid-lifetime>604800</temporary-valid-lifetime>
           <temporary-preferred-lifetime>86400</temporary-preferred-lifetime>
         </autoconf>
-        <diffserv-markings xmlns="urn:xran:interfaces:1.0">
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
           <u-plane-marking>46</u-plane-marking>
           <c-plane-marking>46</c-plane-marking>
           <s-plane-marking>46</s-plane-marking>
           <other-marking>0</other-marking>
         </diffserv-markings>
-        <m-plane-marking xmlns="urn:xran:interfaces:1.0">18</m-plane-marking>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
       </ipv6>
-      <base-interface xmlns="urn:xran:interfaces:1.0">10GEth0</base-interface>
-      <vlan-id xmlns="urn:xran:interfaces:1.0">110</vlan-id>
-      <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:30</mac-address>
-      <port-reference xmlns="urn:xran:interfaces:1.0">
+      <base-interface xmlns="urn:xran:interfaces:2.0">10GEth0</base-interface>
+      <vlan-id xmlns="urn:xran:interfaces:2.0">110</vlan-id>
+      <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+      <port-reference xmlns="urn:xran:interfaces:2.0">
         <xran-port-name>netsim-ru-port0</xran-port-name>
         <xran-port-number>0</xran-port-number>
       </port-reference>
@@ -158,13 +158,13 @@
       <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
         <enabled>true</enabled>
         <forwarding>false</forwarding>
-        <diffserv-markings xmlns="urn:xran:interfaces:1.0">
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
           <u-plane-marking>46</u-plane-marking>
           <c-plane-marking>46</c-plane-marking>
           <s-plane-marking>46</s-plane-marking>
           <other-marking>0</other-marking>
         </diffserv-markings>
-        <m-plane-marking xmlns="urn:xran:interfaces:1.0">18</m-plane-marking>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
       </ipv4>
       <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
         <enabled>true</enabled>
@@ -176,1169 +176,31 @@
           <temporary-valid-lifetime>604800</temporary-valid-lifetime>
           <temporary-preferred-lifetime>86400</temporary-preferred-lifetime>
         </autoconf>
-        <diffserv-markings xmlns="urn:xran:interfaces:1.0">
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
           <u-plane-marking>46</u-plane-marking>
           <c-plane-marking>46</c-plane-marking>
           <s-plane-marking>46</s-plane-marking>
           <other-marking>0</other-marking>
         </diffserv-markings>
-        <m-plane-marking xmlns="urn:xran:interfaces:1.0">18</m-plane-marking>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
       </ipv6>
-      <l2-mtu xmlns="urn:xran:interfaces:1.0">1500</l2-mtu>
-      <vlan-tagging xmlns="urn:xran:interfaces:1.0">true</vlan-tagging>
-      <class-of-service xmlns="urn:xran:interfaces:1.0">
+      <l2-mtu xmlns="urn:xran:interfaces:2.0">1500</l2-mtu>
+      <vlan-tagging xmlns="urn:xran:interfaces:2.0">true</vlan-tagging>
+      <class-of-service xmlns="urn:xran:interfaces:2.0">
         <u-plane-marking>7</u-plane-marking>
         <c-plane-marking>7</c-plane-marking>
         <m-plane-marking>2</m-plane-marking>
         <s-plane-marking>7</s-plane-marking>
         <other-marking>1</other-marking>
       </class-of-service>
-      <mac-address xmlns="urn:xran:interfaces:1.0">00:e0:fe:00:23:40</mac-address>
-      <port-reference xmlns="urn:xran:interfaces:1.0">
+      <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:40</mac-address>
+      <port-reference xmlns="urn:xran:interfaces:2.0">
         <xran-port-name>netsim-ru-port1</xran-port-name>
         <xran-port-number>1</xran-port-number>
       </port-reference>
     </interface>
   </interfaces>
-  <nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
-    <enable-nacm>true</enable-nacm>
-    <read-default>permit</read-default>
-    <write-default>permit</write-default>
-    <exec-default>permit</exec-default>
-    <enable-external-groups>true</enable-external-groups>
-    <groups>
-      <group>
-        <name>admin</name>
-        <user-name>admin</user-name>
-        <user-name>private</user-name>
-      </group>
-      <group>
-        <name>oper</name>
-        <user-name>oper</user-name>
-        <user-name>public</user-name>
-      </group>
-    </groups>
-    <rule-list>
-      <name>admin</name>
-      <group>admin</group>
-      <rule>
-        <name>any-access</name>
-        <module-name>*</module-name>
-        <access-operations>*</access-operations>
-        <action>permit</action>
-        <context xmlns="http://tail-f.com/yang/acm">*</context>
-      </rule>
-    </rule-list>
-    <rule-list>
-      <name>any-group</name>
-      <group>*</group>
-      <rule>
-        <name>tailf-aaa-authentication</name>
-        <module-name>tailf-aaa</module-name>
-        <path>/aaa/authentication/users/user[name='$USER']</path>
-        <access-operations>read update</access-operations>
-        <action>permit</action>
-        <context xmlns="http://tail-f.com/yang/acm">*</context>
-      </rule>
-      <rule>
-        <name>tailf-aaa-user</name>
-        <module-name>tailf-aaa</module-name>
-        <path>/user[name='$USER']</path>
-        <access-operations>create read update delete</access-operations>
-        <action>permit</action>
-        <context xmlns="http://tail-f.com/yang/acm">*</context>
-      </rule>
-      <rule>
-        <name>tailf-webui-user</name>
-        <module-name>tailf-webui</module-name>
-        <path>/webui/data-stores/user-profile[username='$USER']</path>
-        <access-operations>create read update delete</access-operations>
-        <action>permit</action>
-        <context xmlns="http://tail-f.com/yang/acm">*</context>
-      </rule>
-    </rule-list>
-    <cmd-read-default xmlns="http://tail-f.com/yang/acm">permit</cmd-read-default>
-    <cmd-exec-default xmlns="http://tail-f.com/yang/acm">permit</cmd-exec-default>
-  </nacm>
-  <netconf-state xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-monitoring">
-    <capabilities>
-      <capability>urn:ietf:params:netconf:base:1.0</capability>
-      <capability>urn:ietf:params:netconf:base:1.1</capability>
-      <capability>urn:ietf:params:netconf:capability:candidate:1.0</capability>
-      <capability>urn:ietf:params:netconf:capability:confirmed-commit:1.0</capability>
-      <capability>urn:ietf:params:netconf:capability:confirmed-commit:1.1</capability>
-      <capability>urn:ietf:params:netconf:capability:xpath:1.0</capability>
-      <capability>urn:ietf:params:netconf:capability:validate:1.0</capability>
-      <capability>urn:ietf:params:netconf:capability:validate:1.1</capability>
-      <capability>urn:ietf:params:netconf:capability:rollback-on-error:1.0</capability>
-      <capability>urn:ietf:params:netconf:capability:with-defaults:1.0?basic-mode=explicit&amp;also-supported=report-all-tagged</capability>
-      <capability>urn:ietf:params:netconf:capability:yang-library:1.0?revision=2016-06-21&amp;module-set-id=324ac3605cb7ad950970325307f02a66</capability>
-      <capability>http://tail-f.com/ns/netconf/actions/1.0</capability>
-      <capability>http://tail-f.com/ns/netconf/extensions</capability>
-      <capability>http://tail-f.com/ns/aaa/1.1?module=tailf-aaa&amp;revision=2015-06-16</capability>
-      <capability>http://tail-f.com/ns/common/query?module=tailf-common-query&amp;revision=2017-12-15</capability>
-      <capability>http://tail-f.com/ns/kicker?module=tailf-kicker&amp;revision=2017-09-28</capability>
-      <capability>http://tail-f.com/ns/progress?module=tailf-progress&amp;revision=2018-06-21</capability>
-      <capability>http://tail-f.com/ns/webui?module=tailf-webui&amp;revision=2013-03-07</capability>
-      <capability>http://tail-f.com/yang/acm?module=tailf-acm&amp;revision=2013-03-07</capability>
-      <capability>http://tail-f.com/yang/common?module=tailf-common&amp;revision=2018-04-19</capability>
-      <capability>http://tail-f.com/yang/common-monitoring?module=tailf-common-monitoring&amp;revision=2013-06-14</capability>
-      <capability>http://tail-f.com/yang/confd-monitoring?module=tailf-confd-monitoring&amp;revision=2013-06-14</capability>
-      <capability>http://tail-f.com/yang/netconf-monitoring?module=tailf-netconf-monitoring&amp;revision=2016-11-24</capability>
-      <capability>http://tail-f.com/yang/xsd-types?module=tailf-xsd-types&amp;revision=2017-11-20</capability>
-      <capability>urn:ietf:params:xml:ns:yang:iana-crypt-hash?module=iana-crypt-hash&amp;revision=2014-08-06&amp;features=crypt-hash-sha-512,crypt-hash-sha-256,crypt-hash-md5</capability>
-      <capability>urn:ietf:params:xml:ns:yang:iana-if-type?module=iana-if-type&amp;revision=2017-01-19</capability>
-      <capability>urn:ietf:params:xml:ns:yang:ietf-inet-types?module=ietf-inet-types&amp;revision=2013-07-15</capability>
-      <capability>urn:ietf:params:xml:ns:yang:ietf-netconf-acm?module=ietf-netconf-acm&amp;revision=2018-02-14</capability>
-      <capability>urn:ietf:params:xml:ns:yang:ietf-netconf-monitoring?module=ietf-netconf-monitoring&amp;revision=2010-10-04</capability>
-      <capability>urn:ietf:params:xml:ns:yang:ietf-netconf-notifications?module=ietf-netconf-notifications&amp;revision=2012-02-06</capability>
-      <capability>urn:ietf:params:xml:ns:yang:ietf-restconf-monitoring?module=ietf-restconf-monitoring&amp;revision=2017-01-26</capability>
-      <capability>urn:ietf:params:xml:ns:yang:ietf-yang-library?module=ietf-yang-library&amp;revision=2016-06-21</capability>
-      <capability>urn:ietf:params:xml:ns:yang:ietf-yang-types?module=ietf-yang-types&amp;revision=2013-07-15</capability>
-      <capability>urn:ietf:params:xml:ns:netconf:base:1.0?module=ietf-netconf&amp;revision=2011-06-01</capability>
-      <capability>urn:ietf:params:xml:ns:yang:ietf-netconf-with-defaults?module=ietf-netconf-with-defaults&amp;revision=2011-06-01</capability>
-    </capabilities>
-    <datastores>
-      <datastore>
-        <name>running</name>
-        <transaction-id xmlns="http://tail-f.com/yang/netconf-monitoring">1543-333905-930362</transaction-id>
-      </datastore>
-      <datastore>
-        <name>candidate</name>
-      </datastore>
-    </datastores>
-    <schemas>
-      <schema>
-        <identifier>iana-crypt-hash</identifier>
-        <version>2014-08-06</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:iana-crypt-hash</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>iana-hardware</identifier>
-        <version>2018-03-13</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:iana-hardware</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>iana-if-type</identifier>
-        <version>2017-01-19</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:iana-if-type</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-dhcpv6-types</identifier>
-        <version>2018-01-30</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-dhcpv6-types</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-hardware</identifier>
-        <version>2018-03-13</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-hardware</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-inet-types</identifier>
-        <version>2013-07-15</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-inet-types</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-interfaces</identifier>
-        <version>2018-02-20</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-interfaces</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-ip</identifier>
-        <version>2018-02-22</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-ip</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-netconf</identifier>
-        <version>2011-06-01</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:netconf:base:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-netconf-acm</identifier>
-        <version>2018-02-14</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-netconf-acm</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-netconf-monitoring</identifier>
-        <version>2010-10-04</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-netconf-monitoring</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-netconf-notifications</identifier>
-        <version>2012-02-06</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-netconf-notifications</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-netconf-with-defaults</identifier>
-        <version>2011-06-01</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-netconf-with-defaults</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-restconf-monitoring</identifier>
-        <version>2017-01-26</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-restconf-monitoring</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-yang-library</identifier>
-        <version>2016-06-21</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-yang-library</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>ietf-yang-types</identifier>
-        <version>2013-07-15</version>
-        <format>yang</format>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-yang-types</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-aaa</identifier>
-        <version>2015-06-16</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/ns/aaa/1.1</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-acm</identifier>
-        <version>2013-03-07</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/yang/acm</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-cli-extensions</identifier>
-        <version>2018-04-19</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/yang/common</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-common</identifier>
-        <version>2018-04-19</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/yang/common</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-common-monitoring</identifier>
-        <version>2013-06-14</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/yang/common-monitoring</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-common-query</identifier>
-        <version>2017-12-15</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/ns/common/query</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-confd-monitoring</identifier>
-        <version>2013-06-14</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/yang/confd-monitoring</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-kicker</identifier>
-        <version>2017-09-28</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/ns/kicker</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-meta-extensions</identifier>
-        <version>2017-03-08</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/yang/common</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-netconf-monitoring</identifier>
-        <version>2016-11-24</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/yang/netconf-monitoring</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-progress</identifier>
-        <version>2018-06-21</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/ns/progress</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-rollback</identifier>
-        <version>2018-01-12</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/ns/rollback</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-webui</identifier>
-        <version>2013-03-07</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/ns/webui</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>tailf-xsd-types</identifier>
-        <version>2017-11-20</version>
-        <format>yang</format>
-        <namespace>http://tail-f.com/yang/xsd-types</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-alarm-id</identifier>
-        <version>2018-10-10</version>
-        <format>yang</format>
-        <namespace>urn:xran:alarms:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-ald</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:ald:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-ald-port</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:ald-port:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-beamforming</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:beamforming:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-delay-management</identifier>
-        <version>2018-10-10</version>
-        <format>yang</format>
-        <namespace>urn:xran:delay:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-dhcp</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:dhcp:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-ecpri-delay</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:message5:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-externalio</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:external-io:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-fan</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:fan:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-file-management</identifier>
-        <version>2018-10-01</version>
-        <format>yang</format>
-        <namespace>urn:xran:file-management:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-fm</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:fm:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-hardware</identifier>
-        <version>2018-11-14</version>
-        <format>yang</format>
-        <namespace>urn:xran:hardware:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-interfaces</identifier>
-        <version>2018-11-09</version>
-        <format>yang</format>
-        <namespace>urn:xran:interfaces:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-lbm</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:lbm:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-module-cap</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:module-cap:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-mplane-int</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:mplane-interfaces:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-mplane-redundancy</identifier>
-        <version>2018-08-29</version>
-        <format>yang</format>
-        <namespace>urn:xran:mplane-redundancy:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-operations</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:operations:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-performance-management</identifier>
-        <version>2018-10-01</version>
-        <format>yang</format>
-        <namespace>urn:xran:performance-management:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-processing-element</identifier>
-        <version>2018-10-08</version>
-        <format>yang</format>
-        <namespace>urn:xran:processing-element:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-software-management</identifier>
-        <version>2018-10-01</version>
-        <format>yang</format>
-        <namespace>urn:xran:software-management:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-supervision</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:supervision:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-sync</identifier>
-        <version>2018-10-10</version>
-        <format>yang</format>
-        <namespace>urn:xran:sync:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-transceiver</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:transceiver:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-troubleshooting</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:troubleshooting:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-udp-echo</identifier>
-        <version>2018-07-20</version>
-        <format>yang</format>
-        <namespace>urn:xran:udpecho:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-uplane-conf</identifier>
-        <version>2018-09-27</version>
-        <format>yang</format>
-        <namespace>urn:xran:uplane-conf:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-      <schema>
-        <identifier>xran-usermgmt-alt</identifier>
-        <version>2018-11-16</version>
-        <format>yang</format>
-        <namespace>urn:xran:user-mgmt:1.0</namespace>
-        <location>NETCONF</location>
-      </schema>
-    </schemas>
-    <statistics>
-      <netconf-start-time>2018-11-27T15:37:33+00:00</netconf-start-time>
-      <in-bad-hellos>0</in-bad-hellos>
-      <in-sessions>13</in-sessions>
-      <dropped-sessions>13</dropped-sessions>
-      <in-rpcs>280</in-rpcs>
-      <in-bad-rpcs>0</in-bad-rpcs>
-      <out-rpc-errors>0</out-rpc-errors>
-      <out-notifications>0</out-notifications>
-    </statistics>
-  </netconf-state>
-  <restconf-state xmlns="urn:ietf:params:xml:ns:yang:ietf-restconf-monitoring">
-    <capabilities>
-      <capability>urn:ietf:params:restconf:capability:defaults:1.0?basic-mode=explicit</capability>
-      <capability>urn:ietf:params:restconf:capability:depth:1.0</capability>
-      <capability>urn:ietf:params:restconf:capability:fields:1.0</capability>
-      <capability>urn:ietf:params:restconf:capability:with-defaults:1.0</capability>
-      <capability>urn:ietf:params:restconf:capability:filter:1.0</capability>
-      <capability>urn:ietf:params:restconf:capability:replay:1.0</capability>
-      <capability>urn:ietf:params:restconf:capability:yang-patch:1.0</capability>
-      <capability>http://tail-f.com/ns/restconf/collection/1.0</capability>
-      <capability>http://tail-f.com/ns/restconf/query-api/1.0</capability>
-    </capabilities>
-  </restconf-state>
-  <aaa xmlns="http://tail-f.com/ns/aaa/1.1">
-    <authentication>
-      <users>
-        <user>
-          <name>admin</name>
-          <uid>9001</uid>
-          <gid>100</gid>
-          <password>$1$l2HNCixI$dyzV2jHqxuWuK4z7Ui8ya/</password>
-          <ssh_keydir>/var/confd/homes/admin/.ssh</ssh_keydir>
-          <homedir>/var/confd/homes/admin</homedir>
-        </user>
-        <user>
-          <name>oper</name>
-          <uid>9001</uid>
-          <gid>100</gid>
-          <password>$1$Fa16l6tV$OnNqX.8mq0wW.3dAhHXEb.</password>
-          <ssh_keydir>/var/confd/homes/oper/.ssh</ssh_keydir>
-          <homedir>/var/confd/homes/oper</homedir>
-        </user>
-        <user>
-          <name>private</name>
-          <uid>9001</uid>
-          <gid>100</gid>
-          <password>$1$Bblt8Rk/$VrYmeZ/UshxUmdUNWgI1c/</password>
-          <ssh_keydir>/var/confd/homes/private/.ssh</ssh_keydir>
-          <homedir>/var/confd/homes/private</homedir>
-        </user>
-        <user>
-          <name>public</name>
-          <uid>9001</uid>
-          <gid>100</gid>
-          <password>$1$R18teRMa$7xLr7A3OBcggKOKoVJeGC.</password>
-          <ssh_keydir>/var/confd/homes/public/.ssh</ssh_keydir>
-          <homedir>/var/confd/homes/public</homedir>
-        </user>
-      </users>
-    </authentication>
-    <ios>
-      <level>
-        <nr>0</nr>
-        <prompt>\h> </prompt>
-      </level>
-      <level>
-        <nr>15</nr>
-        <prompt>\h# </prompt>
-      </level>
-      <privilege>
-        <mode>exec</mode>
-        <level>
-          <nr>0</nr>
-          <command>
-            <name>action</name>
-          </command>
-          <command>
-            <name>autowizard</name>
-          </command>
-          <command>
-            <name>enable</name>
-          </command>
-          <command>
-            <name>exit</name>
-          </command>
-          <command>
-            <name>help</name>
-          </command>
-          <command>
-            <name>startup</name>
-          </command>
-        </level>
-        <level>
-          <nr>15</nr>
-          <command>
-            <name>configure</name>
-          </command>
-        </level>
-      </privilege>
-    </ios>
-  </aaa>
-  <confd-state xmlns="http://tail-f.com/yang/confd-monitoring">
-    <version>6.7</version>
-    <epoll>false</epoll>
-    <daemon-status>started</daemon-status>
-    <loaded-data-models>
-      <data-model>
-        <name>iana-crypt-hash</name>
-        <revision>2014-08-06</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:iana-crypt-hash</namespace>
-        <prefix>ianach</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>iana-hardware</name>
-        <revision>2018-03-13</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:iana-hardware</namespace>
-        <prefix>ianahw</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>iana-if-type</name>
-        <revision>2017-01-19</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:iana-if-type</namespace>
-        <prefix>ianaift</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-dhcpv6-types</name>
-        <revision>2018-01-30</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-dhcpv6-types</namespace>
-        <prefix>dhcpv6-types</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-hardware</name>
-        <revision>2018-03-13</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-hardware</namespace>
-        <prefix>hw</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-inet-types</name>
-        <revision>2013-07-15</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-inet-types</namespace>
-        <prefix>inet</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-interfaces</name>
-        <revision>2018-02-20</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-interfaces</namespace>
-        <prefix>if</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-ip</name>
-        <revision>2018-02-22</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-ip</namespace>
-        <prefix>ip</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-netconf-acm</name>
-        <revision>2018-02-14</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-netconf-acm</namespace>
-        <prefix>nacm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-netconf-monitoring</name>
-        <revision>2010-10-04</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-netconf-monitoring</namespace>
-        <prefix>ncm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-netconf-notifications</name>
-        <revision>2012-02-06</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-netconf-notifications</namespace>
-        <prefix>ncn</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-restconf</name>
-        <revision>2017-01-26</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-restconf</namespace>
-        <prefix>rc</prefix>
-        <exported-to>rest</exported-to>
-      </data-model>
-      <data-model>
-        <name>ietf-restconf-monitoring</name>
-        <revision>2017-01-26</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-restconf-monitoring</namespace>
-        <prefix>rcmon</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>ietf-yang-library</name>
-        <revision>2016-06-21</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-yang-library</namespace>
-        <prefix>yanglib</prefix>
-        <exported-to>netconf</exported-to>
-        <exported-to>rest</exported-to>
-      </data-model>
-      <data-model>
-        <name>ietf-yang-patch</name>
-        <revision>2017-02-22</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-yang-patch</namespace>
-        <prefix>ypatch</prefix>
-        <exported-to>rest</exported-to>
-      </data-model>
-      <data-model>
-        <name>ietf-yang-types</name>
-        <revision>2013-07-15</revision>
-        <namespace>urn:ietf:params:xml:ns:yang:ietf-yang-types</namespace>
-        <prefix>yang</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-aaa</name>
-        <revision>2015-06-16</revision>
-        <namespace>http://tail-f.com/ns/aaa/1.1</namespace>
-        <prefix>aaa</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-acm</name>
-        <revision>2013-03-07</revision>
-        <namespace>http://tail-f.com/yang/acm</namespace>
-        <prefix>tacm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-common</name>
-        <revision>2018-04-19</revision>
-        <namespace>http://tail-f.com/yang/common</namespace>
-        <prefix>tailf</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-common-monitoring</name>
-        <revision>2013-06-14</revision>
-        <namespace>http://tail-f.com/yang/common-monitoring</namespace>
-        <prefix>tfcg</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-common-query</name>
-        <revision>2017-12-15</revision>
-        <namespace>http://tail-f.com/ns/common/query</namespace>
-        <prefix>tfcq</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-confd-monitoring</name>
-        <revision>2013-06-14</revision>
-        <namespace>http://tail-f.com/yang/confd-monitoring</namespace>
-        <prefix>tfcm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-kicker</name>
-        <revision>2017-09-28</revision>
-        <namespace>http://tail-f.com/ns/kicker</namespace>
-        <prefix>kicker</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-netconf-monitoring</name>
-        <revision>2016-11-24</revision>
-        <namespace>http://tail-f.com/yang/netconf-monitoring</namespace>
-        <prefix>tncm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-progress</name>
-        <revision>2018-06-21</revision>
-        <namespace>http://tail-f.com/ns/progress</namespace>
-        <prefix>progress</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-rollback</name>
-        <revision>2018-01-12</revision>
-        <namespace>http://tail-f.com/ns/rollback</namespace>
-        <prefix>rollback</prefix>
-        <exported-to>rest</exported-to>
-        <exported-to>netconf</exported-to>
-        <exported-to>maapi</exported-to>
-      </data-model>
-      <data-model>
-        <name>tailf-webui</name>
-        <revision>2013-03-07</revision>
-        <namespace>http://tail-f.com/ns/webui</namespace>
-        <prefix>webui</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>tailf-xsd-types</name>
-        <revision>2017-11-20</revision>
-        <namespace>http://tail-f.com/yang/xsd-types</namespace>
-        <prefix>xs</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-alarm-id</name>
-        <revision>2018-10-10</revision>
-        <namespace>urn:xran:alarms:1.0</namespace>
-        <prefix>xran-alarms</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-ald</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:ald:1.0</namespace>
-        <prefix>xran-ald</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-ald-port</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:ald-port:1.0</namespace>
-        <prefix>xran-ald-port</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-beamforming</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:beamforming:1.0</namespace>
-        <prefix>xran-bf</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-delay-management</name>
-        <revision>2018-10-10</revision>
-        <namespace>urn:xran:delay:1.0</namespace>
-        <prefix>xran-delay</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-dhcp</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:dhcp:1.0</namespace>
-        <prefix>xran-dhcp</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-ecpri-delay</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:message5:1.0</namespace>
-        <prefix>xran-msg5</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-externalio</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:external-io:1.0</namespace>
-        <prefix>xran-io</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-fan</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:fan:1.0</namespace>
-        <prefix>xran-fan</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-file-management</name>
-        <revision>2018-10-01</revision>
-        <namespace>urn:xran:file-management:1.0</namespace>
-        <prefix>xran-file-mgmt</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-fm</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:fm:1.0</namespace>
-        <prefix>xran-fm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-hardware</name>
-        <revision>2018-11-14</revision>
-        <namespace>urn:xran:hardware:1.0</namespace>
-        <prefix>xran-hw</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-interfaces</name>
-        <revision>2018-11-09</revision>
-        <namespace>urn:xran:interfaces:1.0</namespace>
-        <prefix>xran-int</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-lbm</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:lbm:1.0</namespace>
-        <prefix>xran-lbm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-module-cap</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:module-cap:1.0</namespace>
-        <prefix>xran-module-cap</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-mplane-int</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:mplane-interfaces:1.0</namespace>
-        <prefix>xran-mplane-int</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-mplane-redundancy</name>
-        <revision>2018-08-29</revision>
-        <namespace>urn:xran:mplane-redundancy:1.0</namespace>
-        <prefix>xmr</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-operations</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:operations:1.0</namespace>
-        <prefix>xran-ops</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-performance-management</name>
-        <revision>2018-10-01</revision>
-        <namespace>urn:xran:performance-management:1.0</namespace>
-        <prefix>xran-pm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-processing-element</name>
-        <revision>2018-10-08</revision>
-        <namespace>urn:xran:processing-element:1.0</namespace>
-        <prefix>xran-elements</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-software-management</name>
-        <revision>2018-10-01</revision>
-        <namespace>urn:xran:software-management:1.0</namespace>
-        <prefix>xran-swm</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-supervision</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:supervision:1.0</namespace>
-        <prefix>xran-supervision</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-sync</name>
-        <revision>2018-10-10</revision>
-        <namespace>urn:xran:sync:1.0</namespace>
-        <prefix>xran-sync</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-transceiver</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:transceiver:1.0</namespace>
-        <prefix>xran-transceiver</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-troubleshooting</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:troubleshooting:1.0</namespace>
-        <prefix>xran-trblsht</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-udp-echo</name>
-        <revision>2018-07-20</revision>
-        <namespace>urn:xran:udpecho:1.0</namespace>
-        <prefix>xran-echo</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-uplane-conf</name>
-        <revision>2018-09-27</revision>
-        <namespace>urn:xran:uplane-conf:1.0</namespace>
-        <prefix>xran-uplane-conf</prefix>
-        <exported-to-all/>
-      </data-model>
-      <data-model>
-        <name>xran-usermgmt-alt</name>
-        <revision>2018-11-16</revision>
-        <namespace>urn:xran:user-mgmt:1.0</namespace>
-        <prefix>xran-usermgmt</prefix>
-        <exported-to-all/>
-      </data-model>
-    </loaded-data-models>
-    <netconf>
-      <listen>
-        <ssh>
-          <ip>0.0.0.0</ip>
-          <port>12022</port>
-        </ssh>
-      </listen>
-    </netconf>
-    <cli>
-      <listen>
-        <ssh>
-          <ip>0.0.0.0</ip>
-          <port>10022</port>
-        </ssh>
-      </listen>
-    </cli>
-    <internal>
-      <cdb>
-        <datastore>
-          <name>running</name>
-          <transaction-id>1543-333905-930362</transaction-id>
-          <filename>./cdb/A.cdb</filename>
-          <disk-size>5620</disk-size>
-          <ram-size>37082</ram-size>
-          <read-locks>0</read-locks>
-          <write-lock-set>false</write-lock-set>
-          <waiting-for-replication-sync>false</waiting-for-replication-sync>
-        </datastore>
-        <datastore>
-          <name>operational</name>
-          <filename>./cdb/O.cdb</filename>
-          <disk-size>110</disk-size>
-          <ram-size>5949</ram-size>
-          <subscription-lock-set>false</subscription-lock-set>
-        </datastore>
-      </cdb>
-    </internal>
-  </confd-state>
-  <rollback-files xmlns="http://tail-f.com/ns/rollback">
-    <file>
-      <id>0</id>
-      <name>rollback0</name>
-      <fixed-number>10009</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:51:45</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>1</id>
-      <name>rollback1</name>
-      <fixed-number>10008</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:51:08</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>2</id>
-      <name>rollback2</name>
-      <fixed-number>10007</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:50:27</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>3</id>
-      <name>rollback3</name>
-      <fixed-number>10006</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:49:40</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>4</id>
-      <name>rollback4</name>
-      <fixed-number>10005</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:48:44</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>5</id>
-      <name>rollback5</name>
-      <fixed-number>10004</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:47:49</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>6</id>
-      <name>rollback6</name>
-      <fixed-number>10003</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:46:53</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>7</id>
-      <name>rollback7</name>
-      <fixed-number>10002</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:45:59</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>8</id>
-      <name>rollback8</name>
-      <fixed-number>10001</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:42:13</date>
-      <via>netconf</via>
-    </file>
-    <file>
-      <id>9</id>
-      <name>rollback9</name>
-      <fixed-number>10000</fixed-number>
-      <creator>admin</creator>
-      <date>2018-11-27 15:39:21</date>
-      <via>netconf</via>
-    </file>
-  </rollback-files>
-  <ald-ports-io xmlns="urn:xran:ald-port:1.0">
+  <ald-ports-io xmlns="urn:xran:ald-port:2.0">
     <ald-port-dc-control>
       <name>aldport0</name>
       <dc-enabled>false</dc-enabled>
@@ -1354,7 +216,7 @@
       <persistent-bf-files>false</persistent-bf-files>
     </operational-properties>
   </beamforming-config>
-  <delay-management xmlns="urn:xran:delay:1.0">
+  <delay-management xmlns="urn:xran:delay:2.0">
     <bandwidth-scs-delay-state>
       <bandwidth>20000</bandwidth>
       <subcarrier-spacing>15000</subcarrier-spacing>
@@ -1369,19 +231,33 @@
     </bandwidth-scs-delay-state>
   </delay-management>
   <ecpri-delay-message xmlns="urn:xran:message5:1.0">
+    <ru-compensation>
+      <tcv2>9</tcv2>
+      <tcv1>19</tcv1>
+    </ru-compensation>
     <enable-message5>true</enable-message5>
     <message5-sessions>
       <session-parameters>
         <session-id>0</session-id>
         <processing-element-name>element0</processing-element-name>
+        <flow-state>
+          <responses-transmitted>236536</responses-transmitted>
+          <requests-transmitted>96734</requests-transmitted>
+          <followups-transmitted>0</followups-transmitted>
+        </flow-state>
       </session-parameters>
       <session-parameters>
         <session-id>1</session-id>
         <processing-element-name>element1</processing-element-name>
+        <flow-state>
+          <responses-transmitted>12525</responses-transmitted>
+          <requests-transmitted>74513</requests-transmitted>
+          <followups-transmitted>99</followups-transmitted>
+        </flow-state>
       </session-parameters>
     </message5-sessions>
   </ecpri-delay-message>
-  <external-io xmlns="urn:xran:external-io:1.0">
+  <external-io xmlns="urn:xran:external-io:2.0">
     <output-setting>
       <name>extoutput0</name>
       <line-out>true</line-out>
@@ -1423,108 +299,16 @@
   </mplane-info>
   <operational-info xmlns="urn:xran:operations:1.0">
     <xran-split>
-      <interface-version>1.0</interface-version>
-      <optional-header-support>NONE</optional-header-support>
-      <ecpri-concatenation-support>false</ecpri-concatenation-support>
+      <interface-version>2.0</interface-version>
+      <optional-header-support>1914POINT3</optional-header-support>
+      <ecpri-concatenation-support>true</ecpri-concatenation-support>
     </xran-split>
-    <re-call-home-no-ssh-timer>60</re-call-home-no-ssh-timer>
+    <operational-state>
+      <restart-cause>POWER-ON</restart-cause>
+    </operational-state>
+    <re-call-home-no-ssh-timer>300</re-call-home-no-ssh-timer>
   </operational-info>
-  <performance-measurement-objects xmlns="urn:xran:performance-management:1.0">
-    <enable-SFTP-upload>true</enable-SFTP-upload>
-    <enable-random-file-upload>false</enable-random-file-upload>
-    <remote-SFTP-uploads>
-      <remote-SFTP-upload-path>sftp://admin@uploadserver.operator.com/SFTPuploads/</remote-SFTP-upload-path>
-      <password>
-        <password>admin</password>
-      </password>
-    </remote-SFTP-uploads>
-    <transceiver-measurement-interval>300</transceiver-measurement-interval>
-    <rx-window-measurement-interval>60</rx-window-measurement-interval>
-    <notification-interval>300</notification-interval>
-    <file-upload-interval>7200</file-upload-interval>
-    <transceiver-measurement-objects>
-      <measurement-object>RX_POWER</measurement-object>
-      <active>true</active>
-      <report-info>FREQUENCY_TABLE</report-info>
-      <object-unit>PORT_NUMBER</object-unit>
-      <bin-count>5</bin-count>
-      <lower-bound>0.0001</lower-bound>
-      <upper-bound>3.2</upper-bound>
-      <transceiver-measurement-result>
-        <object-unit-id>0</object-unit-id>
-        <latest>
-          <value>999.0</value>
-        </latest>
-        <frequeny-table>0</frequeny-table>
-        <frequeny-table>1</frequeny-table>
-        <frequeny-table>2</frequeny-table>
-        <frequeny-table>3</frequeny-table>
-        <frequeny-table>4</frequeny-table>
-        <frequeny-table>99</frequeny-table>
-      </transceiver-measurement-result>
-    </transceiver-measurement-objects>
-    <transceiver-measurement-objects>
-      <measurement-object>VOLTAGE</measurement-object>
-      <active>true</active>
-      <report-info>FREQUENCY_TABLE</report-info>
-      <object-unit>PORT_NUMBER</object-unit>
-      <function>RAW</function>
-      <bin-count>4</bin-count>
-      <lower-bound>0.0</lower-bound>
-      <upper-bound>4.0</upper-bound>
-      <transceiver-measurement-result>
-        <object-unit-id>0</object-unit-id>
-        <frequeny-table>1</frequeny-table>
-        <frequeny-table>56</frequeny-table>
-        <frequeny-table>350</frequeny-table>
-        <frequeny-table>999</frequeny-table>
-      </transceiver-measurement-result>
-    </transceiver-measurement-objects>
-    <transceiver-measurement-objects>
-      <measurement-object>TEMPERATURE</measurement-object>
-      <active>false</active>
-      <object-unit>PORT_NUMBER</object-unit>
-      <transceiver-measurement-result>
-        <object-unit-id>0</object-unit-id>
-        <max>
-          <value>26.7</value>
-          <time>2018-11-27T11:21:00-00:00</time>
-        </max>
-        <frequeny-table>0</frequeny-table>
-      </transceiver-measurement-result>
-    </transceiver-measurement-objects>
-    <rx-window-measurement-objects>
-      <measurement-object>RX_ON_TIME</measurement-object>
-      <active>true</active>
-      <object-unit>TRANSPORT</object-unit>
-      <tr-measured-result>
-        <name>element0</name>
-        <count>567</count>
-      </tr-measured-result>
-      <tr-measured-result>
-        <name>element1</name>
-        <count>999</count>
-      </tr-measured-result>
-    </rx-window-measurement-objects>
-    <rx-window-measurement-objects>
-      <measurement-object>RX_CORRUPT</measurement-object>
-      <active>true</active>
-      <object-unit>EAXC_ID</object-unit>
-      <report-info>COUNT</report-info>
-      <eaxc-measured-result>
-        <eaxc-id>572</eaxc-id>
-        <count>899999</count>
-        <transport-name>element0</transport-name>
-      </eaxc-measured-result>
-    </rx-window-measurement-objects>
-    <rx-window-measurement-objects>
-      <measurement-object>RX_TOTAL</measurement-object>
-      <active>true</active>
-      <object-unit>RU</object-unit>
-      <report-info>COUNT</report-info>
-    </rx-window-measurement-objects>
-  </performance-measurement-objects>
-  <processing-elements xmlns="urn:xran:processing-element:1.0">
+  <processing-elements xmlns="urn:xran:processing-element:2.0">
     <transport-session-type>ETH-INTERFACE</transport-session-type>
     <ru-elements>
       <name>element0</name>
@@ -1549,38 +333,143 @@
       </transport-flow>
     </ru-elements>
   </processing-elements>
-  <sync xmlns="urn:xran:sync:1.0">
+  <sync xmlns="urn:xran:sync:2.0">
+    <sync-status>
+      <sync-state>LOCKED</sync-state>
+      <supported-reference-types>
+        <item>PTP</item>
+      </supported-reference-types>
+      <supported-reference-types>
+        <item>SYNCE</item>
+      </supported-reference-types>
+      <supported-reference-types>
+        <item>GNSS</item>
+      </supported-reference-types>
+    </sync-status>
+    <sync-capability>
+      <sync-t-tsc>STANDARD</sync-t-tsc>
+    </sync-capability>
     <ptp-config>
       <domain-number>24</domain-number>
-      <multicast-mac-address>FORWARDABLE</multicast-mac-address>
-      <delay-asymmetry>0</delay-asymmetry>
+      <multicast-mac-address>NONFORWARDABLE</multicast-mac-address>
+      <accepted-clock-classes>
+        <clock-classes>248</clock-classes>
+      </accepted-clock-classes>
+      <accepted-clock-classes>
+        <clock-classes>6</clock-classes>
+      </accepted-clock-classes>
       <ptp-profile>G_8275_1</ptp-profile>
     </ptp-config>
     <ptp-status>
-      <reporting-period>10</reporting-period>
+      <lock-state>LOCKED</lock-state>
+      <clock-class>6</clock-class>
+      <clock-identity>0x0c1a551c0c10c000</clock-identity>
+      <partial-timing-supported>false</partial-timing-supported>
+      <sources>
+        <local-port-number>0</local-port-number>
+        <state>PARENT</state>
+        <two-step-flag>false</two-step-flag>
+        <leap61>false</leap61>
+        <leap59>false</leap59>
+        <current-utc-offset-valid>false</current-utc-offset-valid>
+        <ptp-timescale>true</ptp-timescale>
+        <time-traceable>true</time-traceable>
+        <frequency-traceable>true</frequency-traceable>
+        <source-clock-identity>0xc10c0000c1a551c0</source-clock-identity>
+        <source-port-number>1</source-port-number>
+        <current-utc-offset>0</current-utc-offset>
+        <priority1>127</priority1>
+        <clock-class>122</clock-class>
+        <clock-accuracy>32</clock-accuracy>
+        <offset-scaled-log-variance>53935</offset-scaled-log-variance>
+        <priority2>0</priority2>
+        <grandmaster-clock-identity>0x0c1a551c0c10c000</grandmaster-clock-identity>
+        <steps-removed>1</steps-removed>
+        <time-source>16</time-source>
+      </sources>
     </ptp-status>
+    <synce-config>
+      <acceptance-list-of-ssm>PRC</acceptance-list-of-ssm>
+      <acceptance-list-of-ssm>PRS</acceptance-list-of-ssm>
+      <acceptance-list-of-ssm>SSU_A</acceptance-list-of-ssm>
+      <acceptance-list-of-ssm>EEC1</acceptance-list-of-ssm>
+      <ssm-timeout>100</ssm-timeout>
+    </synce-config>
     <synce-status>
-      <reporting-period>10</reporting-period>
+      <lock-state>UNLOCKED</lock-state>
+      <sources>
+        <local-port-number>0</local-port-number>
+        <state>DISABLED</state>
+      </sources>
     </synce-status>
     <gnss-config>
+      <enable>true</enable>
+      <satellite-constelation-list>GPS</satellite-constelation-list>
+      <satellite-constelation-list>GALILEO</satellite-constelation-list>
       <polarity>POSITIVE</polarity>
-      <cable-delay>5</cable-delay>
-      <anti-jam-enable>false</anti-jam-enable>
+      <cable-delay>6</cable-delay>
     </gnss-config>
+    <gnss-state>
+      <name>GPS-module</name>
+      <gnss-status>SYNCHRONIZED</gnss-status>
+      <gnss-data>
+        <satellites-tracked>3</satellites-tracked>
+        <location>
+          <altitude>4000</altitude>
+          <latitude>37.4033173</latitude>
+          <longitude>-122.0122518</longitude>
+        </location>
+      </gnss-data>
+    </gnss-state>
   </sync>
   <port-transceivers xmlns="urn:xran:transceiver:1.0">
     <port-transceiver-data>
       <interface-name>10GEth0</interface-name>
       <port-number>0</port-number>
+      <name>transceiver0</name>
+      <present>true</present>
+      <vendor-id>TRXVendor</vendor-id>
+      <vendor-part>CWDM-SFP-0001</vendor-part>
+      <vendor-rev>01</vendor-rev>
+      <serial-no>SN9876543210</serial-no>
+      <SFF8472-compliance-code>rev12.0-diagnostics</SFF8472-compliance-code>
+      <connector-type>unknown</connector-type>
+      <nominal-bitrate>10000</nominal-bitrate>
+      <low-bitrate-margin>5</low-bitrate-margin>
+      <high-bitrate-margin>2</high-bitrate-margin>
+      <rx-power-type>avp</rx-power-type>
+      <rx-power>-8.012</rx-power>
+      <tx-power>-3.5</tx-power>
+      <tx-bias-current>131000</tx-bias-current>
+      <voltage>2395</voltage>
+      <temperature>28.567</temperature>
     </port-transceiver-data>
     <port-transceiver-data>
       <interface-name>10GEth1</interface-name>
       <port-number>1</port-number>
+      <name>transceiver1</name>
+      <present>true</present>
+      <vendor-id>TRXVendor</vendor-id>
+      <vendor-part>CWDM-SFP-0001</vendor-part>
+      <vendor-rev>01</vendor-rev>
+      <serial-no>SN9876543211</serial-no>
+      <SFF8472-compliance-code>rev12.0-diagnostics</SFF8472-compliance-code>
+      <connector-type>unknown</connector-type>
+      <nominal-bitrate>10000</nominal-bitrate>
+      <low-bitrate-margin>5</low-bitrate-margin>
+      <high-bitrate-margin>2</high-bitrate-margin>
+      <rx-power-type>avp</rx-power-type>
+      <rx-power>-8.000</rx-power>
+      <tx-power>-3.6</tx-power>
+      <tx-bias-current>130900</tx-bias-current>
+      <voltage>2385</voltage>
+      <temperature>28.367</temperature>
     </port-transceiver-data>
   </port-transceivers>
-  <udp-echo xmlns="urn:xran:udpecho:1.0">
+  <udp-echo xmlns="urn:xran:udpecho:2.0">
     <enable-udp-echo>false</enable-udp-echo>
     <dscp-config>EF</dscp-config>
+    <echo-replies-transmitted>10</echo-replies-transmitted>
   </udp-echo>
   <user-plane-configuration xmlns="urn:xran:uplane-conf:1.0">
     <compression>
@@ -1713,7 +602,7 @@
       <cp-length>7</cp-length>
     </rx-array-carriers>
   </user-plane-configuration>
-  <xran-users xmlns="urn:xran:user-mgmt:1.0">
+  <xran-users xmlns="urn:xran:user-mgmt:2.0">
     <user>
       <name>fmpmuser</name>
       <password>hashedpassword</password>
@@ -1735,4 +624,312 @@
       <enabled>true</enabled>
     </user>
   </xran-users>
+  <performance-measurement-objects xmlns="urn:xran:performance-management:1.0">
+    <transceiver-measurement-objects>
+      <measurement-object>RX_POWER</measurement-object>
+      <active>true</active>
+      <report-info>FREQUENCY_TABLE</report-info>
+      <object-unit>PORT_NUMBER</object-unit>
+      <bin-count>5</bin-count>
+      <lower-bound>0.0001</lower-bound>
+      <upper-bound>3.2</upper-bound>
+      <transceiver-measurement-result>
+        <object-unit-id>0</object-unit-id>
+        <latest>
+          <value>999.0</value>
+        </latest>
+        <frequeny-table>21</frequeny-table>
+        <frequeny-table>341</frequeny-table>
+        <frequeny-table>552</frequeny-table>
+        <frequeny-table>37</frequeny-table>
+        <frequeny-table>488</frequeny-table>
+        <frequeny-table>888</frequeny-table>
+      </transceiver-measurement-result>
+    </transceiver-measurement-objects>
+    <transceiver-measurement-objects>
+      <measurement-object>VOLTAGE</measurement-object>
+      <active>true</active>
+      <report-info>FREQUENCY_TABLE</report-info>
+      <object-unit>PORT_NUMBER</object-unit>
+      <function>RAW</function>
+      <bin-count>4</bin-count>
+      <lower-bound>0.0</lower-bound>
+      <upper-bound>4.0</upper-bound>
+      <transceiver-measurement-result>
+        <object-unit-id>0</object-unit-id>
+        <frequeny-table>1</frequeny-table>
+        <frequeny-table>56</frequeny-table>
+        <frequeny-table>353535</frequeny-table>
+        <frequeny-table>888</frequeny-table>
+      </transceiver-measurement-result>
+    </transceiver-measurement-objects>
+    <transceiver-measurement-objects>
+      <measurement-object>TEMPERATURE</measurement-object>
+      <active>false</active>
+      <object-unit>PORT_NUMBER</object-unit>
+      <transceiver-measurement-result>
+        <object-unit-id>0</object-unit-id>
+        <max>
+          <value>30.9</value>
+          <time>2018-11-30T11:21:00-00:00</time>
+        </max>
+        <frequeny-table>0</frequeny-table>
+      </transceiver-measurement-result>
+    </transceiver-measurement-objects>
+    <rx-window-measurement-objects>
+      <measurement-object>RX_ON_TIME</measurement-object>
+      <active>true</active>
+      <object-unit>TRANSPORT</object-unit>
+      <tr-measured-result>
+        <name>element0</name>
+        <count>567</count>
+      </tr-measured-result>
+      <tr-measured-result>
+        <name>element1</name>
+        <count>999</count>
+      </tr-measured-result>
+    </rx-window-measurement-objects>
+    <rx-window-measurement-objects>
+      <measurement-object>RX_CORRUPT</measurement-object>
+      <active>true</active>
+      <object-unit>EAXC_ID</object-unit>
+      <report-info>COUNT</report-info>
+      <eaxc-measured-result>
+        <eaxc-id>572</eaxc-id>
+        <count>899999</count>
+        <transport-name>element0</transport-name>
+      </eaxc-measured-result>
+    </rx-window-measurement-objects>
+    <rx-window-measurement-objects>
+      <measurement-object>RX_TOTAL</measurement-object>
+      <active>true</active>
+      <object-unit>RU</object-unit>
+      <report-info>COUNT</report-info>
+      <name>netsim-ru-port1</name>
+      <count>89999</count>
+    </rx-window-measurement-objects>
+  </performance-measurement-objects>
+  <delay-management xmlns="urn:xran:delay:2.0">
+    <bandwidth-scs-delay-state>
+      <bandwidth>20000</bandwidth>
+      <subcarrier-spacing>15000</subcarrier-spacing>
+      <ru-delay-profile>
+        <t2a-min-up>205</t2a-min-up>
+        <t2a-max-up>435</t2a-max-up>
+        <t2a-min-cp-dl>330</t2a-min-cp-dl>
+        <t2a-max-cp-dl>460</t2a-max-cp-dl>
+        <tcp-adv-dl>125</tcp-adv-dl>
+        <ta3-min>70</ta3-min>
+        <ta3-max>235</ta3-max>
+        <t2a-min-cp-ul>125</t2a-min-cp-ul>
+        <t2a-max-cp-ul>360</t2a-max-cp-ul>
+      </ru-delay-profile>
+    </bandwidth-scs-delay-state>
+    <bandwidth-scs-delay-state>
+      <bandwidth>50000</bandwidth>
+      <subcarrier-spacing>30000</subcarrier-spacing>
+      <ru-delay-profile>
+        <t2a-min-up>50</t2a-min-up>
+        <t2a-max-up>250</t2a-max-up>
+        <t2a-min-cp-dl>175</t2a-min-cp-dl>
+        <t2a-max-cp-dl>375</t2a-max-cp-dl>
+        <tcp-adv-dl>125</tcp-adv-dl>
+        <ta3-min>50</ta3-min>
+        <ta3-max>100</ta3-max>
+        <t2a-min-cp-ul>125</t2a-min-cp-ul>
+        <t2a-max-cp-ul>325</t2a-max-cp-ul>
+      </ru-delay-profile>
+    </bandwidth-scs-delay-state>
+    <bandwidth-scs-delay-state>
+      <bandwidth>100000</bandwidth>
+      <subcarrier-spacing>60000</subcarrier-spacing>
+      <ru-delay-profile>
+        <t2a-min-up>50</t2a-min-up>
+        <t2a-max-up>200</t2a-max-up>
+        <t2a-min-cp-dl>175</t2a-min-cp-dl>
+        <t2a-max-cp-dl>300</t2a-max-cp-dl>
+        <tcp-adv-dl>125</tcp-adv-dl>
+        <ta3-min>50</ta3-min>
+        <ta3-max>80</ta3-max>
+        <t2a-min-cp-ul>125</t2a-min-cp-ul>
+        <t2a-max-cp-ul>300</t2a-max-cp-ul>
+      </ru-delay-profile>
+    </bandwidth-scs-delay-state>
+  </delay-management>
+  <software-inventory xmlns="urn:xran:software-management:1.0">
+    <software-slot>
+      <name>factory-default-mz.111-1a.bin</name>
+      <status>VALID</status>
+      <active>true</active>
+      <running>false</running>
+      <access>READ_ONLY</access>
+      <product-code>xRAN Forum netsim-ru-module 1.1.0</product-code>
+      <vendor-code>XR</vendor-code>
+      <build-id>build111</build-id>
+      <build-name>mz.111</build-name>
+      <build-version>SWrev1.1.0</build-version>
+      <files>
+        <name>file-number1</name>
+        <version>1a</version>
+        <local-path>xRAN/sw/factory-default-mz.111-1a.bin</local-path>
+        <integrity>OK</integrity>
+      </files>
+    </software-slot>
+    <software-slot>
+      <name>nov-build123-vt.111-9c.bin</name>
+      <status>VALID</status>
+      <active>true</active>
+      <running>true</running>
+      <access>READ_WRITE</access>
+      <product-code>xRAN Forum netsim-ru-module 1.1.0</product-code>
+      <vendor-code>XR</vendor-code>
+      <build-id>build123</build-id>
+      <build-name>vt.111</build-name>
+      <build-version>SWrev1.1.0</build-version>
+      <files>
+        <name>file-number1</name>
+        <version>9c</version>
+        <local-path>xRAN/sw/nov-build123-vt.pt1.111-9c.bin</local-path>
+        <integrity>OK</integrity>
+      </files>
+      <files>
+        <name>file-number2</name>
+        <version>9c</version>
+        <local-path>xRAN/sw/nov-build123-vt.pt2.111-9c.bin</local-path>
+        <integrity>OK</integrity>
+      </files>
+    </software-slot>
+  </software-inventory>
+  <dhcp xmlns="urn:xran:dhcp:2.0">
+    <interfaces>
+      <interface>10GEth0.100</interface>
+      <dhcpv4>
+        <client-id>1:00:e0:fe:00:23:30</client-id>
+        <dhcp-server-identifier>10.10.10.10</dhcp-server-identifier>
+        <domain-name>operator.com</domain-name>
+        <domain-name-servers>10.29.0.56</domain-name-servers>
+        <domain-name-servers>10.52.12.30</domain-name-servers>
+        <interface-mtu>1500</interface-mtu>
+        <default-gateways>10.10.0.254</default-gateways>
+        <default-gateways>10.10.0.253</default-gateways>
+        <netconf-clients>
+          <client>127.0.0.1</client>
+          <optional-port>12022</optional-port>
+        </netconf-clients>
+      </dhcpv4>
+    </interfaces>
+    <m-plane-dhcp>
+      <vendor-class-data>xran-ru/Cisco</vendor-class-data>
+    </m-plane-dhcp>
+  </dhcp>
+  <fan-tray xmlns="urn:xran:fan:1.0">
+    <fan-state>
+      <name>fan01</name>
+      <fan-location>1</fan-location>
+      <present-and-operating>true</present-and-operating>
+      <vendor-code>4</vendor-code>
+      <fan-speed>90</fan-speed>
+      <target-speed>200</target-speed>
+    </fan-state>
+    <fan-state>
+      <name>fan02</name>
+      <fan-location>2</fan-location>
+      <present-and-operating>true</present-and-operating>
+      <vendor-code>4</vendor-code>
+      <fan-speed>100</fan-speed>
+      <target-speed>200</target-speed>
+    </fan-state>
+  </fan-tray>
+  <active-alarm-list xmlns="urn:xran:fm:1.0">
+    <active-alarms>
+      <fault-id>4000</fault-id>
+      <fault-source>module</fault-source>
+      <affected-objects>
+        <name>radio unit module</name>
+      </affected-objects>
+      <fault-severity>WARNING</fault-severity>
+      <is-cleared>false</is-cleared>
+      <fault-text>test data only - please ignore</fault-text>
+      <event-time>2018-11-05T18:08:00.00Z</event-time>
+    </active-alarms>
+    <active-alarms>
+      <fault-id>6000</fault-id>
+      <fault-source>oscillator</fault-source>
+      <affected-objects>
+        <name>radio</name>
+      </affected-objects>
+      <fault-severity>WARNING</fault-severity>
+      <is-cleared>false</is-cleared>
+      <fault-text>test data only - please ignore</fault-text>
+      <event-time>2018-11-14T18:08:00.00Z</event-time>
+    </active-alarms>
+  </active-alarm-list>
+  <module-capability xmlns="urn:xran:module-cap:1.0">
+    <ru-capabilities>
+      <ru-supported-category>CAT_B</ru-supported-category>
+      <number-of-ru-ports>4</number-of-ru-ports>
+      <number-of-spatial-streams>8</number-of-spatial-streams>
+      <max-power-per-pa-antenna>40.1</max-power-per-pa-antenna>
+      <min-power-per-pa-antenna>3.3</min-power-per-pa-antenna>
+      <fronthaul-split-option>7</fronthaul-split-option>
+      <format-of-iq-sample>
+        <dynamic-compression-supported>false</dynamic-compression-supported>
+        <realtime-variable-bit-width-supported>false</realtime-variable-bit-width-supported>
+        <syminc-supported>false</syminc-supported>
+      </format-of-iq-sample>
+      <ul-mixed-num-required-guard-rbs>
+        <scs-a>KHZ_15</scs-a>
+        <scs-b>KHZ_30</scs-b>
+        <number-of-guard-rbs-ul>1</number-of-guard-rbs-ul>
+      </ul-mixed-num-required-guard-rbs>
+      <ul-mixed-num-required-guard-rbs>
+        <scs-a>KHZ_30</scs-a>
+        <scs-b>KHZ_60</scs-b>
+        <number-of-guard-rbs-ul>2</number-of-guard-rbs-ul>
+      </ul-mixed-num-required-guard-rbs>
+      <ul-mixed-num-required-guard-rbs>
+        <scs-a>KHZ_15</scs-a>
+        <scs-b>KHZ_60</scs-b>
+        <number-of-guard-rbs-ul>3</number-of-guard-rbs-ul>
+      </ul-mixed-num-required-guard-rbs>
+      <dl-mixed-num-required-guard-rbs>
+        <scs-a>KHZ_15</scs-a>
+        <scs-b>KHZ_30</scs-b>
+        <number-of-guard-rbs-dl>2</number-of-guard-rbs-dl>
+      </dl-mixed-num-required-guard-rbs>
+      <dl-mixed-num-required-guard-rbs>
+        <scs-a>KHZ_30</scs-a>
+        <scs-b>KHZ_60</scs-b>
+        <number-of-guard-rbs-dl>4</number-of-guard-rbs-dl>
+      </dl-mixed-num-required-guard-rbs>
+      <dl-mixed-num-required-guard-rbs>
+        <scs-a>KHZ_15</scs-a>
+        <scs-b>KHZ_60</scs-b>
+        <number-of-guard-rbs-dl>6</number-of-guard-rbs-dl>
+      </dl-mixed-num-required-guard-rbs>
+    </ru-capabilities>
+    <band-capabilities>
+      <band-number>78</band-number>
+      <max-supported-frequency-dl>3800000000</max-supported-frequency-dl>
+      <min-supported-frequency-dl>3300000000</min-supported-frequency-dl>
+      <max-supported-bandwidth-dl>100000000</max-supported-bandwidth-dl>
+      <max-num-carriers-dl>5</max-num-carriers-dl>
+      <max-carrier-bandwidth-dl>60000000</max-carrier-bandwidth-dl>
+      <min-carrier-bandwidth-dl>20000000</min-carrier-bandwidth-dl>
+      <max-supported-frequency-ul>3800000000</max-supported-frequency-ul>
+      <min-supported-frequency-ul>3300000000</min-supported-frequency-ul>
+      <max-supported-bandwidth-ul>100000000</max-supported-bandwidth-ul>
+      <max-num-carriers-ul>5</max-num-carriers-ul>
+      <max-carrier-bandwidth-ul>60000000</max-carrier-bandwidth-ul>
+      <min-carrier-bandwidth-ul>20000000</min-carrier-bandwidth-ul>
+      <max-num-component-carriers>5</max-num-component-carriers>
+      <max-num-bands>1</max-num-bands>
+      <max-num-sectors>3</max-num-sectors>
+      <max-power-per-antenna>55.4</max-power-per-antenna>
+      <min-power-per-antenna>5.6</min-power-per-antenna>
+      <codebook-configuration_ng>4</codebook-configuration_ng>
+      <codebook-configuration_n1>2</codebook-configuration_n1>
+      <codebook-configuration_n2>1</codebook-configuration_n2>
+    </band-capabilities>
+  </module-capability>
 </config>
