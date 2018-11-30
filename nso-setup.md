@@ -1,6 +1,6 @@
 # NSO Setup
 
-NSO is available for free download for non-production use. This introduction is how to setup a small NETCONF/YANG environment with NSO to excercise xRAN's YANG based management plane interface.
+NSO is available for free download for non-production use. This introduction is how to setup a small NETCONF/YANG environment with NSO to exercise xRAN's YANG based management plane interface.
 
 ## Download NSO
 
@@ -37,6 +37,34 @@ This aassumes a macOS installation using NSO4.7...
 
 And store in directory, e.g., ~/yang/V1_1_0
 
+As per the warning in the xran-usermgmt.yang model, we need to address the of the constraint that one user account needs to be always enabled on the RU, as this will not be the case when we initially start the simulated RU.
+
+``` yang
+container xran-users {
+  must "user/enabled='true'" {
+    error-message "At least one account needs to be enabled.";
+  }
+  //TAKE NOTE - any configuration with zero enabled users is invalid.
+  //This will typically be the case when using a simulated NETCONF Server
+  //and so this constraint should be removed when operating in those scenarios
+
+```
+so these need to be commented out when working with simulated RUs 
+
+``` yang
+container xran-users {
+//  must "user/enabled='true'" {
+//    error-message "At least one account needs to be enabled.";
+//  }
+  //TAKE NOTE - any configuration with zero enabled users is invalid.
+  //This will typically be the case when using a simulated NETCONF Server
+  //and so this constraint should be removed when operating in those scenarios
+
+```
+
+
+
+
 ## Build Network Element Driver
 
 
@@ -45,11 +73,12 @@ And store in directory, e.g., ~/yang/V1_1_0
 
 ## Create simulated xRAN Radio Unit
 
-    $ cd ~/ncs-run/packages ncs-netsim create-network ./xran110 1 rusim --dir ../netsim
+    $ cd ~/ncs-run/packages
+    $ ncs-netsim create-network ./xran110 1 rusim --dir ../netsim
 
 and start
 
-    $ cd ~/ncs-run/netsim
+    $ cd ~/ncs-run
     $ ncs-netsim start
 
 
@@ -67,7 +96,7 @@ Enter NSO CLI
 
     $ ncs_cli -C -u admin
 
-Now use the NSO CLI to perform a package reload and exit
+Now use the NSO CLI to perform a package reload
 
 
     admin@ncs#packages reload
@@ -93,7 +122,7 @@ Now load the RU's configuration data from the xml file
 
     $ ncs_load -l -m nso-config.xml
 
-## Sync the configration to the Radio Unit
+## Sync the configuration to the Radio Unit
 
 
     $ ncs_cli -C -u admin
@@ -103,7 +132,7 @@ Now load the RU's configuration data from the xml file
 
 ## Load the operational state into RU
 
-Get the IPC port for the NETSIm RU
+Get the IPC port for the NETSIM RU
 
 
     $ ncs-netsim list
