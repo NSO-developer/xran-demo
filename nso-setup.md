@@ -37,7 +37,7 @@ This aassumes a macOS installation using NSO4.7...
 
 And store in directory, e.g., ~/yang/V1_1_0
 
-If you are downloading the "common models" from the xRAN private repository, then **DO NOT** include the ietf-yang-library.yang in the above directory. 
+If you are downloading the "common models" from the xRAN private repository, then **DO NOT** include the ietf-yang-library.yang in the above directory.
 
 As per the warning in the xran-usermgmt.yang model, we need to address the of the constraint that one user account needs to be always enabled on the RU, as this will not be the case when we initially start the simulated RU.
 
@@ -170,3 +170,5 @@ You can check the live status of your RU from the NCS CLI
     live-status hardware component netsim-ru-port1
     class  port
     xran-name netsim-ru-port1
+
+(an example of the complete live status is included in the livestatus.txt file)

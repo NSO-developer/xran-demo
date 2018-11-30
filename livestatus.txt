@@ -1,0 +1,446 @@
+live-status hardware component netsim-ru-module
+ class          XRAN-RADIO
+ description    "an xRAN  simulated xRAN Radio Unit"
+ contains-child [ netsim-ru-port0 netsim-ru-port1 ]
+ hardware-rev   HWrev0
+ software-rev   SWrev1.1.0
+ serial-num     SN0123456789
+ mfg-name       "xRAN Forum"
+ model-name     "NETSIM XRAN RU"
+ is-fru         false
+ mfg-date       2018-09-09T12:00:00+00:00
+ state state-last-changed 2018-11-06T09:06:00+00:00
+ state oper-state   enabled
+ state usage-state  idle
+ state standby-state providing-service
+ state power-state  AWAKE
+ state availability-state NORMAL
+ label-content model-name true
+ label-content serial-number true
+ product-code   "xRAN Forum netsim-ru-module 1.1.0"
+ xran-name      netsim-ru-module
+live-status hardware component netsim-ru-port0
+ class        port
+ description  "a simulated port"
+ hardware-rev Portrev0
+ is-fru       false
+ mfg-date     2018-09-09T12:00:00+00:00
+ xran-name    netsim-ru-port0
+live-status hardware component netsim-ru-port1
+ class        port
+ description  "a simulated port"
+ hardware-rev Portrev0
+ is-fru       false
+ mfg-date     2018-09-09T12:00:00+00:00
+ xran-name    netsim-ru-port1
+live-status interfaces interface 10GEth0
+ type         ethernetCsmacd
+ ipv4 enabled
+ ipv6 enabled
+ vlan-tagging true
+ mac-address  00:e0:fe:00:23:30
+ port-reference xran-port-name netsim-ru-port0
+ port-reference xran-port-number 0
+live-status interfaces interface 10GEth0.100
+ type           l2vlan
+ ipv4 enabled
+            PREFIX
+IP          LENGTH  NETMASK        ORIGIN
+-------------------------------------------
+10.10.0.17  -       255.255.255.0  -
+
+ ipv6 disabled
+ base-interface 10GEth0
+ vlan-id        100
+ mac-address    00:e0:fe:00:23:30
+ port-reference xran-port-name netsim-ru-port0
+ port-reference xran-port-number 0
+live-status interfaces interface 10GEth0.110
+ type           l2vlan
+ ipv4 enabled
+ ipv6 disabled
+ base-interface 10GEth0
+ vlan-id        110
+ mac-address    00:e0:fe:00:23:30
+ port-reference xran-port-name netsim-ru-port0
+ port-reference xran-port-number 0
+live-status interfaces interface 10GEth1
+ type         ethernetCsmacd
+ ipv4 enabled
+ ipv6 enabled
+ vlan-tagging true
+ mac-address  00:e0:fe:00:23:40
+ port-reference xran-port-name netsim-ru-port1
+ port-reference xran-port-number 1
+          DC
+NAME      ENABLED
+-------------------
+aldport0  false
+aldport1  true
+
+live-status beamforming-config per-band-config 78
+ tx-array [ txarray0 txarray1 txarray2 txarray3 ]
+ rx-array [ rxarray0 rxarray1 rxarray2 rxarray3 ]
+ static-properties number-of-beams 10
+ beam-information number-of-beamforming-properties 10
+                     COARSE
+              BEAM   FINE
+BEAM  BEAM    GROUP  BEAM
+ID    TYPE    ID     RELATION  NEIGHBOUR BEAMS
+------------------------------------------------
+0     COARSE  100    [ 1 ]     [ 2 3 4 5 ]
+1     COARSE  100    [ 0 ]     [ 2 3 4 5 ]
+2     COARSE  101    [ 3 ]     [ 0 1 4 5 ]
+3     COARSE  101    [ 2 ]     [ 0 1 4 5 ]
+4     COARSE  102    [ 5 ]     [ 0 1 2 3 6 7 ]
+5     COARSE  102    [ 4 ]     [ 0 1 2 3 6 7 ]
+6     COARSE  103    [ 7 ]     [ 4 5 8 9 ]
+7     COARSE  103    [ 6 ]     [ 4 5 8 9 ]
+8     COARSE  104    [ 9 ]     [ 6 7 ]
+9     COARSE  104    [ 8 ]     [ 6 7 ]
+
+live-status beamforming-config operational-properties update-bf-non-delete false
+live-status beamforming-config operational-properties persistent-bf-files false
+live-status beamforming-config beamforming-trough-attributes-supported false
+live-status beamforming-config beamforming-trough-ue-channel-info-supported false
+                                 T2A   T2A                  T2A   T2A
+                       T2A  T2A  MIN   MAX   TCP            MIN   MAX
+           SUBCARRIER  MIN  MAX  CP    CP    ADV  TA3  TA3  CP    CP
+BANDWIDTH  SPACING     UP   UP   DL    DL    DL   MIN  MAX  UL    UL
+------------------------------------------------------------------------
+20000      15000       205  435  330   460   125  70   235  125   360
+50000      30000       50   250  175   375   125  50   100  125   325
+100000     60000       50   200  175   300   125  50   80   125   300
+
+live-status dhcp interfaces 10GEth0.100
+ dhcpv4 client-id       1:00:e0:fe:00:23:30
+ dhcpv4 dhcp-server-identifier 10.10.10.10
+ dhcpv4 domain-name     operator.com
+ dhcpv4 domain-name-servers [ 10.29.0.56 10.52.12.30 ]
+ dhcpv4 interface-mtu   1500
+ dhcpv4 default-gateways [ 10.10.0.253 10.10.0.254 ]
+           OPTIONAL
+CLIENT     PORT
+---------------------
+127.0.0.1  12022
+
+ dhcpv6 dhcp-client-identifier type-code 65535
+ dhcpv6 dhcp-server-identifier type-code 65535
+live-status dhcp m-plane-dhcp vendor-class-data xran-ru/Cisco
+            LINE
+NAME        OUT
+-------------------
+extoutput0  true
+extoutput1  false
+extoutput2  false
+extoutput3  true
+
+                 PRESENT
+       FAN       AND        VENDOR  FAN    TARGET
+NAME   LOCATION  OPERATING  CODE    SPEED  SPEED
+---------------------------------------------------
+fan01  1         true       4       90     200
+fan02  2         true       4       100    200
+
+FAULT  FAULT       FAULT     IS
+ID     SOURCE      SEVERITY  CLEARED  FAULT TEXT                      EVENT TIME                 NAME
+--------------------------------------------------------------------------------------------------------------------
+4000   module      WARNING   false    test data only - please ignore  2018-11-05T18:08:00+00:00  radio unit module
+6000   oscillator  WARNING   false    test data only - please ignore  2018-11-14T18:08:00+00:00  radio                           
+
+live-status ecpri-delay-message ru-compensation tcv2 9
+live-status ecpri-delay-message ru-compensation tcv1 19
+live-status ecpri-delay-message enable-message5 true
+         PROCESSING
+SESSION  ELEMENT     RESPONSES    REQUESTS     FOLLOWUPS
+ID       NAME        TRANSMITTED  TRANSMITTED  TRANSMITTED
+------------------------------------------------------------
+0        element0    236536       96734        0
+1        element1    12525        74513        99
+
+live-status module-capability ru-capabilities ru-supported-category CAT_B
+live-status module-capability ru-capabilities number-of-ru-ports 4
+live-status module-capability ru-capabilities number-of-spatial-streams 8
+live-status module-capability ru-capabilities max-power-per-pa-antenna 40.1
+live-status module-capability ru-capabilities min-power-per-pa-antenna 3.3
+live-status module-capability ru-capabilities fronthaul-split-option 7
+live-status module-capability ru-capabilities format-of-iq-sample dynamic-compression-supported false
+live-status module-capability ru-capabilities format-of-iq-sample realtime-variable-bit-width-supported false
+live-status module-capability ru-capabilities format-of-iq-sample syminc-supported false
+                NUMBER
+                OF
+                GUARD
+SCS A   SCS B   RBS UL
+------------------------
+KHZ_15  KHZ_30  1
+KHZ_15  KHZ_60  3
+KHZ_30  KHZ_60  2
+
+                NUMBER
+                OF
+                GUARD
+SCS A   SCS B   RBS DL
+------------------------
+KHZ_15  KHZ_30  2
+KHZ_15  KHZ_60  6
+KHZ_30  KHZ_60  4
+
+live-status module-capability band-capabilities 78
+ max-supported-frequency-dl 3800000000
+ min-supported-frequency-dl 3300000000
+ max-supported-bandwidth-dl 100000000
+ max-num-carriers-dl        5
+ max-carrier-bandwidth-dl   60000000
+ min-carrier-bandwidth-dl   20000000
+ max-supported-frequency-ul 3800000000
+ min-supported-frequency-ul 3300000000
+ max-supported-bandwidth-ul 100000000
+ max-num-carriers-ul        5
+ max-carrier-bandwidth-ul   60000000
+ min-carrier-bandwidth-ul   20000000
+ max-num-component-carriers 5
+ max-num-bands              1
+ max-num-sectors            3
+ max-power-per-antenna      55.4
+ min-power-per-antenna      5.6
+ codebook-configuration_ng  4
+ codebook-configuration_n1  2
+ codebook-configuration_n2  1
+live-status mplane-info searchable-mplane-access-vlans-info searchable-access-vlans [ 100 110 120 130 200 210 220 230 ]
+                                                    ACTIVE                                ACTIVE
+INTERFACE    SUB        MPLANE  MPLANE              STANDBY  LAST     MPLANE              STANDBY  LAST
+NAME         INTERFACE  FQDN    IPV4    PORT  NAME  STATE    CHANGED  IPV6    PORT  NAME  STATE    CHANGED
+------------------------------------------------------------------------------------------------------------
+10GEth0.100  100        -
+
+live-status operational-info xran-split interface-version 2.0
+live-status operational-info xran-split optional-header-support 1914POINT3
+live-status operational-info xran-split ecpri-concatenation-support true
+live-status operational-info operational-state restart-cause POWER-ON
+live-status operational-info re-call-home-no-ssh-timer 300
+live-status performance-measurement-objects enable-SFTP-upload true
+live-status performance-measurement-objects enable-random-file-upload false
+REMOTE SFTP UPLOAD PATH                              PASSWORD  CERTIFICATE
+----------------------------------------------------------------------------
+sftp://admin@uploadserver.operator.com/SFTPuploads   admin     -
+sftp://admin@uploadserver.operator.com/SFTPuploads/  admin     -
+
+live-status performance-measurement-objects transceiver-measurement-interval 300
+live-status performance-measurement-objects rx-window-measurement-interval 60
+live-status performance-measurement-objects notification-interval 300
+live-status performance-measurement-objects file-upload-interval 7200
+live-status performance-measurement-objects transceiver-measurement-objects RX_POWER
+ active      true
+ report-info [ FREQUENCY_TABLE ]
+ object-unit PORT_NUMBER
+ bin-count   5
+ lower-bound 0.0001
+ upper-bound 3.2
+ transceiver-measurement-result 0
+  latest value 999.0
+  frequeny-table [ 21 37 341 488 552 888 ]
+live-status performance-measurement-objects transceiver-measurement-objects VOLTAGE
+ active      true
+ report-info [ FREQUENCY_TABLE ]
+ object-unit PORT_NUMBER
+ function    RAW
+ bin-count   4
+ lower-bound 0.0
+ upper-bound 4.0
+ transceiver-measurement-result 0
+  frequeny-table [ 1 56 888 353535 ]
+live-status performance-measurement-objects transceiver-measurement-objects TEMPERATURE
+ active      false
+ object-unit PORT_NUMBER
+ transceiver-measurement-result 0
+  max value 30.9
+  max time 2018-11-30T11:21:00-00:00
+  frequeny-table [ 0 ]
+MEASUREMENT          OBJECT     REPORT                                EAXC          TRANSPORT
+OBJECT       ACTIVE  UNIT       INFO    NAME  COUNT  NAME      COUNT  ID    COUNT   NAME
+-----------------------------------------------------------------------------------------------
+RX_ON_TIME   true    TRANSPORT  -       -     -      element0  567
+                                                     element1  999
+RX_CORRUPT   true    EAXC_ID    COUNT   -     -                       572   899999  element0
+RX_TOTAL     true    RU         COUNT   -     -
+
+live-status processing-elements transport-session-type ETH-INTERFACE
+live-status processing-elements ru-elements element0
+ transport-flow interface-name 10GEth0.100
+ transport-flow eth-flow ru-mac-address 00:e0:fe:00:23:30
+ transport-flow eth-flow vlan-id 100
+ transport-flow eth-flow llscu-mac-address 11:95:a0:af:5f:b9
+live-status processing-elements ru-elements element1
+ transport-flow interface-name 10GEth0.110
+ transport-flow eth-flow ru-mac-address 00:e0:fe:00:23:30
+ transport-flow eth-flow vlan-id 110
+ transport-flow eth-flow llscu-mac-address 11:95:a0:af:5f:b9
+live-status software-inventory software-slot factory-default-mz.111-1a.bin
+ status        VALID
+ active        true
+ running       false
+ access        READ_ONLY
+ product-code  "xRAN Forum netsim-ru-module 1.1.0"
+ vendor-code   XR
+ build-id      build111
+ build-name    mz.111
+ build-version SWrev1.1.0
+ files file-number1
+  version    1a
+  local-path xRAN/sw/factory-default-mz.111-1a.bin
+  integrity  OK
+live-status software-inventory software-slot nov-build123-vt.111-9c.bin
+ status        VALID
+ active        true
+ running       true
+ access        READ_WRITE
+ product-code  "xRAN Forum netsim-ru-module 1.1.0"
+ vendor-code   XR
+ build-id      build123
+ build-name    vt.111
+ build-version SWrev1.1.0
+ files file-number1
+  version    9c
+  local-path xRAN/sw/nov-build123-vt.pt1.111-9c.bin
+  integrity  OK
+ files file-number2
+  version    9c
+  local-path xRAN/sw/nov-build123-vt.pt2.111-9c.bin
+  integrity  OK
+live-status sync sync-status sync-state LOCKED
+ITEM
+-------
+GNSS
+PTP
+SYNCE
+
+live-status sync sync-capability sync-t-tsc STANDARD
+live-status sync ptp-status lock-state LOCKED
+live-status sync ptp-status clock-class 6
+live-status sync ptp-status clock-identity 0x0c1a551c0c10c000
+live-status sync ptp-status partial-timing-supported false
+live-status sync ptp-status sources 0
+ state                      PARENT
+ two-step-flag              false
+ leap61                     false
+ leap59                     false
+ current-utc-offset-valid   false
+ ptp-timescale              true
+ time-traceable             true
+ frequency-traceable        true
+ source-clock-identity      0xc10c0000c1a551c0
+ source-port-number         1
+ current-utc-offset         0
+ priority1                  127
+ clock-class                122
+ clock-accuracy             32
+ offset-scaled-log-variance 53935
+ priority2                  0
+ grandmaster-clock-identity 0x0c1a551c0c10c000
+ steps-removed              1
+ time-source                16
+live-status sync synce-status lock-state UNLOCKED
+LOCAL
+PORT              QUALITY
+NUMBER  STATE     LEVEL
+---------------------------
+0       DISABLED  -
+
+live-status sync gnss-state name GPS-module
+live-status sync gnss-state gnss-status SYNCHRONIZED
+live-status sync gnss-state gnss-data satellites-tracked 3
+live-status sync gnss-state gnss-data location altitude 4000
+live-status sync gnss-state gnss-data location latitude 37.4033173
+live-status sync gnss-state gnss-data location longitude -122.0122518
+live-status port-transceivers port-transceiver-data 10GEth0 0
+ present                 true
+ vendor-id               TRXVendor
+ vendor-part             CWDM-SFP-0001
+ vendor-rev              01
+ serial-no               SN9876543210
+ SFF8472-compliance-code rev12.0-diagnostics
+ connector-type          unknown
+ nominal-bitrate         10000
+ low-bitrate-margin      5
+ high-bitrate-margin     2
+ rx-power-type           avp
+ rx-power                -8.012
+ tx-power                -3.5
+ tx-bias-current         131000.0
+ voltage                 2395.0
+ temperature             28.567
+live-status port-transceivers port-transceiver-data 10GEth1 1
+ present                 true
+ vendor-id               TRXVendor
+ vendor-part             CWDM-SFP-0001
+ vendor-rev              01
+ serial-no               SN9876543211
+ SFF8472-compliance-code rev12.0-diagnostics
+ connector-type          unknown
+ nominal-bitrate         10000
+ low-bitrate-margin      5
+ high-bitrate-margin     2
+ rx-power-type           avp
+ rx-power                -8.0
+ tx-power                -3.6
+ tx-bias-current         130900.0
+ voltage                 2385.0
+ temperature             28.367
+live-status udp-echo enable-udp-echo false
+live-status udp-echo dscp-config EF
+live-status udp-echo echo-replies-transmitted 10
+live-status user-plane-configuration compression compression-type STATIC
+live-status user-plane-configuration compression bitwidth 11
+live-status user-plane-configuration compression compression-method BLOCK_FLOATING_POINT
+                                                                  BAND
+           PROCESSING  TX ARRAY          LOW LEVEL TX    CU PORT  SECTOR   CCID     RU PORT  EAXC
+NAME       ELEMENT     CARRIER           ENDPOINT        BITMASK  BITMASK  BITMASK  BITMASK  ID
+---------------------------------------------------------------------------------------------------
+lltxlink0  element0    >txarraycarrier0  lltx-endpoint0  65024    448      56       7        585
+lltxlink1  element0    >txarraycarrier0  lltx-endpoint1  65024    448      56       7        1170
+
+                                                                 BAND
+           PROCESSING  RX ARRAY         LOW LEVEL RX    CU PORT  SECTOR   CCID     RU PORT  EAXC
+NAME       ELEMENT     CARRIER          ENDPOINT        BITMASK  BITMASK  BITMASK  BITMASK  ID    PRIORITY
+------------------------------------------------------------------------------------------------------------
+llrxlink0  element1    rxarraycarrier0  llrx-endpoint0  65024    448      56       7        585   HIGH
+llrxlink1  element1    rxarraycarrier0  llrx-endpoint1  65024    448      56       7        1170  HIGH
+
+                         BAND
+                CU PORT  SECTOR   CCID     RU PORT  EAXC
+NAME            BITMASK  BITMASK  BITMASK  BITMASK  ID
+----------------------------------------------------------
+llrx-endpoint0  65024    448      56       7        1755
+llrx-endpoint1  65024    448      56       7        2340
+lltx-endpoint0  65024    448      56       7        585
+lltx-endpoint1  65024    448      56       7        1170
+
+live-status user-plane-configuration tx-array-carriers >txarraycarrier0
+ absolute-frequency-center   636666
+ center-of-channel-bandwidth 3549990000
+ channel-bandwidth           20000000
+ power                       30.45
+ active                      ACTIVE
+ fft-size                    4096
+ downlink-radio-frame-offset 0
+ downlink-sfn-offset         0
+ default-scs                 KHZ_15
+ cp-length                   7
+live-status user-plane-configuration rx-array-carriers rxarraycarrier0
+ absolute-frequency-center   636666
+ center-of-channel-bandwidth 3549990000
+ channel-bandwidth           20000000
+ fft-size                    4096
+ ul-fft-sampling-offset      0
+ n-ta-offset                 0
+ default-scs                 KHZ_15
+ scs-specific-config KHZ_15
+  offset-to-absolute-frequency-center 0
+  number-of-prbs                      100
+ cp-length                   7
+NAME      DISABLED  PASSWORD        ENABLED
+---------------------------------------------
+fmpmuser  -         hashedpassword  true
+nmsuser   -         hashedpassword  true
+swmuser   -         hashedpassword  true
+xranuser  -         hashedpassword  true
