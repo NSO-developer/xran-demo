@@ -83,6 +83,8 @@ Now the simulator constraints have been addressed, we can build the NED
 
 ## Create simulated xRAN Radio Unit
 
+Obvioulsy if you have a real RU, that is great, but for this demo we will be using "simulated RUs" that implement the xRAN M-Plane. These are created using the following commands:
+
     $ cd ~/ncs-run/packages
     $ ncs-netsim create-network ./xran110 1 rusim --dir ../netsim
 
