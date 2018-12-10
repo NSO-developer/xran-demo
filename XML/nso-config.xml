@@ -165,7 +165,7 @@
             </m-plane-sub-interfaces>
           </m-plane-interfaces>
         </mplane-info>
-        <performance-measurement-objects xmlns="urn:xran:performance-management:1.0">
+        <performance-measurement-objects xmlns="urn:xran:performance-management:2.0">
           <enable-SFTP-upload>true</enable-SFTP-upload>
           <enable-random-file-upload>false</enable-random-file-upload>
           <remote-SFTP-uploads>
@@ -265,136 +265,6 @@
           <enable-udp-echo>false</enable-udp-echo>
           <dscp-config>EF</dscp-config>
         </udp-echo>
-        <user-plane-configuration xmlns="urn:xran:uplane-conf:1.0">
-          <compression>
-            <compression-type>STATIC</compression-type>
-            <bitwidth>11</bitwidth>
-            <compression-method>BLOCK_FLOATING_POINT</compression-method>
-          </compression>
-          <low-level-tx-links>
-            <name>lltxlink0</name>
-            <processing-element>element0</processing-element>
-            <tx-array-carrier>>txarraycarrier0</tx-array-carrier>
-            <low-level-tx-endpoint>lltx-endpoint0</low-level-tx-endpoint>
-            <remote-address>
-              <cu-port-bitmask>65024</cu-port-bitmask>
-              <band-sector-bitmask>448</band-sector-bitmask>
-              <ccid-bitmask>56</ccid-bitmask>
-              <ru-port-bitmask>7</ru-port-bitmask>
-              <eaxc-id>585</eaxc-id>
-            </remote-address>
-          </low-level-tx-links>
-          <low-level-tx-links>
-            <name>lltxlink1</name>
-            <processing-element>element0</processing-element>
-            <tx-array-carrier>>txarraycarrier0</tx-array-carrier>
-            <low-level-tx-endpoint>lltx-endpoint1</low-level-tx-endpoint>
-            <remote-address>
-              <cu-port-bitmask>65024</cu-port-bitmask>
-              <band-sector-bitmask>448</band-sector-bitmask>
-              <ccid-bitmask>56</ccid-bitmask>
-              <ru-port-bitmask>7</ru-port-bitmask>
-              <eaxc-id>1170</eaxc-id>
-            </remote-address>
-          </low-level-tx-links>
-          <low-level-rx-links>
-            <name>llrxlink0</name>
-            <processing-element>element1</processing-element>
-            <rx-array-carrier>rxarraycarrier0</rx-array-carrier>
-            <low-level-rx-endpoint>llrx-endpoint0</low-level-rx-endpoint>
-            <remote-address>
-              <cu-port-bitmask>65024</cu-port-bitmask>
-              <band-sector-bitmask>448</band-sector-bitmask>
-              <ccid-bitmask>56</ccid-bitmask>
-              <ru-port-bitmask>7</ru-port-bitmask>
-              <eaxc-id>585</eaxc-id>
-            </remote-address>
-            <priority>HIGH</priority>
-          </low-level-rx-links>
-          <low-level-rx-links>
-            <name>llrxlink1</name>
-            <processing-element>element1</processing-element>
-            <rx-array-carrier>rxarraycarrier0</rx-array-carrier>
-            <low-level-rx-endpoint>llrx-endpoint1</low-level-rx-endpoint>
-            <remote-address>
-              <cu-port-bitmask>65024</cu-port-bitmask>
-              <band-sector-bitmask>448</band-sector-bitmask>
-              <ccid-bitmask>56</ccid-bitmask>
-              <ru-port-bitmask>7</ru-port-bitmask>
-              <eaxc-id>1170</eaxc-id>
-            </remote-address>
-            <priority>HIGH</priority>
-          </low-level-rx-links>
-          <low-level-tx-endpoints>
-            <name>llrx-endpoint0</name>
-            <local-address>
-              <cu-port-bitmask>65024</cu-port-bitmask>
-              <band-sector-bitmask>448</band-sector-bitmask>
-              <ccid-bitmask>56</ccid-bitmask>
-              <ru-port-bitmask>7</ru-port-bitmask>
-              <eaxc-id>1755</eaxc-id>
-            </local-address>
-          </low-level-tx-endpoints>
-          <low-level-tx-endpoints>
-            <name>llrx-endpoint1</name>
-            <local-address>
-              <cu-port-bitmask>65024</cu-port-bitmask>
-              <band-sector-bitmask>448</band-sector-bitmask>
-              <ccid-bitmask>56</ccid-bitmask>
-              <ru-port-bitmask>7</ru-port-bitmask>
-              <eaxc-id>2340</eaxc-id>
-            </local-address>
-          </low-level-tx-endpoints>
-          <low-level-tx-endpoints>
-            <name>lltx-endpoint0</name>
-            <local-address>
-              <cu-port-bitmask>65024</cu-port-bitmask>
-              <band-sector-bitmask>448</band-sector-bitmask>
-              <ccid-bitmask>56</ccid-bitmask>
-              <ru-port-bitmask>7</ru-port-bitmask>
-              <eaxc-id>585</eaxc-id>
-            </local-address>
-          </low-level-tx-endpoints>
-          <low-level-tx-endpoints>
-            <name>lltx-endpoint1</name>
-            <local-address>
-              <cu-port-bitmask>65024</cu-port-bitmask>
-              <band-sector-bitmask>448</band-sector-bitmask>
-              <ccid-bitmask>56</ccid-bitmask>
-              <ru-port-bitmask>7</ru-port-bitmask>
-              <eaxc-id>1170</eaxc-id>
-            </local-address>
-          </low-level-tx-endpoints>
-          <tx-array-carriers>
-            <name>>txarraycarrier0</name>
-            <absolute-frequency-center>636666</absolute-frequency-center>
-            <center-of-channel-bandwidth>3549990000</center-of-channel-bandwidth>
-            <channel-bandwidth>20000000</channel-bandwidth>
-            <power>30.45</power>
-            <active>ACTIVE</active>
-            <fft-size>4096</fft-size>
-            <downlink-radio-frame-offset>0</downlink-radio-frame-offset>
-            <downlink-sfn-offset>0</downlink-sfn-offset>
-            <default-scs>KHZ_15</default-scs>
-            <cp-length>7</cp-length>
-          </tx-array-carriers>
-          <rx-array-carriers>
-            <name>rxarraycarrier0</name>
-            <absolute-frequency-center>636666</absolute-frequency-center>
-            <center-of-channel-bandwidth>3549990000</center-of-channel-bandwidth>
-            <channel-bandwidth>20000000</channel-bandwidth>
-            <fft-size>4096</fft-size>
-            <ul-fft-sampling-offset>0</ul-fft-sampling-offset>
-            <n-ta-offset>0</n-ta-offset>
-            <default-scs>KHZ_15</default-scs>
-            <scs-specific-config>
-              <scs>KHZ_15</scs>
-              <offset-to-absolute-frequency-center>0</offset-to-absolute-frequency-center>
-              <number-of-prbs>100</number-of-prbs>
-            </scs-specific-config>
-            <cp-length>7</cp-length>
-          </rx-array-carriers>
-        </user-plane-configuration>
         <xran-users xmlns="urn:xran:user-mgmt:2.0">
           <user>
             <name>fmpmuser</name>
