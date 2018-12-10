@@ -1,0 +1,24 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <xran-users xmlns="urn:xran:user-mgmt:2.0">
+    <user>
+      <name>fmpmuser</name>
+      <password>hashedpassword</password>
+      <enabled>true</enabled>
+    </user>
+    <user>
+      <name>nmsuser</name>
+      <password>hashedpassword</password>
+      <enabled>true</enabled>
+    </user>
+    <user>
+      <name>swmuser</name>
+      <password>hashedpassword</password>
+      <enabled>true</enabled>
+    </user>
+    <user>
+      <name>xranuser</name>
+      <password>hashedpassword</password>
+      <enabled>true</enabled>
+    </user>
+  </xran-users>
+</config>

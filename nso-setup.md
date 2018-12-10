@@ -151,10 +151,10 @@ Get the IPC port for the NETSIM RU
     ncs-netsim list for ~/ncs-run/netsim
     name=rusim0 netconf=12022 snmp=11022 ipc=5010 cli=10022 dir=~/ncs-run/netsim/rusim/rusim
 
-Load the RU's operational data from the xml file using the identified IPC port, in this case 5010
+Load the RU's operational data from the xml files using the identified IPC port, in this case 5010 (where xxx is used to identify a particular model in the list of xml files)
 
 
-    $ env CONFD_IPC_PORT=5010 confd_load -F p -W -o confd-oper.xml
+    $ env CONFD_IPC_PORT=5010 confd_load -lC confd-xxx.xml
 
 **Success!!** You know have a NETCONF client, supporting the xRAN YANG models, and a simulated Radio Unit.
 

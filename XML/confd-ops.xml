@@ -1,0 +1,20 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <operational-info xmlns="urn:xran:operations:2.0">
+    <declarations>
+      <supported-mplane-xran-version>2.0</supported-mplane-xran-version>
+      <supported-cusplane-xran-version>2.1</supported-cusplane-xran-version>
+      <supported-header-mechanism>
+        <protocol>ECPRI</protocol>
+        <ecpri-concatenation-support>true</ecpri-concatenation-support>
+        <protocol-version>1.0</protocol-version>
+      </supported-header-mechanism>
+    </declarations>
+    <operational-state>
+      <restart-cause>POWER-ON</restart-cause>
+      <restart-datetime>2018-12-10T14:08:00.00Z</restart-datetime>
+    </operational-state>
+    <clock>
+      <timezone-utc-offset>-480</timezone-utc-offset>
+    </clock>
+  </operational-info>
+</config>

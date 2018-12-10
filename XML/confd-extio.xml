@@ -1,0 +1,20 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <external-io xmlns="urn:xran:external-io:2.0">
+    <output-setting>
+      <name>extoutput0</name>
+      <line-out>true</line-out>
+    </output-setting>
+    <output-setting>
+      <name>extoutput1</name>
+      <line-out>false</line-out>
+    </output-setting>
+    <output-setting>
+      <name>extoutput2</name>
+      <line-out>false</line-out>
+    </output-setting>
+    <output-setting>
+      <name>extoutput3</name>
+      <line-out>true</line-out>
+    </output-setting>
+  </external-io>
+</config>

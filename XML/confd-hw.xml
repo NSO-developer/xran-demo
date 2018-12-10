@@ -1,0 +1,56 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+    <component>
+      <name>netsim-ru-module</name>
+      <class>XRAN-RADIO</class>
+      <description>an xRAN  simulated xRAN Radio Unit</description>
+      <contains-child>netsim-ru-port0</contains-child>
+      <contains-child>netsim-ru-port1</contains-child>
+      <hardware-rev>HWrev0</hardware-rev>
+      <software-rev>SWrev1.1.0</software-rev>
+      <serial-num>SN0123456789</serial-num>
+      <mfg-name>xRAN Forum</mfg-name>
+      <model-name>NETSIM XRAN RU</model-name>
+      <is-fru>false</is-fru>
+      <mfg-date>2018-09-09T12:00:00.00Z</mfg-date>
+      <state>
+        <state-last-changed>2018-11-06T09:06:00.00Z</state-last-changed>
+        <admin-state>unlocked</admin-state>
+        <oper-state>enabled</oper-state>
+        <usage-state>idle</usage-state>
+        <standby-state>providing-service</standby-state>
+        <power-state xmlns="urn:xran:hardware:2.0">AWAKE</power-state>
+        <availability-state xmlns="urn:xran:hardware:2.0">NORMAL</availability-state>
+      </state>
+      <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-module</xran-name>
+      <label-content xmlns="urn:xran:hardware:2.0">
+        <model-name>true</model-name>
+        <serial-number>true</serial-number>
+      </label-content>
+      <product-code xmlns="urn:xran:hardware:2.0">xRAN Forum netsim-ru-module 1.1.0</product-code>
+      <energy-saving-enabled xmlns="urn:xran:hardware:2.0">false</energy-saving-enabled>
+    </component>
+    <component>
+      <name>netsim-ru-port0</name>
+      <class>port</class>
+      <description>a simulated port</description>
+      <parent>netsim-ru-module</parent>
+      <parent-rel-pos>0</parent-rel-pos>
+      <hardware-rev>Portrev0</hardware-rev>
+      <is-fru>false</is-fru>
+      <mfg-date>2018-09-09T12:00:00.00Z</mfg-date>
+      <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-port0</xran-name>
+    </component>
+    <component>
+      <name>netsim-ru-port1</name>
+      <class>port</class>
+      <description>a simulated port</description>
+      <parent>netsim-ru-module</parent>
+      <parent-rel-pos>1</parent-rel-pos>
+      <hardware-rev>Portrev0</hardware-rev>
+      <is-fru>false</is-fru>
+      <mfg-date>2018-09-09T12:00:00.00Z</mfg-date>
+      <xran-name xmlns="urn:xran:hardware:2.0">netsim-ru-port1</xran-name>
+    </component>
+  </hardware>
+</config>

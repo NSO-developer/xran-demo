@@ -1,0 +1,24 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <mplane-info xmlns="urn:xran:mplane-interfaces:1.0">
+    <searchable-mplane-access-vlans-info>
+      <searchable-access-vlans>100</searchable-access-vlans>
+      <searchable-access-vlans>110</searchable-access-vlans>
+      <searchable-access-vlans>120</searchable-access-vlans>
+      <searchable-access-vlans>130</searchable-access-vlans>
+      <searchable-access-vlans>200</searchable-access-vlans>
+      <searchable-access-vlans>210</searchable-access-vlans>
+      <searchable-access-vlans>220</searchable-access-vlans>
+      <searchable-access-vlans>230</searchable-access-vlans>
+    </searchable-mplane-access-vlans-info>
+    <m-plane-interfaces>
+      <m-plane-sub-interfaces>
+        <interface-name>10GEth0.100</interface-name>
+        <sub-interface>100</sub-interface>
+      </m-plane-sub-interfaces>
+      <m-plane-ssh-ports>
+        <call-home-ssh-port>4334</call-home-ssh-port>
+        <server-ssh-port>830</server-ssh-port>
+      </m-plane-ssh-ports>
+    </m-plane-interfaces>
+  </mplane-info>
+</config>

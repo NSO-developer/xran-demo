@@ -1,0 +1,12 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <ald-ports-io xmlns="urn:xran:ald-port:2.0">
+    <ald-port-dc-control>
+      <name>aldport0</name>
+      <dc-enabled>false</dc-enabled>
+    </ald-port-dc-control>
+    <ald-port-dc-control>
+      <name>aldport1</name>
+      <dc-enabled>true</dc-enabled>
+    </ald-port-dc-control>
+  </ald-ports-io>
+</config>

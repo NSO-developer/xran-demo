@@ -1,0 +1,186 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    <interface>
+      <name>10GEth0</name>
+      <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+      <enabled>true</enabled>
+      <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+        <enabled>true</enabled>
+        <forwarding>false</forwarding>
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+          <u-plane-marking>46</u-plane-marking>
+          <c-plane-marking>46</c-plane-marking>
+          <s-plane-marking>46</s-plane-marking>
+          <other-marking>0</other-marking>
+        </diffserv-markings>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
+      </ipv4>
+      <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+        <enabled>true</enabled>
+        <forwarding>false</forwarding>
+        <dup-addr-detect-transmits>1</dup-addr-detect-transmits>
+        <autoconf>
+          <create-global-addresses>true</create-global-addresses>
+          <create-temporary-addresses>false</create-temporary-addresses>
+          <temporary-valid-lifetime>604800</temporary-valid-lifetime>
+          <temporary-preferred-lifetime>86400</temporary-preferred-lifetime>
+        </autoconf>
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+          <u-plane-marking>46</u-plane-marking>
+          <c-plane-marking>46</c-plane-marking>
+          <s-plane-marking>46</s-plane-marking>
+          <other-marking>0</other-marking>
+        </diffserv-markings>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
+      </ipv6>
+      <l2-mtu xmlns="urn:xran:interfaces:2.0">1500</l2-mtu>
+      <vlan-tagging xmlns="urn:xran:interfaces:2.0">true</vlan-tagging>
+      <class-of-service xmlns="urn:xran:interfaces:2.0">
+        <u-plane-marking>7</u-plane-marking>
+        <c-plane-marking>7</c-plane-marking>
+        <m-plane-marking>2</m-plane-marking>
+        <s-plane-marking>7</s-plane-marking>
+        <other-marking>1</other-marking>
+      </class-of-service>
+      <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+      <port-reference xmlns="urn:xran:interfaces:2.0">
+        <xran-port-name>netsim-ru-port0</xran-port-name>
+        <xran-port-number>0</xran-port-number>
+      </port-reference>
+    </interface>
+    <interface>
+      <name>10GEth0.100</name>
+      <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:l2vlan</type>
+      <enabled>true</enabled>
+      <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+        <enabled>true</enabled>
+        <forwarding>false</forwarding>
+        <address>
+          <ip>10.10.0.17</ip>
+          <netmask>255.255.255.0</netmask>
+        </address>
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+          <u-plane-marking>46</u-plane-marking>
+          <c-plane-marking>46</c-plane-marking>
+          <s-plane-marking>46</s-plane-marking>
+          <other-marking>0</other-marking>
+        </diffserv-markings>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
+      </ipv4>
+      <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+        <enabled>false</enabled>
+        <forwarding>false</forwarding>
+        <dup-addr-detect-transmits>1</dup-addr-detect-transmits>
+        <autoconf>
+          <create-global-addresses>true</create-global-addresses>
+          <create-temporary-addresses>false</create-temporary-addresses>
+          <temporary-valid-lifetime>604800</temporary-valid-lifetime>
+          <temporary-preferred-lifetime>86400</temporary-preferred-lifetime>
+        </autoconf>
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+          <u-plane-marking>46</u-plane-marking>
+          <c-plane-marking>46</c-plane-marking>
+          <s-plane-marking>46</s-plane-marking>
+          <other-marking>0</other-marking>
+        </diffserv-markings>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
+      </ipv6>
+      <base-interface xmlns="urn:xran:interfaces:2.0">10GEth0</base-interface>
+      <vlan-id xmlns="urn:xran:interfaces:2.0">100</vlan-id>
+      <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+      <port-reference xmlns="urn:xran:interfaces:2.0">
+        <xran-port-name>netsim-ru-port0</xran-port-name>
+        <xran-port-number>0</xran-port-number>
+      </port-reference>
+    </interface>
+    <interface>
+      <name>10GEth0.110</name>
+      <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:l2vlan</type>
+      <enabled>true</enabled>
+      <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+        <enabled>true</enabled>
+        <forwarding>false</forwarding>
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+          <u-plane-marking>46</u-plane-marking>
+          <c-plane-marking>46</c-plane-marking>
+          <s-plane-marking>46</s-plane-marking>
+          <other-marking>0</other-marking>
+        </diffserv-markings>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
+      </ipv4>
+      <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+        <enabled>false</enabled>
+        <forwarding>false</forwarding>
+        <dup-addr-detect-transmits>1</dup-addr-detect-transmits>
+        <autoconf>
+          <create-global-addresses>true</create-global-addresses>
+          <create-temporary-addresses>false</create-temporary-addresses>
+          <temporary-valid-lifetime>604800</temporary-valid-lifetime>
+          <temporary-preferred-lifetime>86400</temporary-preferred-lifetime>
+        </autoconf>
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+          <u-plane-marking>46</u-plane-marking>
+          <c-plane-marking>46</c-plane-marking>
+          <s-plane-marking>46</s-plane-marking>
+          <other-marking>0</other-marking>
+        </diffserv-markings>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
+      </ipv6>
+      <base-interface xmlns="urn:xran:interfaces:2.0">10GEth0</base-interface>
+      <vlan-id xmlns="urn:xran:interfaces:2.0">110</vlan-id>
+      <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
+      <port-reference xmlns="urn:xran:interfaces:2.0">
+        <xran-port-name>netsim-ru-port0</xran-port-name>
+        <xran-port-number>0</xran-port-number>
+      </port-reference>
+    </interface>
+    <interface>
+      <name>10GEth1</name>
+      <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+      <enabled>true</enabled>
+      <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+        <enabled>true</enabled>
+        <forwarding>false</forwarding>
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+          <u-plane-marking>46</u-plane-marking>
+          <c-plane-marking>46</c-plane-marking>
+          <s-plane-marking>46</s-plane-marking>
+          <other-marking>0</other-marking>
+        </diffserv-markings>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
+      </ipv4>
+      <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+        <enabled>true</enabled>
+        <forwarding>false</forwarding>
+        <dup-addr-detect-transmits>1</dup-addr-detect-transmits>
+        <autoconf>
+          <create-global-addresses>true</create-global-addresses>
+          <create-temporary-addresses>false</create-temporary-addresses>
+          <temporary-valid-lifetime>604800</temporary-valid-lifetime>
+          <temporary-preferred-lifetime>86400</temporary-preferred-lifetime>
+        </autoconf>
+        <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+          <u-plane-marking>46</u-plane-marking>
+          <c-plane-marking>46</c-plane-marking>
+          <s-plane-marking>46</s-plane-marking>
+          <other-marking>0</other-marking>
+        </diffserv-markings>
+        <m-plane-marking xmlns="urn:xran:interfaces:2.0">18</m-plane-marking>
+      </ipv6>
+      <l2-mtu xmlns="urn:xran:interfaces:2.0">1500</l2-mtu>
+      <vlan-tagging xmlns="urn:xran:interfaces:2.0">true</vlan-tagging>
+      <class-of-service xmlns="urn:xran:interfaces:2.0">
+        <u-plane-marking>7</u-plane-marking>
+        <c-plane-marking>7</c-plane-marking>
+        <m-plane-marking>2</m-plane-marking>
+        <s-plane-marking>7</s-plane-marking>
+        <other-marking>1</other-marking>
+      </class-of-service>
+      <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:40</mac-address>
+      <port-reference xmlns="urn:xran:interfaces:2.0">
+        <xran-port-name>netsim-ru-port1</xran-port-name>
+        <xran-port-number>1</xran-port-number>
+      </port-reference>
+    </interface>
+  </interfaces>
+</config>

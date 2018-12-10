@@ -1,0 +1,46 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <software-inventory xmlns="urn:xran:software-management:2.0">
+    <software-slot>
+      <name>factory-default-mz.111-1a.bin</name>
+      <status>VALID</status>
+      <active>true</active>
+      <running>false</running>
+      <access>READ_ONLY</access>
+      <product-code>xRAN Forum netsim-ru-module 1.1.0</product-code>
+      <vendor-code>XR</vendor-code>
+      <build-id>build111</build-id>
+      <build-name>mz.111</build-name>
+      <build-version>SWrev1.1.0</build-version>
+      <files>
+        <name>file-number1</name>
+        <version>1a</version>
+        <local-path>xRAN/sw/factory-default-mz.111-1a.bin</local-path>
+        <integrity>OK</integrity>
+      </files>
+    </software-slot>
+    <software-slot>
+      <name>nov-build123-vt.111-9c.bin</name>
+      <status>VALID</status>
+      <active>true</active>
+      <running>true</running>
+      <access>READ_WRITE</access>
+      <product-code>xRAN Forum netsim-ru-module 1.1.0</product-code>
+      <vendor-code>XR</vendor-code>
+      <build-id>build123</build-id>
+      <build-name>vt.111</build-name>
+      <build-version>SWrev1.1.0</build-version>
+      <files>
+        <name>file-number1</name>
+        <version>9c</version>
+        <local-path>xRAN/sw/nov-build123-vt.pt1.111-9c.bin</local-path>
+        <integrity>OK</integrity>
+      </files>
+      <files>
+        <name>file-number2</name>
+        <version>9c</version>
+        <local-path>xRAN/sw/nov-build123-vt.pt2.111-9c.bin</local-path>
+        <integrity>OK</integrity>
+      </files>
+    </software-slot>
+  </software-inventory>
+</config>
