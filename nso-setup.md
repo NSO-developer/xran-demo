@@ -64,13 +64,39 @@ container xran-users {
 
 ```
 
-A similar change needs to performed on the xran-laa.yang file, which checks for the number of secondary LAA cells:
+Also take note, there is an NSO bug (RT#35651) which currently requires a manual editing of the xran-uplane-conf.yang model. The leafref with require-instance to the imported mcap: module needs to be edited and changed to a uint16. The original YANG leaf is shown below:
 
 ``` yang
-container laa-config {
-//  must "number-of-laa-scells <= /mcap:module-capability/mcap:band-capabilities[mcap:band-number = '46']/mcap:sub-band-info/mcap:number-of-laa-scells" {
-//    error-message "number of laa secondary cells must be less than supported number of laa scells.";
-//  }
+uses common-array-carrier-elements;
+
+leaf band-number {
+  if-feature mcap:LAA;
+  type leafref {
+    path "/mcap:module-capability/mcap:band-capabilities/mcap:band-number";
+    require-instance false;
+  }
+  description
+    "This parameter informing which frequency band particular antenna
+     array is serving for.
+     Intended use is to deal with multiband solutions.";
+}
+
+```
+and this needs to be changed to a type uint16 as shown
+
+``` yang
+uses common-array-carrier-elements;
+
+leaf band-number {
+  if-feature mcap:LAA;
+  type uint16; //avoiding error
+
+  description
+    "This parameter informing which frequency band particular antenna
+     array is serving for.
+     Intended use is to deal with multiband solutions.";
+}
+
 ```
 
 
