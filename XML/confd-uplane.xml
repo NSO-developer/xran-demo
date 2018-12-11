@@ -358,6 +358,13 @@
       <array2>
         <tx-array-name>txarray1</tx-array-name>
       </array2>
+      <types>
+        <relation-type>COALOCATED</relation-type>
+        <pairs>
+          <element-array1>0</element-array1>
+          <element-array2>5</element-array2>
+        </pairs>
+      </types>
     </relations>
     <relations>
       <array1>
@@ -366,6 +373,13 @@
       <array2>
         <tx-array-name>rxarray1</tx-array-name>
       </array2>
+      <types>
+        <relation-type>COALOCATED</relation-type>
+        <pairs>
+          <element-array1>0</element-array1>
+          <element-array2>5</element-array2>
+        </pairs>
+      </types>
     </relations>
   </user-plane-configuration>
 </config>
