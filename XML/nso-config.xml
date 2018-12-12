@@ -147,7 +147,7 @@
             </session-parameters>
           </message5-sessions>
         </ecpri-delay-message>
-        <mplane-info xmlns="urn:xran:mplane-interfaces:1.0">
+        <mplane-info xmlns="urn:xran:mplane-interfaces:2.0">
           <searchable-mplane-access-vlans-info>
             <searchable-access-vlans>100</searchable-access-vlans>
             <searchable-access-vlans>110</searchable-access-vlans>
@@ -276,10 +276,6 @@
             <cp-length>7</cp-length>
             <cp-length-other>0</cp-length-other>
             <offset-to-absolute-frequency-center>0</offset-to-absolute-frequency-center>
-            <number-of-prb-per-scs>
-              <scs>0</scs>
-              <number-of-prb>200</number-of-prb>
-            </number-of-prb-per-scs>
             <e-axcid>
               <cu-port-bitmask>65024</cu-port-bitmask>
               <band-sector-bitmask>448</band-sector-bitmask>

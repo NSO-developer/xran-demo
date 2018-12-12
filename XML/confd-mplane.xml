@@ -1,5 +1,5 @@
 <config xmlns="http://tail-f.com/ns/config/1.0">
-  <mplane-info xmlns="urn:xran:mplane-interfaces:1.0">
+  <mplane-info xmlns="urn:xran:mplane-interfaces:2.0">
     <searchable-mplane-access-vlans-info>
       <searchable-access-vlans>100</searchable-access-vlans>
       <searchable-access-vlans>110</searchable-access-vlans>

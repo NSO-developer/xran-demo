@@ -105,7 +105,7 @@
       <cp-length-other>0</cp-length-other>
       <offset-to-absolute-frequency-center>-7500</offset-to-absolute-frequency-center>
       <number-of-prb-per-scs>
-        <scs>0</scs>
+        <scs>KHZ_15</scs>
         <number-of-prb>200</number-of-prb>
       </number-of-prb-per-scs>
       <e-axcid>
@@ -128,7 +128,7 @@
       <cp-length-other>0</cp-length-other>
       <offset-to-absolute-frequency-center>-7500</offset-to-absolute-frequency-center>
       <number-of-prb-per-scs>
-        <scs>0</scs>
+        <scs>KHZ_15</scs>
         <number-of-prb>200</number-of-prb>
       </number-of-prb-per-scs>
       <e-axcid>
@@ -151,11 +151,11 @@
       <cp-length-other>0</cp-length-other>
       <offset-to-absolute-frequency-center>0</offset-to-absolute-frequency-center>
       <number-of-prb-per-scs>
-        <scs>0</scs>
+        <scs>KHZ_15</scs>
         <number-of-prb>200</number-of-prb>
       </number-of-prb-per-scs>
       <ul-fft-sampling-offsets>
-        <scs>0</scs>
+        <scs>KHZ_15</scs>
         <ul-fft-sampling-offset>0</ul-fft-sampling-offset>
       </ul-fft-sampling-offsets>
       <e-axcid>
@@ -179,11 +179,11 @@
       <cp-length-other>0</cp-length-other>
       <offset-to-absolute-frequency-center>0</offset-to-absolute-frequency-center>
       <number-of-prb-per-scs>
-        <scs>0</scs>
+        <scs>KHZ_15</scs>
         <number-of-prb>200</number-of-prb>
       </number-of-prb-per-scs>
       <ul-fft-sampling-offsets>
-        <scs>0</scs>
+        <scs>KHZ_15</scs>
         <ul-fft-sampling-offset>0</ul-fft-sampling-offset>
       </ul-fft-sampling-offsets>
       <e-axcid>
@@ -298,8 +298,7 @@
       <vertical-spacing>0.1</vertical-spacing>
       <normal-vector-direction>
         <azimuth-angle>1.2</azimuth-angle>
-        <zenith-angle>-25
-        </zenith-angle>
+        <zenith-angle>-25</zenith-angle>
       </normal-vector-direction>
       <leftmost-bottom-array-element-position>
         <x>-0.5</x>
@@ -352,6 +351,7 @@
       </gain-correction-range>
     </rx-arrays>
     <relations>
+      <entity>0</entity>
       <array1>
         <tx-array-name>txarray0</tx-array-name>
       </array1>
@@ -359,25 +359,10 @@
         <tx-array-name>txarray1</tx-array-name>
       </array2>
       <types>
-        <relation-type>COALOCATED</relation-type>
+        <relation-type>SHARED</relation-type>
         <pairs>
-          <element-array1>0</element-array1>
-          <element-array2>5</element-array2>
-        </pairs>
-      </types>
-    </relations>
-    <relations>
-      <array1>
-        <tx-array-name>rxarray0</tx-array-name>
-      </array1>
-      <array2>
-        <tx-array-name>rxarray1</tx-array-name>
-      </array2>
-      <types>
-        <relation-type>COALOCATED</relation-type>
-        <pairs>
-          <element-array1>0</element-array1>
-          <element-array2>5</element-array2>
+          <element-array1>4000</element-array1>
+          <element-array2>6000</element-array2>
         </pairs>
       </types>
     </relations>
