@@ -146,8 +146,9 @@ FAULT  FAULT       FAULT     IS
 ID     SOURCE      SEVERITY  CLEARED  FAULT TEXT                      EVENT TIME                 NAME
 --------------------------------------------------------------------------------------------------------------------
 4000   module      WARNING   false    test data only - please ignore  2018-11-05T18:08:00+00:00  radio unit module
-6000   oscillator  WARNING   false    test data only - please ignore  2018-11-14T18:08:00+00:00  radio                           
+6000   oscillator  WARNING   false    test data only - please ignore  2018-11-14T18:08:00+00:00  radio
 
+live-status laa-config
 live-status ecpri-delay-message ru-compensation tcv2 9
 live-status ecpri-delay-message ru-compensation tcv1 19
 live-status ecpri-delay-message enable-message5 true
@@ -213,11 +214,8 @@ NAME         INTERFACE  FQDN    IPV4    PORT  NAME  STATE    CHANGED  IPV6    PO
 ------------------------------------------------------------------------------------------------------------
 10GEth0.100  100        -
 
-live-status operational-info xran-split interface-version 2.0
-live-status operational-info xran-split optional-header-support 1914POINT3
-live-status operational-info xran-split ecpri-concatenation-support true
 live-status operational-info operational-state restart-cause POWER-ON
-live-status operational-info re-call-home-no-ssh-timer 300
+live-status operational-info operational-state restart-datetime 2018-12-10T14:08:00+00:00
 live-status performance-measurement-objects enable-SFTP-upload true
 live-status performance-measurement-objects enable-random-file-upload false
 REMOTE SFTP UPLOAD PATH                              PASSWORD  CERTIFICATE
@@ -229,6 +227,7 @@ live-status performance-measurement-objects transceiver-measurement-interval 300
 live-status performance-measurement-objects rx-window-measurement-interval 60
 live-status performance-measurement-objects notification-interval 300
 live-status performance-measurement-objects file-upload-interval 7200
+live-status performance-measurement-objects max-bin-count 100
 live-status performance-measurement-objects transceiver-measurement-objects RX_POWER
  active      true
  report-info [ FREQUENCY_TABLE ]
@@ -314,7 +313,7 @@ GNSS
 PTP
 SYNCE
 
-live-status sync sync-capability sync-t-tsc STANDARD
+live-status sync sync-capability sync-t-tsc CLASS_B
 live-status sync ptp-status lock-state LOCKED
 live-status sync ptp-status clock-class 6
 live-status sync ptp-status clock-identity 0x0c1a551c0c10c000
@@ -346,12 +345,12 @@ NUMBER  STATE     LEVEL
 ---------------------------
 0       DISABLED  -
 
-live-status sync gnss-state name GPS-module
-live-status sync gnss-state gnss-status SYNCHRONIZED
-live-status sync gnss-state gnss-data satellites-tracked 3
-live-status sync gnss-state gnss-data location altitude 4000
-live-status sync gnss-state gnss-data location latitude 37.4033173
-live-status sync gnss-state gnss-data location longitude -122.0122518
+live-status sync gnss-status name GPS-module
+live-status sync gnss-status gnss-sync-status SYNCHRONIZED
+live-status sync gnss-status gnss-data satellites-tracked 3
+live-status sync gnss-status gnss-data location altitude 4000
+live-status sync gnss-status gnss-data location latitude 37.4033173
+live-status sync gnss-status gnss-data location longitude -122.0122518
 live-status port-transceivers port-transceiver-data 10GEth0 0
  present                 true
  vendor-id               TRXVendor
@@ -388,56 +387,179 @@ live-status port-transceivers port-transceiver-data 10GEth1 1
  temperature             28.367
 live-status udp-echo enable-udp-echo false
 live-status udp-echo dscp-config EF
-live-status udp-echo echo-replies-transmitted 10
-live-status user-plane-configuration compression compression-type STATIC
-live-status user-plane-configuration compression bitwidth 11
-live-status user-plane-configuration compression compression-method BLOCK_FLOATING_POINT
-                                                                  BAND
-           PROCESSING  TX ARRAY          LOW LEVEL TX    CU PORT  SECTOR   CCID     RU PORT  EAXC
-NAME       ELEMENT     CARRIER           ENDPOINT        BITMASK  BITMASK  BITMASK  BITMASK  ID
----------------------------------------------------------------------------------------------------
-lltxlink0  element0    >txarraycarrier0  lltx-endpoint0  65024    448      56       7        585
-lltxlink1  element0    >txarraycarrier0  lltx-endpoint1  65024    448      56       7        1170
+live-status user-plane-configuration endpoint-types 0
+ supported-section-types 0
+ supported-section-types 1
+  supported-section-extensions [ 3 ]
+ supported-section-types 2
+ supported-section-types 3
+  supported-section-extensions [ 3 ]
+ supported-section-types 5
+ supported-frame-structures          [ 112 128 ]
+ managed-delay-support               NON_MANAGED
+ max-numerology-change-duration      1000
+ max-sections-per-symbol             4
+ max-sections-per-slot               4000
+ max-beams-per-symbol                4
+ max-beams-per-slot                  40
+ max-prb-per-symbol                  200
+ prb-capacity-allocation-granularity [ 200 500 1000 ]
+ max-numerologies-per-symbol         4
+    MAX
+    CONTROL   MAX                 MAX     MAX    MAX                              MAX        MAX NON
+    SECTIONS  SECTIONS  MAX       BEAMS   BEAMS  PRB     MAX                      MANAGED    MANAGED
+    PER DATA  PER       SECTIONS  PER     PER    PER     NUMEROLOGIES  MAX        DELAY      DELAY
+ID  SECTION   SYMBOL    PER SLOT  SYMBOL  SLOT   SYMBOL  PER SYMBOL    ENDPOINTS  ENDPOINTS  ENDPOINTS
+--------------------------------------------------------------------------------------------------------
+0   -         4         4000      4       40     200     4             4          0          4
 
-                                                                 BAND
-           PROCESSING  RX ARRAY         LOW LEVEL RX    CU PORT  SECTOR   CCID     RU PORT  EAXC
-NAME       ELEMENT     CARRIER          ENDPOINT        BITMASK  BITMASK  BITMASK  BITMASK  ID    PRIORITY
-------------------------------------------------------------------------------------------------------------
-llrxlink0  element1    rxarraycarrier0  llrx-endpoint0  65024    448      56       7        585   HIGH
-llrxlink1  element1    rxarraycarrier0  llrx-endpoint1  65024    448      56       7        1170  HIGH
+                                                 CAPACITY
+                 RESTRICTED            ENDPOINT  SHARING
+NAME             INTERFACES  ARRAY     TYPE      GROUPS
+-----------------------------------------------------------
+slltx-endpoint0  -           txarray0  0         [ 0 ]
+slltx-endpoint1  -           txarray1  0         [ 0 ]
 
-                         BAND
-                CU PORT  SECTOR   CCID     RU PORT  EAXC
-NAME            BITMASK  BITMASK  BITMASK  BITMASK  ID
-----------------------------------------------------------
-llrx-endpoint0  65024    448      56       7        1755
-llrx-endpoint1  65024    448      56       7        2340
-lltx-endpoint0  65024    448      56       7        585
-lltx-endpoint1  65024    448      56       7        1170
+                                                 CAPACITY
+                 RESTRICTED            ENDPOINT  SHARING
+NAME             INTERFACES  ARRAY     TYPE      GROUPS
+-----------------------------------------------------------
+sllrx-endpoint0  -           rxarray0  0         [ 0 ]
+sllrx-endpoint1  -           rxarray1  0         [ 0 ]
 
-live-status user-plane-configuration tx-array-carriers >txarraycarrier0
+live-status user-plane-configuration low-level-tx-endpoints slltx-endpoint0
+ compression compression-type STATIC
+ compression bitwidth 11
+ frame-structure                     112
+ cp-length                           7
+ cp-length-other                     0
+ offset-to-absolute-frequency-center 0
+ e-axcid cu-port-bitmask 65024
+ e-axcid band-sector-bitmask 448
+ e-axcid ccid-bitmask 56
+ e-axcid ru-port-bitmask 7
+ e-axcid eaxc-id     585
+live-status user-plane-configuration low-level-tx-endpoints slltx-endpoint1
+ cp-length                           7
+ cp-length-other                     0
+ offset-to-absolute-frequency-center -7500
+ e-axcid cu-port-bitmask 65024
+ e-axcid band-sector-bitmask 448
+ e-axcid ccid-bitmask 56
+ e-axcid ru-port-bitmask 7
+ e-axcid eaxc-id     1170
+live-status user-plane-configuration low-level-rx-endpoints sllrx-endpoint0
+ compression compression-type STATIC
+ cp-length                           7
+ cp-length-other                     0
+ offset-to-absolute-frequency-center 0
+ e-axcid cu-port-bitmask 65024
+ e-axcid band-sector-bitmask 448
+ e-axcid ccid-bitmask 56
+ e-axcid ru-port-bitmask 7
+ e-axcid eaxc-id     585
+live-status user-plane-configuration low-level-rx-endpoints sllrx-endpoint1
+ compression compression-type STATIC
+ cp-length                           7
+ cp-length-other                     0
+ offset-to-absolute-frequency-center 0
+ e-axcid cu-port-bitmask 65024
+ e-axcid band-sector-bitmask 448
+ e-axcid ccid-bitmask 56
+ e-axcid ru-port-bitmask 7
+ e-axcid eaxc-id     1170
+live-status user-plane-configuration tx-array-carriers txarraycarrier0
  absolute-frequency-center   636666
  center-of-channel-bandwidth 3549990000
  channel-bandwidth           20000000
- power                       30.45
- active                      ACTIVE
- fft-size                    4096
+ gain                        30.45
  downlink-radio-frame-offset 0
  downlink-sfn-offset         0
- default-scs                 KHZ_15
- cp-length                   7
-live-status user-plane-configuration rx-array-carriers rxarraycarrier0
- absolute-frequency-center   636666
- center-of-channel-bandwidth 3549990000
- channel-bandwidth           20000000
- fft-size                    4096
- ul-fft-sampling-offset      0
- n-ta-offset                 0
- default-scs                 KHZ_15
- scs-specific-config KHZ_15
-  offset-to-absolute-frequency-center 0
-  number-of-prbs                      100
- cp-length                   7
+                                                                                DOWNLINK
+                 ABSOLUTE   CENTER OF                                           RADIO     DOWNLINK
+                 FREQUENCY  CHANNEL     CHANNEL                         DUPLEX  FRAME     SFN       GAIN        N TA
+NAME             CENTER     BANDWIDTH   BANDWIDTH  ACTIVE  STATE  TYPE  SCHEME  OFFSET    OFFSET    CORRECTION  OFFSET
+------------------------------------------------------------------------------------------------------------------------
+rxarraycarrier0  636666     3549990000  20000000   -       -      -     -       0         0         0.001       0
+
+live-status user-plane-configuration tx-arrays txarray0
+ number-of-rows           8
+ number-of-columns        8
+ number-of-array-layers   2
+ horizontal-spacing       0.1
+ vertical-spacing         0.1
+ normal-vector-direction azimuth-angle 0.1
+ normal-vector-direction zenith-angle -30.5
+ leftmost-bottom-array-element-position x -0.5
+ leftmost-bottom-array-element-position y -0.5
+ leftmost-bottom-array-element-position z 0.01
+ polarisations 0
+  polarisation MINUS_45
+ polarisations 1
+  polarisation PLUS_45
+ band-number              78
+ max-gain                 30.45
+ independent-power-budget false
+live-status user-plane-configuration tx-arrays txarray1
+ number-of-rows           8
+ number-of-columns        8
+ number-of-array-layers   2
+ horizontal-spacing       0.1
+ vertical-spacing         0.1
+ normal-vector-direction azimuth-angle 0.1
+ normal-vector-direction zenith-angle -30.5
+ leftmost-bottom-array-element-position x -0.5
+ leftmost-bottom-array-element-position y -0.5
+ leftmost-bottom-array-element-position z -5.01
+ polarisations 0
+  polarisation MINUS_45
+ polarisations 1
+  polarisation PLUS_45
+ band-number              78
+ max-gain                 30.45
+ independent-power-budget false
+live-status user-plane-configuration rx-arrays rxarray0
+ number-of-rows         8
+ number-of-columns      8
+ number-of-array-layers 2
+ horizontal-spacing     0.1
+ vertical-spacing       0.1
+ normal-vector-direction azimuth-angle 1.2
+ normal-vector-direction zenith-angle -25.0
+ leftmost-bottom-array-element-position x -0.5
+ leftmost-bottom-array-element-position y 5.5
+ leftmost-bottom-array-element-position z 0.0
+ polarisations 0
+  polarisation MINUS_45
+ polarisations 1
+  polarisation PLUS_45
+ band-number            78
+ gain-correction-range max 0.34
+ gain-correction-range min 4.56
+live-status user-plane-configuration rx-arrays rxarray1
+ number-of-rows         8
+ number-of-columns      8
+ number-of-array-layers 2
+ horizontal-spacing     0.1
+ vertical-spacing       0.1
+ normal-vector-direction azimuth-angle 1.2
+ normal-vector-direction zenith-angle -25.0
+ leftmost-bottom-array-element-position x -0.5
+ leftmost-bottom-array-element-position y 10.5
+ leftmost-bottom-array-element-position z 0.0
+ polarisations 0
+  polarisation MINUS_45
+ polarisations 1
+  polarisation PLUS_45
+ band-number            78
+ gain-correction-range max 0.34
+ gain-correction-range min 4.56
+                  RX               RX
+        TX ARRAY  ARRAY  TX ARRAY  ARRAY  RELATION  ELEMENT  ELEMENT
+ENTITY  NAME      NAME   NAME      NAME   TYPE      ARRAY1   ARRAY2
+----------------------------------------------------------------------
+0       txarray0  -      txarray1  -      SHARED    4000     6000
+
 NAME      DISABLED  PASSWORD        ENABLED
 ---------------------------------------------
 fmpmuser  -         hashedpassword  true
