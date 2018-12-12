@@ -14,4 +14,4 @@ Configuration is loaded using the following command
 
 Operational state is loaded using the following command
 
-    env CONFD_IPC_PORT=<insert ipc-vale> confd_load -lC confd-all.xml
+    env CONFD_IPC_PORT=<insert ipc value> confd_load -lC confd-all.xml
