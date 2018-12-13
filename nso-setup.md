@@ -20,8 +20,8 @@ This aassumes a macOS installation using NSO4.7...
 **set environmental valriables**
 
 
-    $ source ~/ncs4.7/ncsrc
-    $ source ~/ncs4.7/netsim/confd/confdrc
+    $ source ~/ncs-4.7/ncsrc
+    $ source ~/ncs-4.7/netsim/confd/confdrc
 
 
 ## Setup NSO and verify
