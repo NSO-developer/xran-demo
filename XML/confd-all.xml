@@ -719,131 +719,679 @@
       <rx-array>rxarray3</rx-array>
       <static-properties>
         <frequency-domain-beams>
-          <max-number-of-beam-ids>10</max-number-of-beam-ids>
-          <initial-beam-id>0</initial-beam-id>
+          <max-number-of-beam-ids>40</max-number-of-beam-ids>
+          <initial-beam-id>1</initial-beam-id>
         </frequency-domain-beams>
-        <number-of-beams>10</number-of-beams>
+        <number-of-beams>40</number-of-beams>
       </static-properties>
       <beam-information>
-        <number-of-beamforming-properties>10</number-of-beamforming-properties>
-        <beamforming-properties>
-          <beam-id>0</beam-id>
-          <beamforming-property>
-            <beam-type>COARSE</beam-type>
-            <beam-group-id>100</beam-group-id>
-            <coarse-fine-beam-relation>1</coarse-fine-beam-relation>
-            <neighbour-beams>2</neighbour-beams>
-            <neighbour-beams>3</neighbour-beams>
-            <neighbour-beams>4</neighbour-beams>
-            <neighbour-beams>5</neighbour-beams>
-          </beamforming-property>
-        </beamforming-properties>
+        <number-of-beamforming-properties>40</number-of-beamforming-properties>
         <beamforming-properties>
           <beam-id>1</beam-id>
           <beamforming-property>
             <beam-type>COARSE</beam-type>
-            <beam-group-id>100</beam-group-id>
-            <coarse-fine-beam-relation>0</coarse-fine-beam-relation>
+            <beam-group-id>1</beam-group-id>
+            <coarse-fine-beam-relation>9</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>10</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>17</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>18</coarse-fine-beam-relation>
             <neighbour-beams>2</neighbour-beams>
-            <neighbour-beams>3</neighbour-beams>
-            <neighbour-beams>4</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
             <neighbour-beams>5</neighbour-beams>
+            <neighbour-beams>11</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>25</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
         <beamforming-properties>
           <beam-id>2</beam-id>
           <beamforming-property>
             <beam-type>COARSE</beam-type>
-            <beam-group-id>101</beam-group-id>
-            <coarse-fine-beam-relation>3</coarse-fine-beam-relation>
-            <neighbour-beams>0</neighbour-beams>
+            <beam-group-id>1</beam-group-id>
+            <coarse-fine-beam-relation>11</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>12</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>19</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>20</coarse-fine-beam-relation>
             <neighbour-beams>1</neighbour-beams>
-            <neighbour-beams>4</neighbour-beams>
             <neighbour-beams>5</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+            <neighbour-beams>10</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>13</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
         <beamforming-properties>
           <beam-id>3</beam-id>
           <beamforming-property>
             <beam-type>COARSE</beam-type>
-            <beam-group-id>101</beam-group-id>
-            <coarse-fine-beam-relation>2</coarse-fine-beam-relation>
-            <neighbour-beams>0</neighbour-beams>
-            <neighbour-beams>1</neighbour-beams>
+            <beam-group-id>1</beam-group-id>
+            <coarse-fine-beam-relation>13</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>14</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>21</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>22</coarse-fine-beam-relation>
+            <neighbour-beams>2</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>8</neighbour-beams>
             <neighbour-beams>4</neighbour-beams>
-            <neighbour-beams>5</neighbour-beams>
+            <neighbour-beams>12</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>15</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
         <beamforming-properties>
           <beam-id>4</beam-id>
           <beamforming-property>
             <beam-type>COARSE</beam-type>
-            <beam-group-id>102</beam-group-id>
-            <coarse-fine-beam-relation>5</coarse-fine-beam-relation>
-            <neighbour-beams>0</neighbour-beams>
-            <neighbour-beams>1</neighbour-beams>
-            <neighbour-beams>2</neighbour-beams>
+            <beam-group-id>1</beam-group-id>
+            <coarse-fine-beam-relation>15</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>16</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>23</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>24</coarse-fine-beam-relation>
             <neighbour-beams>3</neighbour-beams>
-            <neighbour-beams>6</neighbour-beams>
             <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>8</neighbour-beams>
+            <neighbour-beams>14</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>32</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
         <beamforming-properties>
           <beam-id>5</beam-id>
           <beamforming-property>
             <beam-type>COARSE</beam-type>
-            <beam-group-id>102</beam-group-id>
-            <coarse-fine-beam-relation>4</coarse-fine-beam-relation>
-            <neighbour-beams>0</neighbour-beams>
+            <beam-group-id>2</beam-group-id>
+            <coarse-fine-beam-relation>25</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>26</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>33</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>34</coarse-fine-beam-relation>
             <neighbour-beams>1</neighbour-beams>
             <neighbour-beams>2</neighbour-beams>
-            <neighbour-beams>3</neighbour-beams>
             <neighbour-beams>6</neighbour-beams>
-            <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>17</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>35</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
         <beamforming-properties>
           <beam-id>6</beam-id>
           <beamforming-property>
             <beam-type>COARSE</beam-type>
-            <beam-group-id>103</beam-group-id>
-            <coarse-fine-beam-relation>7</coarse-fine-beam-relation>
-            <neighbour-beams>4</neighbour-beams>
+            <beam-group-id>2</beam-group-id>
+            <coarse-fine-beam-relation>27</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>28</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>35</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>36</coarse-fine-beam-relation>
             <neighbour-beams>5</neighbour-beams>
-            <neighbour-beams>8</neighbour-beams>
-            <neighbour-beams>9</neighbour-beams>
+            <neighbour-beams>1</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>34</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>37</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
         <beamforming-properties>
           <beam-id>7</beam-id>
           <beamforming-property>
             <beam-type>COARSE</beam-type>
-            <beam-group-id>103</beam-group-id>
-            <coarse-fine-beam-relation>6</coarse-fine-beam-relation>
+            <beam-group-id>2</beam-group-id>
+            <coarse-fine-beam-relation>29</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>30</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>37</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>38</coarse-fine-beam-relation>
+            <neighbour-beams>6</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
             <neighbour-beams>4</neighbour-beams>
-            <neighbour-beams>5</neighbour-beams>
             <neighbour-beams>8</neighbour-beams>
-            <neighbour-beams>9</neighbour-beams>
+            <neighbour-beams>36</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>39</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
         <beamforming-properties>
           <beam-id>8</beam-id>
           <beamforming-property>
             <beam-type>COARSE</beam-type>
-            <beam-group-id>104</beam-group-id>
-            <coarse-fine-beam-relation>9</coarse-fine-beam-relation>
-            <neighbour-beams>6</neighbour-beams>
+            <beam-group-id>2</beam-group-id>
+            <coarse-fine-beam-relation>31</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>32</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>39</coarse-fine-beam-relation>
+            <coarse-fine-beam-relation>40</coarse-fine-beam-relation>
             <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+            <neighbour-beams>4</neighbour-beams>
+            <neighbour-beams>38</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>24</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
         <beamforming-properties>
           <beam-id>9</beam-id>
           <beamforming-property>
-            <beam-type>COARSE</beam-type>
-            <beam-group-id>104</beam-group-id>
-            <coarse-fine-beam-relation>8</coarse-fine-beam-relation>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>3</beam-group-id>
+            <coarse-fine-beam-relation>1</coarse-fine-beam-relation>
+            <neighbour-beams>10</neighbour-beams>
+            <neighbour-beams>17</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>10</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>3</beam-group-id>
+            <coarse-fine-beam-relation>1</coarse-fine-beam-relation>
+            <neighbour-beams>9</neighbour-beams>
+            <neighbour-beams>17</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>11</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>11</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>3</beam-group-id>
+            <coarse-fine-beam-relation>2</coarse-fine-beam-relation>
+            <neighbour-beams>10</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>12</neighbour-beams>
+            <neighbour-beams>1</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>12</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>3</beam-group-id>
+            <coarse-fine-beam-relation>2</coarse-fine-beam-relation>
+            <neighbour-beams>11</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>13</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>13</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>3</beam-group-id>
+            <coarse-fine-beam-relation>3</coarse-fine-beam-relation>
+            <neighbour-beams>12</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>14</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>14</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>3</beam-group-id>
+            <coarse-fine-beam-relation>3</coarse-fine-beam-relation>
+            <neighbour-beams>13</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>15</neighbour-beams>
+            <neighbour-beams>4</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>15</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>3</beam-group-id>
+            <coarse-fine-beam-relation>4</coarse-fine-beam-relation>
+            <neighbour-beams>14</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>24</neighbour-beams>
+            <neighbour-beams>16</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>16</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>3</beam-group-id>
+            <coarse-fine-beam-relation>4</coarse-fine-beam-relation>
+            <neighbour-beams>15</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>24</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>17</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>4</beam-group-id>
+            <coarse-fine-beam-relation>1</coarse-fine-beam-relation>
+            <neighbour-beams>9</neighbour-beams>
+            <neighbour-beams>10</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>25</neighbour-beams>
+            <neighbour-beams>5</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>18</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>4</beam-group-id>
+            <coarse-fine-beam-relation>1</coarse-fine-beam-relation>
+            <neighbour-beams>9</neighbour-beams>
+            <neighbour-beams>10</neighbour-beams>
+            <neighbour-beams>11</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>25</neighbour-beams>
+            <neighbour-beams>17</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+            <neighbour-beams>5</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>19</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>4</beam-group-id>
+            <coarse-fine-beam-relation>2</coarse-fine-beam-relation>
+            <neighbour-beams>10</neighbour-beams>
+            <neighbour-beams>11</neighbour-beams>
+            <neighbour-beams>12</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>1</neighbour-beams>
+            <neighbour-beams>5</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>20</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>4</beam-group-id>
+            <coarse-fine-beam-relation>2</coarse-fine-beam-relation>
+            <neighbour-beams>11</neighbour-beams>
+            <neighbour-beams>12</neighbour-beams>
+            <neighbour-beams>13</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
             <neighbour-beams>6</neighbour-beams>
             <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>21</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>4</beam-group-id>
+            <coarse-fine-beam-relation>3</coarse-fine-beam-relation>
+            <neighbour-beams>12</neighbour-beams>
+            <neighbour-beams>13</neighbour-beams>
+            <neighbour-beams>14</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>22</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>4</beam-group-id>
+            <coarse-fine-beam-relation>3</coarse-fine-beam-relation>
+            <neighbour-beams>13</neighbour-beams>
+            <neighbour-beams>14</neighbour-beams>
+            <neighbour-beams>15</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>8</neighbour-beams>
+            <neighbour-beams>4</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>23</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>4</beam-group-id>
+            <coarse-fine-beam-relation>4</coarse-fine-beam-relation>
+            <neighbour-beams>14</neighbour-beams>
+            <neighbour-beams>15</neighbour-beams>
+            <neighbour-beams>16</neighbour-beams>
+            <neighbour-beams>24</neighbour-beams>
+            <neighbour-beams>32</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>8</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>24</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>4</beam-group-id>
+            <coarse-fine-beam-relation>4</coarse-fine-beam-relation>
+            <neighbour-beams>15</neighbour-beams>
+            <neighbour-beams>16</neighbour-beams>
+            <neighbour-beams>32</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>8</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>25</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>5</beam-group-id>
+            <coarse-fine-beam-relation>5</coarse-fine-beam-relation>
+            <neighbour-beams>17</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>34</neighbour-beams>
+            <neighbour-beams>33</neighbour-beams>
+            <neighbour-beams>1</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>26</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>5</beam-group-id>
+            <coarse-fine-beam-relation>5</coarse-fine-beam-relation>
+            <neighbour-beams>17</neighbour-beams>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>35</neighbour-beams>
+            <neighbour-beams>34</neighbour-beams>
+            <neighbour-beams>33</neighbour-beams>
+            <neighbour-beams>25</neighbour-beams>
+            <neighbour-beams>1</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>27</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>5</beam-group-id>
+            <coarse-fine-beam-relation>6</coarse-fine-beam-relation>
+            <neighbour-beams>18</neighbour-beams>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>36</neighbour-beams>
+            <neighbour-beams>35</neighbour-beams>
+            <neighbour-beams>24</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>5</neighbour-beams>
+            <neighbour-beams>1</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>28</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>5</beam-group-id>
+            <coarse-fine-beam-relation>6</coarse-fine-beam-relation>
+            <neighbour-beams>19</neighbour-beams>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>37</neighbour-beams>
+            <neighbour-beams>36</neighbour-beams>
+            <neighbour-beams>35</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>29</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>5</beam-group-id>
+            <coarse-fine-beam-relation>7</coarse-fine-beam-relation>
+            <neighbour-beams>20</neighbour-beams>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>38</neighbour-beams>
+            <neighbour-beams>37</neighbour-beams>
+            <neighbour-beams>36</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+            <neighbour-beams>2</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>30</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>5</beam-group-id>
+            <coarse-fine-beam-relation>7</coarse-fine-beam-relation>
+            <neighbour-beams>21</neighbour-beams>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>39</neighbour-beams>
+            <neighbour-beams>38</neighbour-beams>
+            <neighbour-beams>37</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+            <neighbour-beams>4</neighbour-beams>
+            <neighbour-beams>8</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>31</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>5</beam-group-id>
+            <coarse-fine-beam-relation>8</coarse-fine-beam-relation>
+            <neighbour-beams>22</neighbour-beams>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>24</neighbour-beams>
+            <neighbour-beams>32</neighbour-beams>
+            <neighbour-beams>40</neighbour-beams>
+            <neighbour-beams>39</neighbour-beams>
+            <neighbour-beams>38</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>3</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+            <neighbour-beams>4</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>32</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>5</beam-group-id>
+            <coarse-fine-beam-relation>8</coarse-fine-beam-relation>
+            <neighbour-beams>23</neighbour-beams>
+            <neighbour-beams>24</neighbour-beams>
+            <neighbour-beams>40</neighbour-beams>
+            <neighbour-beams>39</neighbour-beams>
+            <neighbour-beams>32</neighbour-beams>
+            <neighbour-beams>4</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>33</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>6</beam-group-id>
+            <coarse-fine-beam-relation>5</coarse-fine-beam-relation>
+            <neighbour-beams>25</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>34</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>34</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>6</beam-group-id>
+            <coarse-fine-beam-relation>5</coarse-fine-beam-relation>
+            <neighbour-beams>25</neighbour-beams>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>35</neighbour-beams>
+            <neighbour-beams>33</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>35</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>6</beam-group-id>
+            <coarse-fine-beam-relation>6</coarse-fine-beam-relation>
+            <neighbour-beams>26</neighbour-beams>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>36</neighbour-beams>
+            <neighbour-beams>34</neighbour-beams>
+            <neighbour-beams>5</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>36</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>6</beam-group-id>
+            <coarse-fine-beam-relation>6</coarse-fine-beam-relation>
+            <neighbour-beams>27</neighbour-beams>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>37</neighbour-beams>
+            <neighbour-beams>35</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>37</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>6</beam-group-id>
+            <coarse-fine-beam-relation>7</coarse-fine-beam-relation>
+            <neighbour-beams>28</neighbour-beams>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>38</neighbour-beams>
+            <neighbour-beams>36</neighbour-beams>
+            <neighbour-beams>6</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>38</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>6</beam-group-id>
+            <coarse-fine-beam-relation>7</coarse-fine-beam-relation>
+            <neighbour-beams>29</neighbour-beams>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>39</neighbour-beams>
+            <neighbour-beams>37</neighbour-beams>
+            <neighbour-beams>8</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>39</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>6</beam-group-id>
+            <coarse-fine-beam-relation>8</coarse-fine-beam-relation>
+            <neighbour-beams>30</neighbour-beams>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>32</neighbour-beams>
+            <neighbour-beams>40</neighbour-beams>
+            <neighbour-beams>38</neighbour-beams>
+            <neighbour-beams>7</neighbour-beams>
+          </beamforming-property>
+        </beamforming-properties>
+        <beamforming-properties>
+          <beam-id>40</beam-id>
+          <beamforming-property>
+            <beam-type>FINE</beam-type>
+            <beam-group-id>6</beam-group-id>
+            <coarse-fine-beam-relation>8</coarse-fine-beam-relation>
+            <neighbour-beams>31</neighbour-beams>
+            <neighbour-beams>32</neighbour-beams>
+            <neighbour-beams>39</neighbour-beams>
           </beamforming-property>
         </beamforming-properties>
       </beam-information>
