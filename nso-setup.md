@@ -17,7 +17,7 @@ This aassumes a macOS installation using NSO4.7...
 
     $ sh nso-4.7.darwin.x86_64.installer.bin /Users/admin/nso-4.7
 
-**set environmental valriables**
+**set environmental variables**
 
 
     $ source ~/nso-4.7/ncsrc
