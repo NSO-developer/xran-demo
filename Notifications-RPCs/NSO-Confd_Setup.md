@@ -1,6 +1,6 @@
 # NSO - ConfD Setup
 
-This document describes the procedure to configure NSO and ConfD on separate machines (servers / VMs) to demenostrate use of Notifications and RPCs in an xRAN-RU Netconf/Yang implementation. Particularly, we will limit the scope of this document to notifications and RPCs used by the xran-supervision model.
+This document describes the procedure to configure NSO and ConfD on separate machines (servers / VMs) to demenostrate the use of Notifications and RPCs in an xRAN-RU Netconf/Yang implementation. Particularly, we will limit the scope of this document to notifications and RPCs used by the xran-supervision module.
 
 ## xRAN-RU Supervision Description
 
