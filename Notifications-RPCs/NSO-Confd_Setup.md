@@ -9,7 +9,7 @@ For both the NSO and ConfD machines we will assume that the following items are 
 * OS: Ubuntu **16.04**
 * Username: **ubuntu**
 * Install packages:
-
+```bash
     sudo apt update
     sudo apt upgrade
     sudo apt-get install vim -y
@@ -23,7 +23,7 @@ For both the NSO and ConfD machines we will assume that the following items are 
     sudo pip install --upgrade pip
     sudo pip install requests
     sudo pip install pyangbind
-    
+```    
 * NSO Installer: **nso-4.7.2.1.linux.x86_64.installer.bin**
 
 ## NSO Installation
