@@ -116,11 +116,135 @@ Verify that the Kicker was configured correctly.
 ```
 show running-config kickers
 ```
-		*kickers notification-kicker kicker1
+		kickers notification-kicker kicker1
 		 selector-expr "$SUBSCRIPTION_NAME = 'mysub'"
 		 kick-node     /action
 		 action-name   watchdogreset
-		!*
+		!
+
+## ConfD Installation
+### In NSO machine
+cd ~/nso-4.7.2.1/netsim
+tar cvf confd.tar confd
+
+# Transfer NSO-confd to the ConfD machine
+e.g.,
+scp confd.tar ubuntu@192.168.3.241:/home/ubuntu
+
+# In ConfD machine
+cd $HOME
+tar xvf confd.tar
+rm confd.tar
+cd confd
+sed -i 's|nso-4.7.2.1/netsim/||g' confdrc
+sed -i 's|nso-4.7.2.1/netsim/||g' confdrc.tcsh
+sed -i 's|nso-4.7.2.1/netsim/||g' etc/confd/confd.conf
+
+cd $HOME
+vi .profile
+source /home/ubuntu/confd/confdrc
+
+
+## Customize confd.conf
+vi ~/confd/etc/confd/confd.conf
+  <cdb>
+    <operational>
+      <enabled>true</enabled>
+    </operational>
+  </cdb>
+  <notifications>
+    <eventStreams>
+      <stream>
+        <name>supervision</name>
+        <description>xran-supervision-notification</description>
+        <replaySupport>false</replaySupport>
+      </stream>
+    </eventStreams>
+  </notifications>
+  <cli>
+    <style>c</style>
+  </cli> 
+
+
+# Transfer 2-0, XML_2-0, notifier, and rpc directories to $HOME
+cd ~/2-0
+./compiler.sh
+mv *.fxs ~/confd/etc/confd/
+
+cd ~/notifier
+cp ~/2-0/xran-supervision* .
+make clean
+make
+
+### For Troubleshooting ONLY
+#confdc -c -a xran-supervision-ann.yang xran-supervision.yang; confdc --emit-h xran-supervision.h xran-supervision.fxs; cc -c -o notifier.o notifier.c -Wall -g -I/home/ubuntu/confd/include; cc notifier.o /home/ubuntu/confd/lib/libconfd.a -lpthread -lm -Wall -g -I/home/ubuntu/confd/include -o notifier; ./notifier
+
+#confdc -c -a xran-supervision-ann.yang xran-supervision.yang
+#confdc --emit-h xran-supervision.h xran-supervision.fxs
+#cc -c -o notifier.o notifier.c -Wall -g -I ~/confd/include
+#cc notifier.o ~/confd/lib/libconfd.a -lpthread -lm -Wall -g -I ~/confd/include -o notifier
+
+
+## Start ConfD
+cd ~/confd
+confd
+
+
+
+
+# Add device on NSO CLI
+config
+devices authgroups group default
+umap system remote-name admin remote-password admin
+devices device ru0 authgroup default address 192.168.3.241 port 2022 device-type netconf
+state admin-state unlocked 
+commit
+ssh fetch-host-keys 
+connect
+sync-from
+end
+
+# Verify
+show running-config devices device ru0
+show devices device ru0 live-status
+
+
+# Load nso-config.xml
+- From NSO machine
+ncs_load -l -m ~/XML_2-0/nso-config.xml
+
+- From NSO CLI
+devices device ru0 sync-to
+
+
+# Load confd-*.xml
+- From confd machine
+confd_load -lCO ~/XML_2-0/confd-all.xml
+
+- From NSO CLI
+devices device ru0 sync-from
+
+
+# Subscription to supervision notification on NSO CLI
+config
+devices device ru0 netconf-notifications subscription mysub local-user admin stream supervision
+commit
+end
+
+# Verify
+show devices device ru0 netconf-notifications subscription
+
+
+
+# From ConfD machine start notifier
+cd ~/notifier
+./notifier
+
+# Check logs on ConfD machine
+tail -f ~/rpc/supervision-watchdog-reset.result 
+
+# Check logs on NSO machine
+tail -f ~/ncs-run/logs/python-supervision-action.log 
 
 
 
