@@ -1,6 +1,10 @@
 # NSO - ConfD Setup
 
-This document describes the procedure to configure NSO and ConfD on separate machines (servers / VMs).
+This document describes the procedure to configure NSO and ConfD on separate machines (servers / VMs) to demenostrate use of Notifications and RPCs in an xRAN-RU Netconf/Yang implementation. Particularly, we will limit the scope of this document to notifications and RPCs used by the xran-supervision model.
+
+## High-level Description
+
+The NSO machine serves as the Netconf Client and the ConfD machine serves as the Netconf Server (RU).
 
 ## Prerequisites
 
@@ -55,13 +59,13 @@ cd ~/ncs-run
 ncs
 ```
 
-### Compiling and Loading the xRAN-RU NED
+### xRAN-RU NED Compiling and Loading
 Transfer all the 2.0 yang files to the **~/yang** directory.
 
 Replace the **~/yang/xran-supervision.yang** file with the one provide here:
 [xran-supervision.yang](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/NSO/yang-override/xran-supervision.yang)
 
-Generate and compile the **xran20** NED package based on the yang files located at the ~/yang directory. Place the package in the **~/ncs-run/packages** directory.
+Generate and compile the **xran20** NED package based on the yang files located at the **~/yang** directory. Place the package in the **~/ncs-run/packages** directory.
 ```Bash
 cd $HOME
 ncs-make-package --netconf-ned ~/yang xran20 --dest ~/ncs-run/packages/xran20 --vendor xran --build --no-java
@@ -74,18 +78,8 @@ ncs --stop
 ncs --with-package-reload
 ```
 
-# Creating Netsim (xRAN RU) device  --->>> ONLY in the case of RU Simulated (not for notifications / kickers / RPCs)
-cd ~/ncs-run/packages
-ncs-netsim create-network ./xran110 1 rusim --dir ../netsim
-cd ~/ncs-run
-ncs-netsim start
-
-ncs-netsim ncs-xml-init > devices.xml
-ncs_load -l -m devices.xml 
-
-
-
-## Action package
+## Action Package Compiling and Loading
+The Action Package serves as a way to trigger
 # Copy xran-supervison-action package to $HOME/ncs-run/packages
 cd $HOME/ncs-run/packages/xran-supervision-action/src
 make clean && make
