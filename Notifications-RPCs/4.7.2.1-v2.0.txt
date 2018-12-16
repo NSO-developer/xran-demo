@@ -1,0 +1,235 @@
+#### NEW NSO VM
+Install Ubuntu 16.04 Minimal
+username=ubuntu
+password=cisco123
+
+
+# Through console
+sudo su
+cisco123
+passwd
+cisco123
+cisco123
+
+apt-get update
+apt-get install vim -y
+apt-get install ssh -y
+
+vi /etc/ssh/sshd_config
+PermitRootLogin yes
+PasswordAuthentication yes
+UseDNS no
+
+service ssh restart
+# You can now login through ssh
+
+## Prerequisites
+sudo apt-get install python -y
+sudo apt-get install ant -y
+sudo apt-get install python-pip -y
+sudo apt-get install default-jdk -y
+sudo apt-get install xsltproc -y
+sudo apt-get install curl -y
+
+sudo pip install --upgrade pip
+sudo pip install requests
+sudo pip install pyangbind
+
+
+## NSO Installation
+cd $HOME
+sh nso-4.7.2.1.linux.x86_64.installer.bin $HOME/nso-4.7.2.1 --local-install
+
+vi .profile
+source $HOME/nso-4.7.2.1/ncsrc
+source $HOME/nso-4.7.2.1/netsim/confd/confdrc
+
+# Exit and relogin
+
+mkdir ncs-run
+ncs-setup --dest $HOME/ncs-run
+cd ncs-run
+vi ncs.conf
+  <cli>
+    <style>c</style>
+    <history-remove-duplicates>true</history-remove-duplicates>
+  </cli> 
+  <hide-group>
+    <name>debug</name>
+  </hide-group>
+
+ncs
+
+
+# Compiling and loading the xRAN RU NED
+cd $HOME
+ncs-make-package --netconf-ned ~/2-0 xran20 --dest ~/ncs-run/packages/xran20 --vendor xran --build --no-java
+
+
+cd ~/ncs-run
+ncs --stop
+ncs --with-package-reload
+
+
+# Creating Netsim (xRAN RU) device  --->>> ONLY in the case of RU Simulated (not for notifications / kickers / RPCs)
+cd ~/ncs-run/packages
+ncs-netsim create-network ./xran110 1 rusim --dir ../netsim
+cd ~/ncs-run
+ncs-netsim start
+
+ncs-netsim ncs-xml-init > devices.xml
+ncs_load -l -m devices.xml 
+
+
+
+## Action package
+# Copy xran-supervison-action package to $HOME/ncs-run/packages
+cd $HOME/ncs-run/packages/xran-supervision-action/src
+make clean && make
+
+cd $HOME/ncs-run
+ncs --stop
+ncs --with-package-reload
+
+
+## Kicker Config
+config
+unhide debug
+kickers notification-kicker kicker1 kick-node /xran-supervision-action:action action-name watchdogreset selector-expr "$SUBSCRIPTION_NAME = 'mysub'"
+commit
+end
+show running-config kickers
+
+
+
+### Installing ConfD
+# In NSO machine
+cd ~/nso-4.7.2.1/netsim
+tar cvf confd.tar confd
+
+# Transfer NSO-confd to the ConfD machine
+e.g.,
+scp confd.tar ubuntu@192.168.3.241:/home/ubuntu
+
+# In ConfD machine
+cd $HOME
+tar xvf confd.tar
+rm confd.tar
+cd confd
+sed -i 's|nso-4.7.2.1/netsim/||g' confdrc
+sed -i 's|nso-4.7.2.1/netsim/||g' confdrc.tcsh
+sed -i 's|nso-4.7.2.1/netsim/||g' etc/confd/confd.conf
+
+cd $HOME
+vi .profile
+source /home/ubuntu/confd/confdrc
+
+
+## Customize confd.conf
+vi ~/confd/etc/confd/confd.conf
+  <cdb>
+    <operational>
+      <enabled>true</enabled>
+    </operational>
+  </cdb>
+  <notifications>
+    <eventStreams>
+      <stream>
+        <name>supervision</name>
+        <description>xran-supervision-notification</description>
+        <replaySupport>false</replaySupport>
+      </stream>
+    </eventStreams>
+  </notifications>
+  <cli>
+    <style>c</style>
+  </cli> 
+
+
+# Transfer 2-0, XML_2-0, notifier, and rpc directories to $HOME
+cd ~/2-0
+./compiler.sh
+mv *.fxs ~/confd/etc/confd/
+
+cd ~/notifier
+cp ~/2-0/xran-supervision* .
+make clean
+
+confdc -c -a xran-supervision-ann.yang xran-supervision.yang
+confdc --emit-h xran-supervision.h xran-supervision.fxs
+cc -c -o notifier.o notifier.c -Wall -g -I/home/ubuntu/confd/include
+cc notifier.o /home/ubuntu/confd/lib/libconfd.a -lpthread -lm -Wall -g -I/home/ubuntu/confd/include -o notifier
+
+# For Troubleshooting ONLY
+#confdc -c -a xran-supervision-ann.yang xran-supervision.yang; confdc --emit-h xran-supervision.h xran-supervision.fxs; cc -c -o notifier.o notifier.c -Wall -g -I/home/ubuntu/confd/include; cc notifier.o /home/ubuntu/confd/lib/libconfd.a -lpthread -lm -Wall -g -I/home/ubuntu/confd/include -o notifier; ./notifier
+
+
+## Start ConfD
+cd ~/confd
+confd
+
+
+
+
+# Add device on NSO CLI
+config
+devices authgroups group default
+umap system remote-name admin remote-password admin
+devices device ru0 authgroup default address 192.168.3.241 port 2022 device-type netconf
+state admin-state unlocked 
+commit
+ssh fetch-host-keys 
+connect
+sync-from
+end
+
+# Verify
+show running-config devices device ru0
+show devices device ru0 live-status
+
+
+# Load nso-config.xml
+- From NSO machine
+ncs_load -l -m ~/XML_2-0/nso-config.xml
+
+- From NSO CLI
+devices device ru0 sync-to
+
+
+# Load confd-*.xml
+- From confd machine
+confd_load -lCO ~/XML_2-0/confd-all.xml
+
+- From NSO CLI
+devices device ru0 sync-from
+
+
+# Subscription to supervision notification on NSO CLI
+config
+devices device ru0 netconf-notifications subscription mysub local-user admin stream supervision
+commit
+end
+
+# Verify
+show devices device ru0 netconf-notifications subscription
+
+
+
+# From ConfD machine start notifier
+cd ~/notifier
+./notifier
+
+# Check logs on ConfD machine
+tail -f ~/rpc/supervision-watchdog-reset.result 
+
+# Check logs on NSO machine
+tail -f ~/ncs-run/logs/python-supervision-action.log 
+
+
+
+
+
+
+
+### This json-based api call to trigger an rpc WORKS!!!
+curl -vvv -i -u admin:admin -X POST http://127.0.0.1:8080/api/running/devices/device/ru0/rpc/xran-supervision:rpc-supervision-watchdog-reset/_operations/supervision-watchdog-reset --header "Content-Type: application/vnd.yang.operation+json" --header "Accept: application/vnd.yang.operation+json" -d '{ "xran-supervision:supervision-watchdog-reset": { "supervision-notification-interval":"15", "guard-timer-overhead":"5"}}'
