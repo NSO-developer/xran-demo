@@ -33,6 +33,8 @@ sudo pip install pyangbind
 
 ## NSO Installation
 
+NSO is available from https://developer.cisco.com/site/nso/.
+
 To install NSO, ssh to the NSO machine and follow the steps below.
 
 ```Bash
@@ -80,7 +82,8 @@ ncs --with-package-reload
 
 ## Action Package Compiling and Loading
 The Action Package serves as a way to trigger
-# Copy xran-supervison-action package to $HOME/ncs-run/packages
+ 
+Transfer the **[xran-supervison-action](https://github.com/NSO-developer/xran-demo/tree/master/Notifications-RPCs/NSO/packages/xran-supervision-action)** package and place it in the **~/ncs-run/packages** directory.
 cd $HOME/ncs-run/packages/xran-supervision-action/src
 make clean && make
 
