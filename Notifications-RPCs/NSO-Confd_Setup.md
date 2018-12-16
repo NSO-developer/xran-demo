@@ -4,7 +4,8 @@ This document describes the procedure to configure NSO and ConfD on separate mac
 
 ## xRAN-RU Supervision Description
 
-The NSO machine serves as the Netconf Client and the ConfD machine serves as the Netconf Server (RU). Below is the flow diagram for this use case.
+The NSO machine serves as the Netconf Client and the ConfD machine serves as the Netconf Server (RU). Below is the flow diagram for this use case. 
+**Reference:** [20180713-XRAN-FHMP0-v0100.pdf](http://www.xran.org/s/20180713-XRAN-FHMP0-v0100.pdf)
 
 ![xran-supervision-flow.png](https://github.com/NSO-developer/xran-demo/raw/master/Notifications-RPCs/xran-supervision-flow.png "xRAN-RU Supervision Flow Diagram")
 
