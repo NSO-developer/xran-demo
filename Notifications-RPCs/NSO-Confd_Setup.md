@@ -155,6 +155,7 @@ Replace the **~/confd/etc/confd/confd.conf** file with the one provide here:
 Transfer all the 2.0 yang files to the **~/yang** directory. Add/replace the following files provided here to this directory:
 [xran-supervision.yang](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/ConfD/yang-override/xran-supervision.yang)
 [xran-supervision-ann.yang](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/ConfD/yang-override/xran-supervision-ann.yang)
+[compiler.sh](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/ConfD/yang-override/compiler.sh)
 
 Copy the following directory structures to the ~/ (HOME) directory:
 [notifier](https://github.com/NSO-developer/xran-demo/tree/master/Notifications-RPCs/ConfD/notifier)
