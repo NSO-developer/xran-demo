@@ -2,7 +2,7 @@
 
 This directory contains a set of procedures and required files to illustrate how to exercise the notifications and RPCs with NSO and ConfD.
 
-* [NSO](https://github.com/NSO-developer/xran-demo/Notifications-RPCs/NSO)
+* [NSO](https://github.com/NSO-developer/xran-demo/tree/master/Notifications-RPCs/NSO)
 * file2 is...
 * file3 is...
 
