@@ -39,15 +39,15 @@ source $HOME/nso-4.7.2.1/ncsrc >> ~/.profile
 source $HOME/nso-4.7.2.1/netsim/confd/confdrc >> ~/.profile
 ```
 
-Exit the ssh session and relogin. Prepare the NSO running directory "ncs-run".
+Exit the ssh session and relogin. Create and prepare the NSO running directory **ncs-run** on your home directory.
 
 ```Bash
 mkdir ncs-run
 ncs-setup --dest $HOME/ncs-run
 ```
 
-Replace the ~/ncs-run/ncs.conf configuration file with the one provided here:
-[ncs.conf](https://github.com/NSO-developer/xran-demo/edit/master/Notifications-RPCs/NSO-Confd_Setup.md)
+Replace the **~/ncs-run/ncs.conf** configuration file with the one provided here:
+[ncs.conf](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/NSO/ncs-run/ncs.conf)
 
 Run NSO.
 ```Bash
@@ -55,15 +55,24 @@ cd ~/ncs-run
 ncs
 ```
 
-# Compiling and loading the xRAN RU NED
+### Compiling and Loading the xRAN-RU NED
+Transfer all the 2.0 yang files to the **~/yang** directory.
+
+Replace the **~/yang/xran-supervision.yang** file with the one provide here:
+[xran-supervision.yang](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/NSO/yang-override/xran-supervision.yang)
+
+Generate and compile the **xran20** NED package based on the yang files located at the ~/yang directory. Place the package in the **~/ncs-run/packages** directory.
+```Bash
 cd $HOME
-ncs-make-package --netconf-ned ~/2-0 xran20 --dest ~/ncs-run/packages/xran20 --vendor xran --build --no-java
+ncs-make-package --netconf-ned ~/yang xran20 --dest ~/ncs-run/packages/xran20 --vendor xran --build --no-java
+```
 
-
+Restart NSO and reload the packages.
+```Bash
 cd ~/ncs-run
 ncs --stop
 ncs --with-package-reload
-
+```
 
 # Creating Netsim (xRAN RU) device  --->>> ONLY in the case of RU Simulated (not for notifications / kickers / RPCs)
 cd ~/ncs-run/packages
