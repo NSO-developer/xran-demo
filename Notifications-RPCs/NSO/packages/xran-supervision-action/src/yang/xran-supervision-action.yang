@@ -1,0 +1,39 @@
+module xran-supervision-action {
+
+  namespace "http://example.com/xran-supervision-action";
+  prefix xran-supervision-action;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  import tailf-kicker {
+    prefix kicker;
+  }
+
+
+  description
+    "Bla bla...";
+
+  revision 2016-01-01 {
+    description
+      "Initial revision.";
+  }
+
+  container action {
+    tailf:action watchdogreset {
+      tailf:actionpoint xran-supervision-action-action;
+      input {
+        uses kicker:action-input-params;
+      }
+      output {
+      }
+    }
+  }
+}
