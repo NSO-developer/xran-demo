@@ -223,19 +223,19 @@ cd ~/notifier
 ./notifier
 ```
 Sample output:
-	Variables Filename is:   /home/ubuntu/rpc/variables2
+		Variables Filename is:   /home/ubuntu/rpc/variables2
 
-	Inteval read from file is: 5
-	Guard read from file is: 3
+		Inteval read from file is: 5
+		Guard read from file is: 3
 
-	Netconf Notification Agent (notifier) Started!
+		Netconf Notification Agent (notifier) Started!
 
-	Notification was sent -- 1544907843
-	RPC Supervision Watchdog Timer Reset Received with inteval=10 and guard=6 -- 1544907843
-	Variables2 file deleted successfully -- 1544907843
-	Notification was sent -- 1544907853
-	RPC Supervision Watchdog Timer Reset Received with inteval=10 and guard=6 -- 1544907853
-	Variables2 file deleted successfully -- 1544907853
+		Notification was sent -- 1544907843
+		RPC Supervision Watchdog Timer Reset Received with inteval=10 and guard=6 -- 1544907843
+		Variables2 file deleted successfully -- 1544907843
+		Notification was sent -- 1544907853
+		RPC Supervision Watchdog Timer Reset Received with inteval=10 and guard=6 -- 1544907853
+		Variables2 file deleted successfully -- 1544907853
 
 
 
