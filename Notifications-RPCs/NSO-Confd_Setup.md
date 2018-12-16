@@ -48,8 +48,8 @@ To install NSO, ssh to the NSO machine and follow the steps below.
 cd $HOME
 sh nso-4.7.2.1.linux.x86_64.installer.bin $HOME/nso-4.7.2.1 --local-install
 
-source $HOME/nso-4.7.2.1/ncsrc >> ~/.profile
-source $HOME/nso-4.7.2.1/netsim/confd/confdrc >> ~/.profile
+echo "source $HOME/nso-4.7.2.1/ncsrc" >> ~/.profile
+echo "source $HOME/nso-4.7.2.1/netsim/confd/confdrc" >> ~/.profile
 ```
 
 Exit the ssh session and relogin. Create and prepare the NSO running directory **ncs-run** on your home directory.
@@ -116,22 +116,27 @@ Verify that the Kicker was configured correctly.
 ```
 show running-config kickers
 ```
-		kickers notification-kicker kicker1
-		 selector-expr "$SUBSCRIPTION_NAME = 'mysub'"
-		 kick-node     /action
-		 action-name   watchdogreset
-		!
 
 ## ConfD Installation
-### In NSO machine
+### In NSO Machine
+Tar the **~/nso-4.7.2.1/netsim/confd** directory.
+```Bash
 cd ~/nso-4.7.2.1/netsim
 tar cvf confd.tar confd
+```
 
-# Transfer NSO-confd to the ConfD machine
+Transfer the **confd.tar** file to the ConfD machine.
+```Bash
+scp confd.tar ubuntu@<IP Address>:<HOME Directory>
+```
 e.g.,
+```Bash
 scp confd.tar ubuntu@192.168.3.241:/home/ubuntu
+```
 
-# In ConfD machine
+### In ConfD Machine
+Extract the **confd.tar** file and the configuration files.
+```Bash
 cd $HOME
 tar xvf confd.tar
 rm confd.tar
@@ -141,58 +146,45 @@ sed -i 's|nso-4.7.2.1/netsim/||g' confdrc.tcsh
 sed -i 's|nso-4.7.2.1/netsim/||g' etc/confd/confd.conf
 
 cd $HOME
-vi .profile
-source /home/ubuntu/confd/confdrc
+echo "source /home/ubuntu/confd/confdrc" >> ~/.profile
+```
 
+Replace the **~/confd/etc/confd/confd.conf** file with the one provide here:
+[confd.conf](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/ConfD/confd/etc/confd/confd.conf)
 
-## Customize confd.conf
-vi ~/confd/etc/confd/confd.conf
-  <cdb>
-    <operational>
-      <enabled>true</enabled>
-    </operational>
-  </cdb>
-  <notifications>
-    <eventStreams>
-      <stream>
-        <name>supervision</name>
-        <description>xran-supervision-notification</description>
-        <replaySupport>false</replaySupport>
-      </stream>
-    </eventStreams>
-  </notifications>
-  <cli>
-    <style>c</style>
-  </cli> 
+Transfer all the 2.0 yang files to the **~/yang** directory. Add/replace the following files provided here to this directory:
+[xran-supervision.yang](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/ConfD/yang-override/xran-supervision.yang)
+[xran-supervision-ann.yang](https://github.com/NSO-developer/xran-demo/blob/master/Notifications-RPCs/ConfD/yang-override/xran-supervision-ann.yang)
 
+Copy the following directory structures to the ~/ (HOME) directory:
+[notifier](https://github.com/NSO-developer/xran-demo/tree/master/Notifications-RPCs/ConfD/notifier)
+[rpc](https://github.com/NSO-developer/xran-demo/tree/master/Notifications-RPCs/ConfD/rpc)
 
-# Transfer 2-0, XML_2-0, notifier, and rpc directories to $HOME
-cd ~/2-0
+Compile all the yang files and place their compiled versions on the **~/confd/etc/confd** directory.
+```Bash
+cd ~/yang
 ./compiler.sh
 mv *.fxs ~/confd/etc/confd/
+```
 
+Compile the **notifier** process.
+```Bash
 cd ~/notifier
-cp ~/2-0/xran-supervision* .
+cp ~/yang/xran-supervision* .
 make clean
 make
+```
 
-### For Troubleshooting ONLY
-#confdc -c -a xran-supervision-ann.yang xran-supervision.yang; confdc --emit-h xran-supervision.h xran-supervision.fxs; cc -c -o notifier.o notifier.c -Wall -g -I/home/ubuntu/confd/include; cc notifier.o /home/ubuntu/confd/lib/libconfd.a -lpthread -lm -Wall -g -I/home/ubuntu/confd/include -o notifier; ./notifier
-
-#confdc -c -a xran-supervision-ann.yang xran-supervision.yang
-#confdc --emit-h xran-supervision.h xran-supervision.fxs
-#cc -c -o notifier.o notifier.c -Wall -g -I ~/confd/include
-#cc notifier.o ~/confd/lib/libconfd.a -lpthread -lm -Wall -g -I ~/confd/include -o notifier
-
-
-## Start ConfD
+Start ConfD.
+```Bash
 cd ~/confd
 confd
+```
 
+## Device Commissioning on NSO CLI
+Login to the NSO CLI and issue the following commands to add the ConfD device **ru** to the NSO DB:
 
-
-
-# Add device on NSO CLI
+```
 config
 devices authgroups group default
 umap system remote-name admin remote-password admin
@@ -203,49 +195,59 @@ ssh fetch-host-keys
 connect
 sync-from
 end
-
-# Verify
+```
+Verify that the **ru0** Device was added and configured correctly, and that NSO is able to fetch live-status from it.
+```
 show running-config devices device ru0
 show devices device ru0 live-status
+```
 
-
-# Load nso-config.xml
-- From NSO machine
-ncs_load -l -m ~/XML_2-0/nso-config.xml
-
-- From NSO CLI
-devices device ru0 sync-to
-
-
-# Load confd-*.xml
-- From confd machine
-confd_load -lCO ~/XML_2-0/confd-all.xml
-
-- From NSO CLI
-devices device ru0 sync-from
-
-
-# Subscription to supervision notification on NSO CLI
+## Subscription to Supervision Notification on NSO CLI
+Login to the NSO CLI and issue the following commands to subscribe the **ru0** device to the supervision notifications:
+```
 config
 devices device ru0 netconf-notifications subscription mysub local-user admin stream supervision
 commit
 end
-
-# Verify
+```
+Verify that the **ru0** Device was subscribed successfuly to the supervision notifications.
+```
 show devices device ru0 netconf-notifications subscription
+````
 
+## Supervision Flow Validation
 
-
-# From ConfD machine start notifier
+From the ConfD machine start the **notifier** process to validate the Supervision Flow.
+```Bash
 cd ~/notifier
 ./notifier
+```
+Sample output:
+	Variables Filename is:   /home/ubuntu/rpc/variables2
 
-# Check logs on ConfD machine
+	Inteval read from file is: 5
+	Guard read from file is: 3
+
+	Netconf Notification Agent (notifier) Started!
+
+	Notification was sent -- 1544907843
+	RPC Supervision Watchdog Timer Reset Received with inteval=10 and guard=6 -- 1544907843
+	Variables2 file deleted successfully -- 1544907843
+	Notification was sent -- 1544907853
+	RPC Supervision Watchdog Timer Reset Received with inteval=10 and guard=6 -- 1544907853
+	Variables2 file deleted successfully -- 1544907853
+
+
+
+
+You may review the following logs on the ConfD machine:
+```Bash
 tail -f ~/rpc/supervision-watchdog-reset.result 
-
-# Check logs on NSO machine
+```
+You may review the following logs on the NSO machine:
+```Bash
 tail -f ~/ncs-run/logs/python-supervision-action.log 
-
+```
 
 
 
