@@ -2,9 +2,15 @@
 
 This document describes the procedure to configure NSO and ConfD on separate machines (servers / VMs) to demenostrate use of Notifications and RPCs in an xRAN-RU Netconf/Yang implementation. Particularly, we will limit the scope of this document to notifications and RPCs used by the xran-supervision model.
 
-## High-level Description
+## xRAN-RU Supervision Description
 
-The NSO machine serves as the Netconf Client and the ConfD machine serves as the Netconf Server (RU).
+The NSO machine serves as the Netconf Client and the ConfD machine serves as the Netconf Server (RU). Below is the flow diagram for this use case.
+
+![xran-supervision-flow.png](https://github.com/NSO-developer/xran-demo/raw/master/Notifications-RPCs/xran-supervision-flow.png "xRAN-RU Supervision Flow Diagram")
+
+The implemention of the above flow diagram is described below.
+
+The **notifier** (c-based) process sends the **xran-supervision** notifications from the RU (ConfD) to the RU Controller (NSO), as per the configured interval. NSO will be configured to subscribe to notifications. When NSO receives the notification, a **Kicker** event is triggered and the configured **xran-supervision-action** is executed. The **xran-supervision-action** calls a python script that sends the **xran-supervision** RPC to the ConfD. When ConfD receives the RPC, it executes the associated **supervision-watchdog-reset.sh** script, which writes a **variables2** text (flat) file with the interval and guard timer values. The **notifier** process will detect that this text file exists, and clears/resets the supervision watchdog timer, and cycles through this loop continously. If an RPC is not received within the interval + guard time frame, it triggers an RU RESET action.
 
 ## Prerequisites
 
@@ -84,15 +90,19 @@ ncs --with-package-reload
 The Action Package serves as a way to trigger
  
 Transfer the **[xran-supervison-action](https://github.com/NSO-developer/xran-demo/tree/master/Notifications-RPCs/NSO/packages/xran-supervision-action)** package and place it in the **~/ncs-run/packages** directory.
-cd $HOME/ncs-run/packages/xran-supervision-action/src
+```Bash
+cd ~/ncs-run/packages/xran-supervision-action/src
 make clean && make
+```
 
-cd $HOME/ncs-run
+Restart NSO and reload the packages.
+```Bash
+cd ~/ncs-run
 ncs --stop
 ncs --with-package-reload
+```
 
-
-## Kicker Config
+## Kicker Configuration
 config
 unhide debug
 kickers notification-kicker kicker1 kick-node /xran-supervision-action:action action-name watchdogreset selector-expr "$SUBSCRIPTION_NAME = 'mysub'"
