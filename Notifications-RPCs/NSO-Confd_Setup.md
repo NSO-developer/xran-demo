@@ -116,7 +116,7 @@ Verify that the Kicker was configured correctly.
 ```
 show running-config kickers
 ```
-*		kickers notification-kicker kicker1
+		*kickers notification-kicker kicker1
 		 selector-expr "$SUBSCRIPTION_NAME = 'mysub'"
 		 kick-node     /action
 		 action-name   watchdogreset
