@@ -103,7 +103,7 @@ ncs --with-package-reload
 ```
 
 ## Kicker Configuration
-Login to the NSO CLI and issue the following commands:
+Login to the NSO CLI and issue the following commands to configure the Kicker:
 ```
 config
 unhide debug
@@ -112,10 +112,16 @@ commit
 end
 ```
 
-Verify that the kicker was configured correctly.
+Verify that the Kicker was configured correctly.
 ```
 show running-config kickers
 ```
+	kickers notification-kicker kicker1
+	 selector-expr "$SUBSCRIPTION_NAME = 'mysub'"
+	 kick-node     /action
+	 action-name   watchdogreset
+	!
+
 
 
 
