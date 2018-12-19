@@ -26,11 +26,54 @@
             <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
             <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>true</enabled>
+              <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+                <u-plane-marking>46</u-plane-marking>
+                <c-plane-marking>46</c-plane-marking>
+                <s-plane-marking>46</s-plane-marking>
+                <other-marking>0</other-marking>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking1</up-marking-name>
+                  <enhanced-marking>39</enhanced-marking>
+                </enhanced-uplane-markings>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking2</up-marking-name>
+                  <enhanced-marking>38</enhanced-marking>
+                </enhanced-uplane-markings>
+              </diffserv-markings>
             </ipv4>
             <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>true</enabled>
+              <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+                <u-plane-marking>46</u-plane-marking>
+                <c-plane-marking>46</c-plane-marking>
+                <s-plane-marking>46</s-plane-marking>
+                <other-marking>0</other-marking>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking1</up-marking-name>
+                  <enhanced-marking>39</enhanced-marking>
+                </enhanced-uplane-markings>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking2</up-marking-name>
+                  <enhanced-marking>38</enhanced-marking>
+                </enhanced-uplane-markings>
+              </diffserv-markings>
             </ipv6>
             <vlan-tagging xmlns="urn:xran:interfaces:2.0">true</vlan-tagging>
+            <class-of-service xmlns="urn:xran:interfaces:2.0">
+              <u-plane-marking>7</u-plane-marking>
+              <c-plane-marking>7</c-plane-marking>
+              <m-plane-marking>2</m-plane-marking>
+              <s-plane-marking>7</s-plane-marking>
+              <other-marking>1</other-marking>
+              <enhanced-uplane-markings>
+                <up-marking-name>marking1</up-marking-name>
+                <enhanced-marking>6</enhanced-marking>
+              </enhanced-uplane-markings>
+              <enhanced-uplane-markings>
+                <up-marking-name>marking2</up-marking-name>
+                <enhanced-marking>5</enhanced-marking>
+              </enhanced-uplane-markings>
+            </class-of-service>
             <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:30</mac-address>
             <port-reference xmlns="urn:xran:interfaces:2.0">
               <xran-port-name>netsim-ru-port0</xran-port-name>
@@ -42,6 +85,20 @@
             <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:l2vlan</type>
             <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>true</enabled>
+              <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+                <u-plane-marking>46</u-plane-marking>
+                <c-plane-marking>46</c-plane-marking>
+                <s-plane-marking>46</s-plane-marking>
+                <other-marking>0</other-marking>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking1</up-marking-name>
+                  <enhanced-marking>39</enhanced-marking>
+                </enhanced-uplane-markings>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking2</up-marking-name>
+                  <enhanced-marking>38</enhanced-marking>
+                </enhanced-uplane-markings>
+              </diffserv-markings>
               <address>
                 <ip>10.10.0.17</ip>
                 <netmask>255.255.255.0</netmask>
@@ -63,6 +120,20 @@
             <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:l2vlan</type>
             <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>true</enabled>
+              <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+                <u-plane-marking>46</u-plane-marking>
+                <c-plane-marking>46</c-plane-marking>
+                <s-plane-marking>46</s-plane-marking>
+                <other-marking>0</other-marking>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking1</up-marking-name>
+                  <enhanced-marking>39</enhanced-marking>
+                </enhanced-uplane-markings>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking2</up-marking-name>
+                  <enhanced-marking>38</enhanced-marking>
+                </enhanced-uplane-markings>
+              </diffserv-markings>
             </ipv4>
             <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>false</enabled>
@@ -80,11 +151,55 @@
             <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
             <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>true</enabled>
+              <diffserv-markings xmlns="urn:xran:interfaces:2.0">
+                <u-plane-marking>46</u-plane-marking>
+                <c-plane-marking>46</c-plane-marking>
+                <s-plane-marking>46</s-plane-marking>
+                <other-marking>0</other-marking>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking1</up-marking-name>
+                  <enhanced-marking>39</enhanced-marking>
+                </enhanced-uplane-markings>
+                <enhanced-uplane-markings>
+                  <up-marking-name>marking2</up-marking-name>
+                  <enhanced-marking>38</enhanced-marking>
+                </enhanced-uplane-markings>
+              </diffserv-markings>
             </ipv4>
             <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
               <enabled>true</enabled>
             </ipv6>
             <vlan-tagging xmlns="urn:xran:interfaces:2.0">true</vlan-tagging>
+            <class-of-service xmlns="urn:xran:interfaces:2.0">
+              <u-plane-marking>7</u-plane-marking>
+              <c-plane-marking>7</c-plane-marking>
+              <m-plane-marking>2</m-plane-marking>
+              <s-plane-marking>7</s-plane-marking>
+              <other-marking>1</other-marking>
+              <enhanced-uplane-markings>
+                <up-marking-name>marking1</up-marking-name>
+                <enhanced-marking>6</enhanced-marking>
+              </enhanced-uplane-markings>
+              <enhanced-uplane-markings>
+                <up-marking-name>marking2</up-marking-name>
+                <enhanced-marking>5</enhanced-marking>
+              </enhanced-uplane-markings>
+            </class-of-service>
+            <class-of-service xmlns="urn:xran:interfaces:2.0">
+              <u-plane-marking>7</u-plane-marking>
+              <c-plane-marking>7</c-plane-marking>
+              <m-plane-marking>2</m-plane-marking>
+              <s-plane-marking>7</s-plane-marking>
+              <other-marking>1</other-marking>
+              <enhanced-uplane-markings>
+                <up-marking-name>marking1</up-marking-name>
+                <enhanced-marking>6</enhanced-marking>
+              </enhanced-uplane-markings>
+              <enhanced-uplane-markings>
+                <up-marking-name>marking2</up-marking-name>
+                <enhanced-marking>5</enhanced-marking>
+              </enhanced-uplane-markings>
+            </class-of-service>
             <mac-address xmlns="urn:xran:interfaces:2.0">00:e0:fe:00:23:40</mac-address>
             <port-reference xmlns="urn:xran:interfaces:2.0">
               <xran-port-name>netsim-ru-port1</xran-port-name>
@@ -228,6 +343,16 @@
         </performance-measurement-objects>
         <processing-elements xmlns="urn:xran:processing-element:2.0">
           <transport-session-type>ETH-INTERFACE</transport-session-type>
+          <enhanced-uplane-mapping>
+            <uplane-mapping>
+              <up-marking-name>slice0</up-marking-name>
+              <up-cos-name>marking1</up-cos-name>
+            </uplane-mapping>
+            <uplane-mapping>
+              <up-marking-name>slice1</up-marking-name>
+              <up-cos-name>marking2</up-cos-name>
+            </uplane-mapping>
+          </enhanced-uplane-mapping>
           <ru-elements>
             <name>element0</name>
             <transport-flow>
