@@ -104,7 +104,7 @@ leaf band-number {
 
 Now the simulator constraints have been addressed, we can build the NED
 
-    $ ~/ncs4.7/bin/ncs-make-package --netconf-ned ~/yang/V1_1_0 xran110 --dest ~/ncs-run/packages/xran110 --vendor xran --build --no-java
+    $ ~/nso-4.7/bin/ncs-make-package --netconf-ned ~/yang/V1_1_0 xran110 --dest ~/ncs-run/packages/xran110 --vendor xran --build --no-java
 
 
 ## Create simulated xRAN Radio Unit
